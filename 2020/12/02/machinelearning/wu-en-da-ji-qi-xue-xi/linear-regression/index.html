@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Hello World, 曾先森的Blog">
+    <meta name="keywords" content="01_线性回归_Linear_Regression, 曾先森的Blog">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Hello World | 曾先森的Blog</title>
+    <title>01_线性回归_Linear_Regression | 曾先森的Blog</title>
     <link rel="icon" type="image/png" href="https://cdn.jsdelivr.net/gh/ZqtCtios/ZqtCtios.github.io/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/ZqtCtios/ZqtCtios.github.io/libs/awesome/css/all.css">
@@ -29,7 +29,11 @@
 
     <script src="https://cdn.jsdelivr.net/gh/ZqtCtios/ZqtCtios.github.io/libs/jquery/jquery.min.js"></script>
 
-<meta name="generator" content="Hexo 5.2.0">
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.2.0">
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
 <link rel="alternate" href="/atom.xml" title="曾先森的Blog" type="application/atom+xml">
 </head>
@@ -38,7 +42,7 @@
 
    <style>
     body{
-       background-image: url(https://cdn.jsdelivr.net/gh/Tokisaki-Galaxy/res/site/medias/background.jpg);
+       background-image: url(https://cdn.jsdelivr.net/gh/ZqtCtios/Image/img/20201204234530.jpg);
        background-repeat:no-repeat;
        background-size:cover;
        background-attachment:fixed;
@@ -201,75 +205,12 @@
         </li>
         
         
-        <li><div class="divider"></div></li>
-        <li>
-            <a href="https://github.com/blinkfox/hexo-theme-matery" class="waves-effect waves-light" target="_blank">
-                <i class="fab fa-github-square fa-fw"></i>Fork Me
-            </a>
-        </li>
-        
     </ul>
 </div>
 
 
         </div>
 
-        
-            <style>
-    .nav-transparent .github-corner {
-        display: none !important;
-    }
-
-    .github-corner {
-        position: absolute;
-        z-index: 10;
-        top: 0;
-        right: 0;
-        border: 0;
-        transform: scale(1.1);
-    }
-
-    .github-corner svg {
-        color: #0f9d58;
-        fill: #fff;
-        height: 64px;
-        width: 64px;
-    }
-
-    .github-corner:hover .octo-arm {
-        animation: a 0.56s ease-in-out;
-    }
-
-    .github-corner .octo-arm {
-        animation: none;
-    }
-
-    @keyframes a {
-        0%,
-        to {
-            transform: rotate(0);
-        }
-        20%,
-        60% {
-            transform: rotate(-25deg);
-        }
-        40%,
-        80% {
-            transform: rotate(10deg);
-        }
-    }
-</style>
-
-<a href="https://github.com/blinkfox/hexo-theme-matery" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
-   data-tooltip="Fork Me" data-position="left" data-delay="50">
-    <svg viewBox="0 0 250 250" aria-hidden="true">
-        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
-        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
-              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
-        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
-              fill="currentColor" class="octo-body"></path>
-    </svg>
-</a>
         
     </nav>
 
@@ -279,12 +220,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/ZqtCtios/ZqtCtios.github.io/medias/featureimages/12.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/ZqtCtios/ZqtCtios.github.io/medias/featureimages/14.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Hello World</h1>
+                    <h1 class="description center-align post-title">01_线性回归_Linear_Regression</h1>
                 </div>
             </div>
         </div>
@@ -398,12 +339,33 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/">
+                                <span class="chip bg-color">机器学习</span>
+                            </a>
+                        
+                            <a href="/tags/%E5%90%B4%E6%81%A9%E8%BE%BE/">
+                                <span class="chip bg-color">吴恩达</span>
+                            </a>
+                        
+                            <a href="/tags/%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92/">
+                                <span class="chip bg-color">线性回归</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/%E5%90%B4%E6%81%A9%E8%BE%BE%E2%80%94%E2%80%94%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" class="post-category">
+                                吴恩达——机器学习
+                            </a>
+                        
+                    </div>
                     
                 </div>
             </div>
@@ -412,17 +374,32 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2020-12-02
+                </div>
+                
+
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
                     2020-12-04
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    1.8k
                 </div>
                 
 
                 
 
                 
-
-                
-
-                
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
             </div>
         </div>
         <hr class="clearfix">
@@ -436,19 +413,132 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo new <span class="token string">"My New Post"</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo server<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo generate<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo deploy<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+                <h1 id="线性回归"><a href="#线性回归" class="headerlink" title="线性回归"></a>线性回归</h1><p>回归本质上是利用离散的值来试着推测出一个连续值的结果，对其他值进行预测</p>
+<h2 id="1-单变量线性回归（Linear-Regression-with-One-Variable）"><a href="#1-单变量线性回归（Linear-Regression-with-One-Variable）" class="headerlink" title="1 单变量线性回归（Linear Regression with One Variable）"></a>1 单变量线性回归（Linear Regression with One Variable）</h2><p><img src="https://cdn.jsdelivr.net/gh/ZqtCtios/Image/img/20201202232210.png" alt="image-20201202232210402"></p>
+<h3 id="1-1-例子房价预测问题："><a href="#1-1-例子房价预测问题：" class="headerlink" title="1.1 例子房价预测问题："></a>1.1 例子房价预测问题：</h3><p>假使回归问题的训练集(Training Set)如下表所示</p>
+<p><img src="https://cdn.jsdelivr.net/gh/ZqtCtios/Image/img/20201202232330.png" alt="image-20201202232330802"></p>
+<p>我们将要用来描述这个回归问题的标记如下: </p>
+<ul>
+<li><p>$𝑚$代表训练集中实例的数量</p>
+</li>
+<li><p>$𝑥$ 代表特征/输入变量</p>
+</li>
+<li>$𝑦$ 代表目标变量/输出变量</li>
+<li>$(𝑥,𝑦)$ 代表训练集中的实例</li>
+<li>$(𝑥^{(𝑖)},𝑦^{(𝑖)})$代表第$𝑖$ 个观察实例</li>
+<li>$h$ 代表学习算法的解决方案或函数也称为假设(hypothesis)</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/ZqtCtios/Image/img/20201202232830.png" alt="image-20201202232830677"></p>
+<p>我们该如何表达 h?</p>
+<p>一种可能的表达方式为:$h_𝜃(𝑥) = 𝜃_0 + 𝜃_1𝑥$，因为只含有一个特征/输入变量，因此这样 的问题叫作单变量线性回归问题。</p>
+<h3 id="1-2-代价函数"><a href="#1-2-代价函数" class="headerlink" title="1.2 代价函数"></a>1.2 代价函数</h3><h4 id="误差定义："><a href="#误差定义：" class="headerlink" title="误差定义："></a>误差定义：</h4><p>预测值与实际值的的差距。$h_𝜃(x)-y$</p>
+<h4 id="代价函数"><a href="#代价函数" class="headerlink" title="代价函数"></a>代价函数</h4><p>对于$h_𝜃(𝑥) = 𝜃_0 + 𝜃_1𝑥$，目的是找到两个变量$𝜃_0,𝜃_1$来使得整体误差的值最小，即误差平方和最小，代价公式为：</p>
+<script type="math/tex; mode=display">
+MSE=J\left(\theta_{0}, \theta_{1}\right)=\frac{1}{2 m} \sum_{i=1}^{m}\left(h_{\theta}\left(x^{(i)}\right)-y^{(i)}\right)^{2}</script><p><img src="https://cdn.jsdelivr.net/gh/ZqtCtios/Image/img/20201202233929.png" alt="image-20201202233929481"></p>
+<h3 id="1-3-梯度下降"><a href="#1-3-梯度下降" class="headerlink" title="1.3 梯度下降"></a>1.3 梯度下降</h3><p>批量梯度下降(batch gradient descent):</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+&\text { repeat until convergence \{}\\
+&\theta_{j}:=\theta_{j}-\alpha \frac{\partial}{\partial \theta_{j}} J\left(\theta_{0}, \theta_{1}\right) \quad(\text { for } j=0 \text { and } j=1)\\
+&\text{\}}
+\end{aligned}</script><p>其中$𝑎$是学习率(learning rate)，它决定了我们沿着能让代价函数下降程度最大的方向 向下迈出的步子有多大，在批量梯度下降中，我们每一次都同时让所有的参数减去学习速率乘以代价函数的导数，参数更新的步骤如下</p>
+<script type="math/tex; mode=display">
+\begin{array}{l}
+\text { temp } 0:=\theta_{0}-\alpha \frac{\partial}{\partial \theta_{0}} J\left(\theta_{0}, \theta_{1}\right) \\
+\text { templ }:=\theta_{1}-\alpha \frac{\partial}{\partial \theta_{1}} J\left(\theta_{0}, \theta_{1}\right) \\
+\theta_{0}:=\text { temp } 0 \\
+\theta_{1}:=\text { temp } 1
+\end{array}</script><ul>
+<li>$a$太小收敛速度太慢</li>
+<li>$a$太大可能不收敛</li>
+</ul>
+<h3 id="1-4-梯度下降的线性回归"><a href="#1-4-梯度下降的线性回归" class="headerlink" title="1.4 梯度下降的线性回归"></a>1.4 梯度下降的线性回归</h3><script type="math/tex; mode=display">
+\begin{array}{c}
+\frac{\partial}{\partial \theta_{j}} J\left(\theta_{0}, \theta_{1}\right)=\frac{\partial}{\partial \theta_{j}} \frac{1}{2 m} \sum_{i=1}^{m}\left(h_{\theta}\left(x^{(i)}\right)-y^{(i)}\right)^{2} \\
+j=0 \text { 时: } \frac{\partial}{\partial \theta_{0}} J\left(\theta_{0}, \theta_{1}\right)=\frac{1}{m} \sum_{i=1}^{m}\left(h_{\theta}\left(x^{(i)}\right)-y^{(i)}\right) \\
+j=1 \text { 时: } \quad \frac{\partial}{\partial \theta_{1}} J\left(\theta_{0}, \theta_{1}\right)=\frac{1}{m} \sum_{i=1}^{m}\left(\left(h_{\theta}\left(x^{(i)}\right)-y^{(i)}\right) \cdot x^{(i)}\right)
+\end{array}</script><h2 id="2-多变量线性回归-Linear-Regression-with-Multiple-Variables"><a href="#2-多变量线性回归-Linear-Regression-with-Multiple-Variables" class="headerlink" title="2 多变量线性回归(Linear Regression with Multiple Variables)"></a>2 多变量线性回归(Linear Regression with Multiple Variables)</h2><p>对上面的模型增加更多的特征，模型中的特征为$(x_1,x_2,….,x_n)$</p>
+<p><img src="https://cdn.jsdelivr.net/gh/ZqtCtios/Image/img/20201203163630.png" alt="image-20201203150333545"></p>
+<p>增添更多特征后，我们引入一系列新的注释:</p>
+<ul>
+<li><p>$𝑛$ 代表特征的数量</p>
+</li>
+<li><p>$𝑥^{(𝑖)}$代表第 $𝑖$ 个训练实例，是特征矩阵中的第$𝑖$行，是一个向量(vector)。</p>
+</li>
+<li><p>比方说，上图的</p>
+<script type="math/tex; mode=display">
+x^{(2)}=\left[\begin{array}{c}
+1416 \\
+3 \\
+2 \\
+40
+\end{array}\right]</script></li>
+<li><p>$𝑥^{(𝑖)}_j$代表特征矩阵中第$ 𝑖$ 行的第$𝑗$个特征，也就是第 𝑖 个训练实例的第 𝑗 个特征。</p>
+</li>
+<li><p>如上图的$\mid x_{2}^{(2)}=3, x_{3}^{(2)}=2$</p>
+</li>
+<li><p>支持多变量的假设 h 表示为:$h_{\theta}(x)=\theta_{0}+\theta_{1} x_{1}+\theta_{2} x_{2}+\ldots+\theta_{n} x_{n}$</p>
+</li>
+<li><p>这个公式中有𝑛 + 1个参数和𝑛个变量，为了使得公式能够简化一些，引入$𝑥_0 = 1$，则公 式转化为:$h_{\theta}(x)=\theta_{0} x_{0}+\theta_{1} x_{1}+\theta_{2} x_{2}+\ldots+\theta_{n} x_{n}$</p>
+</li>
+<li><p>此时模型中的参数是一个$𝑛 + 1$维的向量，任何一个训练实例也都是𝑛 + 1维的向量，特 征矩阵𝑋的维度是 $𝑚 ∗ (𝑛 + 1)$。 因此公式可以简化为:$h_𝜃(𝑥) = 𝜃^𝑇𝑋$，其中上标𝑇代表矩阵转置。</p>
+</li>
+</ul>
+<h3 id="2-1-多变量梯度下降Gradient-Descent-for-Multiple-Variables"><a href="#2-1-多变量梯度下降Gradient-Descent-for-Multiple-Variables" class="headerlink" title="2.1 多变量梯度下降Gradient Descent for Multiple Variables"></a>2.1 多变量梯度下降Gradient Descent for Multiple Variables</h3><p>与单变量线性回归类似，在多变量线性回归中，我们也构建一个代价函数，则这个代价 函数是所有建模误差的平方和，即:</p>
+<script type="math/tex; mode=display">
+J\left(\theta_{0}, \theta_{1} \ldots \theta_{n}\right)=\frac{1}{2 m} \sum_{i=1}^{m}\left(h_{\theta}\left(x^{(i)}\right)-y^{(i)}\right)^{2}</script><p>梯度下降算法求导后：</p>
+<p>Repeat：</p>
+<script type="math/tex; mode=display">
+\theta_{j}:=\theta_{j}-\alpha \frac{1}{m} \sum_{i=1}^{m}\left(\left(h_{\theta}\left(x^{(i)}\right)-y^{(i)}\right) \cdot x_{j}^{(i)}\right)</script><p>( simultaneously update  $\theta_{j}$$ \text { for } \mathrm{j}=0,1, \ldots, \mathrm{n})$</p>
+<p>计算Cost函数Python代码：</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">computeCost</span><span class="token punctuation">(</span>X<span class="token punctuation">,</span> y<span class="token punctuation">,</span> theta<span class="token punctuation">)</span><span class="token punctuation">:</span>
+  inner <span class="token operator">=</span> np<span class="token punctuation">.</span>power<span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">(</span>X <span class="token operator">*</span> theta<span class="token punctuation">.</span>T<span class="token punctuation">)</span> <span class="token operator">-</span> y<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span> 
+  <span class="token keyword">return</span> np<span class="token punctuation">.</span><span class="token builtin">sum</span><span class="token punctuation">(</span>inner<span class="token punctuation">)</span> <span class="token operator">/</span> <span class="token punctuation">(</span><span class="token number">2</span> <span class="token operator">*</span> <span class="token builtin">len</span><span class="token punctuation">(</span>X<span class="token punctuation">)</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<h3 id="2-2-梯度下降法实践-1-特征缩放"><a href="#2-2-梯度下降法实践-1-特征缩放" class="headerlink" title="2.2 梯度下降法实践 1-特征缩放"></a>2.2 梯度下降法实践 1-特征缩放</h3><p>Gradient Descent in Practice I - Feature Scaling</p>
+<p>在我们面对多维特征问题的时候，我们要保证这些特征都具有相近的尺度，这将帮助梯度下降算法更快地收敛，解决的方法是尝试将所有特征的尺度都尽量缩放到-1到1之间。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/ZqtCtios/Image/img/20201203153342.png" alt="image-20201203153342751"></p>
+<p>最简单的方法是令:$x_{n}=\frac{x_{n}-\mu_{n}}{s_{n}},$ 其中 $\mu_{n}$ 是平均值, $s_{n}$ 是标准差。</p>
+<h3 id="2-3-梯度下降法实践-2-学习率"><a href="#2-3-梯度下降法实践-2-学习率" class="headerlink" title="2.3 梯度下降法实践 2-学习率"></a>2.3 梯度下降法实践 2-学习率</h3><p>Gradient Descent in Practice II - Learning Rate</p>
+<p>梯度下降算法的每次迭代受到学习率的影响，如果学习率𝑎过小，则达到收敛所需的迭 代次数会非常高;如果学习率𝑎过大，每次迭代可能不会减小代价函数，可能会越过局部最 小值导致无法收敛。</p>
+<h3 id="2-4-特征和多项式回归"><a href="#2-4-特征和多项式回归" class="headerlink" title="2.4 特征和多项式回归"></a>2.4 特征和多项式回归</h3><p>线性回归并不适用于所有数据，有时我们需要曲线来适应我们的数据，比如一个二次方模型: $h_{\theta}(x)=\theta_{0}+\theta_{1} x_{1}+\theta_{2} x_{2}^{2}$<br>或者三次方模型: $\quad h_{\theta}(x)=\theta_{0}+\theta_{1} x_{1}+\theta_{2} x_{2}^{2}+\theta_{3} x_{3}^{3}$</p>
+<p><img src="https://cdn.jsdelivr.net/gh/ZqtCtios/Image/img/20201203155639.png" alt="image-20201203155639868"></p>
+<p>通常我们需要先观察数据然后再决定准备尝试怎样的模型。 另外，我们可以令：$x_{2}=x_{2}^{2}, x_{3}=x_{3}^{3},$ 从而将模型转化为线性回归模型。</p>
+<p>从而将模型转化为线性回归模型。</p>
+<h3 id="2-5-正规方程"><a href="#2-5-正规方程" class="headerlink" title="2.5 正规方程"></a>2.5 正规方程</h3><p>正规方程是通过求解下面的方程来找出使得代价函数最小的参数的 $： \frac{\partial}{\partial \theta_{j}} J\left(\theta_{j}\right)=0$，假设我们的训练集特征矩阵为 X（包含了 $x_{0}=1$ ）并且我们的训练集结果为向量 y，则利用正规方程解出向量 $\theta=\left(X^{T} X\right)^{-1} X^{T} y$ 。上标 T 代表矩阵转置，上标-1 代表矩阵的逆。设矩阵 $A=X^{T} X,$ 则: $\left(X^{T} X\right)^{-1}=A^{-1}$</p>
+<p> 梯度下降与正规方程的比较:</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:left">梯度下降</th>
+<th>正规方程</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">需要选择学习率𝛼</td>
+<td>不需要</td>
+</tr>
+<tr>
+<td style="text-align:left">需要多次迭代</td>
+<td>一次运算得出</td>
+</tr>
+<tr>
+<td style="text-align:left">当特征数量𝑛大时也能较好适用</td>
+<td>需要计算 $\left(X^{T} X\right)^{-1}$ 如果特征数量 $n$ 较大则运算代价大, 因为矩阵逆的计算时间复杂度 为 $O\left(n^{3}\right),$ 通常来说当n小于10000 时还是 可以接受的</td>
+</tr>
+<tr>
+<td style="text-align:left">适用于各种类型的模型</td>
+<td>只适用于线性模型，不适合逻辑回归模型等 其他模型</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>正规方程的python实现：</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> numpy <span class="token keyword">as</span> np 
+<span class="token keyword">def</span> <span class="token function">normalEqn</span><span class="token punctuation">(</span>X<span class="token punctuation">,</span> y<span class="token punctuation">)</span><span class="token punctuation">:</span>
+  theta <span class="token operator">=</span> np<span class="token punctuation">.</span>linalg<span class="token punctuation">.</span>inv<span class="token punctuation">(</span>X<span class="token punctuation">.</span>T@X<span class="token punctuation">)</span>@X<span class="token punctuation">.</span>T@y <span class="token comment">#X.T@X 等价于 X.T.dot(X) </span>
+  <span class="token keyword">return</span> theta<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 
                 
             </div>
@@ -475,7 +565,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://example.com/2020/12/04/hello-world/">http://example.com/2020/12/04/hello-world/</a>
+                    <a href="http://example.com/2020/12/02/machinelearning/wu-en-da-ji-qi-xue-xi/linear-regression/">http://example.com/2020/12/02/machinelearning/wu-en-da-ji-qi-xue-xi/linear-regression/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -512,7 +602,19 @@
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
+                            
+                                <a href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/">
+                                    <span class="chip bg-color">机器学习</span>
+                                </a>
+                            
+                                <a href="/tags/%E5%90%B4%E6%81%A9%E8%BE%BE/">
+                                    <span class="chip bg-color">吴恩达</span>
+                                </a>
+                            
+                                <a href="/tags/%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92/">
+                                    <span class="chip bg-color">线性回归</span>
+                                </a>
+                            
                         </div>
                     
                 </div>
@@ -684,13 +786,13 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2020/12/04/article-title/">
+                <a href="/2020/12/03/machinelearning/wu-en-da-ji-qi-xue-xi/logistic-regression/">
                     <div class="card-image">
                         
                         
-                        <img src="https://cdn.jsdelivr.net/gh/ZqtCtios/ZqtCtios.github.io/medias/featureimages/2.jpg" class="responsive-img" alt="article title">
+                        <img src="https://cdn.jsdelivr.net/gh/ZqtCtios/ZqtCtios.github.io/medias/featureimages/16.jpg" class="responsive-img" alt="02_逻辑回归_Logistic_Regression">
                         
-                        <span class="card-title">article title</span>
+                        <span class="card-title">02_逻辑回归_Logistic_Regression</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -701,15 +803,35 @@
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-12-04
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-12-03
                         </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            Ctios
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E5%90%B4%E6%81%A9%E8%BE%BE%E2%80%94%E2%80%94%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" class="post-category">
+                                    吴恩达——机器学习
+                                </a>
+                            
                             
                         </span>
                     </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/">
+                        <span class="chip bg-color">机器学习</span>
+                    </a>
+                    
+                    <a href="/tags/%E5%90%B4%E6%81%A9%E8%BE%BE/">
+                        <span class="chip bg-color">吴恩达</span>
+                    </a>
+                    
+                    <a href="/tags/%E9%80%BB%E8%BE%91%E5%9B%9E%E5%BD%92/">
+                        <span class="chip bg-color">逻辑回归</span>
+                    </a>
+                    
                 </div>
                 
             </div>
@@ -721,13 +843,13 @@
                 本篇&nbsp;<i class="far fa-dot-circle"></i>
             </div>
             <div class="card">
-                <a href="/2020/12/04/hello-world/">
+                <a href="/2020/12/02/machinelearning/wu-en-da-ji-qi-xue-xi/linear-regression/">
                     <div class="card-image">
                         
                         
-                        <img src="https://cdn.jsdelivr.net/gh/ZqtCtios/ZqtCtios.github.io/medias/featureimages/12.jpg" class="responsive-img" alt="Hello World">
+                        <img src="https://cdn.jsdelivr.net/gh/ZqtCtios/ZqtCtios.github.io/medias/featureimages/14.jpg" class="responsive-img" alt="01_线性回归_Linear_Regression">
                         
-                        <span class="card-title">Hello World</span>
+                        <span class="card-title">01_线性回归_Linear_Regression</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -738,17 +860,37 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-12-04
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-12-02
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            Ctios
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E5%90%B4%E6%81%A9%E8%BE%BE%E2%80%94%E2%80%94%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" class="post-category">
+                                    吴恩达——机器学习
+                                </a>
+                            
                             
                         </span>
                     </div>
                 </div>
 
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/">
+                        <span class="chip bg-color">机器学习</span>
+                    </a>
+                    
+                    <a href="/tags/%E5%90%B4%E6%81%A9%E8%BE%BE/">
+                        <span class="chip bg-color">吴恩达</span>
+                    </a>
+                    
+                    <a href="/tags/%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92/">
+                        <span class="chip bg-color">线性回归</span>
+                    </a>
+                    
+                </div>
                 
             </div>
         </div>
@@ -877,6 +1019,13 @@
 </main>
 
 
+<script src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script>
+    MathJax.Hub.Config({
+        tex2jax: {inlineMath: [['$', '$'], ['\(', '\)']]}
+    });
+</script>
+
 
 
     <footer class="page-footer bg-color">
@@ -917,12 +1066,12 @@
         <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
                    server="netease"
                    type="playlist"
-                   id="503838841"
+                   id="152698194"
                    fixed='true'
                    autoplay='false'
                    theme='#42b983'
                    loop='all'
-                   order='random'
+                   order='list'
                    preload='auto'
                    volume='0.7'
                    list-folded='true'
@@ -1205,11 +1354,13 @@ $(function () {
     
 
     
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/ZqtCtios/ZqtCtios.github.io/libs/background/ribbon-dynamic.js" async="async"></script>
+    
 
     
     <script src="https://cdn.jsdelivr.net/gh/ZqtCtios/ZqtCtios.github.io/libs/instantpage/instantpage.js" type="module"></script>
     
 
-<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true},"react":{"opacity":0.7}});</script></body>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/tororo.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true},"react":{"opacity":0.7}});</script></body>
 
 </html>

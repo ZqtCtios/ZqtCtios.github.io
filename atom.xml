@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2020-12-04T08:12:53.310Z</updated>
+  <updated>2020-12-04T15:35:34.240Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -17,36 +17,61 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>article title</title>
-    <link href="http://example.com/2020/12/04/article-title/"/>
-    <id>http://example.com/2020/12/04/article-title/</id>
-    <published>2020-12-04T08:12:53.000Z</published>
-    <updated>2020-12-04T08:12:53.310Z</updated>
+    <title>02_逻辑回归_Logistic_Regression</title>
+    <link href="http://example.com/2020/12/03/machinelearning/wu-en-da-ji-qi-xue-xi/logistic-regression/"/>
+    <id>http://example.com/2020/12/03/machinelearning/wu-en-da-ji-qi-xue-xi/logistic-regression/</id>
+    <published>2020-12-03T08:12:53.000Z</published>
+    <updated>2020-12-04T15:35:34.240Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;逻辑回归（Logistic-Regression）&quot;&gt;&lt;a href=&quot;#逻辑回归（Logistic-Regression）&quot; class=&quot;headerlink&quot; title=&quot;逻辑回归（Logistic</summary>
+        
+      
     
     
     
+    <category term="吴恩达——机器学习" scheme="http://example.com/categories/%E5%90%B4%E6%81%A9%E8%BE%BE%E2%80%94%E2%80%94%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
     
+    
+    <category term="机器学习" scheme="http://example.com/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    
+    <category term="吴恩达" scheme="http://example.com/tags/%E5%90%B4%E6%81%A9%E8%BE%BE/"/>
+    
+    <category term="逻辑回归" scheme="http://example.com/tags/%E9%80%BB%E8%BE%91%E5%9B%9E%E5%BD%92/"/>
     
   </entry>
   
   <entry>
-    <title>Hello World</title>
-    <link href="http://example.com/2020/12/04/hello-world/"/>
-    <id>http://example.com/2020/12/04/hello-world/</id>
-    <published>2020-12-04T07:48:23.110Z</published>
-    <updated>2020-12-04T07:48:23.110Z</updated>
+    <title>01_线性回归_Linear_Regression</title>
+    <link href="http://example.com/2020/12/02/machinelearning/wu-en-da-ji-qi-xue-xi/linear-regression/"/>
+    <id>http://example.com/2020/12/02/machinelearning/wu-en-da-ji-qi-xue-xi/linear-regression/</id>
+    <published>2020-12-02T08:12:53.000Z</published>
+    <updated>2020-12-04T15:35:29.359Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot;&gt;documentation&lt;/a&gt;</summary>
+    <summary type="html">&lt;h1 id=&quot;线性回归&quot;&gt;&lt;a href=&quot;#线性回归&quot; class=&quot;headerlink&quot; title=&quot;线性回归&quot;&gt;&lt;/a&gt;线性回归&lt;/h1&gt;&lt;p&gt;回归本质上是利用离散的值来试着推测出一个连续值的结果，对其他值进行预测&lt;/p&gt;
+&lt;h2</summary>
         
       
     
     
     
+    <category term="吴恩达——机器学习" scheme="http://example.com/categories/%E5%90%B4%E6%81%A9%E8%BE%BE%E2%80%94%E2%80%94%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+    <category term="机器学习" scheme="http://example.com/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    
+    <category term="吴恩达" scheme="http://example.com/tags/%E5%90%B4%E6%81%A9%E8%BE%BE/"/>
+    
+    <category term="线性回归" scheme="http://example.com/tags/%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92/"/>
     
   </entry>
   
