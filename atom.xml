@@ -3,11 +3,11 @@
   <title>曾先森的Blog</title>
   
   <subtitle>一个没有脱离低级趣味的人</subtitle>
-  <link href="http://example.com/atom.xml" rel="self"/>
+  <link href="http://blog.ctios.cn/atom.xml" rel="self"/>
   
-  <link href="http://example.com/"/>
+  <link href="http://blog.ctios.cn/"/>
   <updated>2020-12-04T16:22:18.638Z</updated>
-  <id>http://example.com/</id>
+  <id>http://blog.ctios.cn/</id>
   
   <author>
     <name>Ctios</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>02_逻辑回归_Logistic_Regression</title>
-    <link href="http://example.com/2020/12/03/machinelearning/wu-en-da-ji-qi-xue-xi/logistic-regression/"/>
-    <id>http://example.com/2020/12/03/machinelearning/wu-en-da-ji-qi-xue-xi/logistic-regression/</id>
+    <link href="http://blog.ctios.cn/2020/12/03/machinelearning/wu-en-da-ji-qi-xue-xi/logistic-regression/"/>
+    <id>http://blog.ctios.cn/2020/12/03/machinelearning/wu-en-da-ji-qi-xue-xi/logistic-regression/</id>
     <published>2020-12-03T08:12:53.000Z</published>
     <updated>2020-12-04T16:22:18.638Z</updated>
     
@@ -34,21 +34,21 @@
     
     
     
-    <category term="吴恩达——机器学习" scheme="http://example.com/categories/%E5%90%B4%E6%81%A9%E8%BE%BE%E2%80%94%E2%80%94%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    <category term="吴恩达——机器学习" scheme="http://blog.ctios.cn/categories/%E5%90%B4%E6%81%A9%E8%BE%BE%E2%80%94%E2%80%94%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
     
     
-    <category term="机器学习" scheme="http://example.com/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    <category term="机器学习" scheme="http://blog.ctios.cn/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
     
-    <category term="吴恩达" scheme="http://example.com/tags/%E5%90%B4%E6%81%A9%E8%BE%BE/"/>
+    <category term="吴恩达" scheme="http://blog.ctios.cn/tags/%E5%90%B4%E6%81%A9%E8%BE%BE/"/>
     
-    <category term="逻辑回归" scheme="http://example.com/tags/%E9%80%BB%E8%BE%91%E5%9B%9E%E5%BD%92/"/>
+    <category term="逻辑回归" scheme="http://blog.ctios.cn/tags/%E9%80%BB%E8%BE%91%E5%9B%9E%E5%BD%92/"/>
     
   </entry>
   
   <entry>
     <title>01_线性回归_Linear_Regression</title>
-    <link href="http://example.com/2020/12/02/machinelearning/wu-en-da-ji-qi-xue-xi/linear-regression/"/>
-    <id>http://example.com/2020/12/02/machinelearning/wu-en-da-ji-qi-xue-xi/linear-regression/</id>
+    <link href="http://blog.ctios.cn/2020/12/02/machinelearning/wu-en-da-ji-qi-xue-xi/linear-regression/"/>
+    <id>http://blog.ctios.cn/2020/12/02/machinelearning/wu-en-da-ji-qi-xue-xi/linear-regression/</id>
     <published>2020-12-02T08:12:53.000Z</published>
     <updated>2020-12-04T15:35:29.359Z</updated>
     
@@ -64,14 +64,14 @@
     
     
     
-    <category term="吴恩达——机器学习" scheme="http://example.com/categories/%E5%90%B4%E6%81%A9%E8%BE%BE%E2%80%94%E2%80%94%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    <category term="吴恩达——机器学习" scheme="http://blog.ctios.cn/categories/%E5%90%B4%E6%81%A9%E8%BE%BE%E2%80%94%E2%80%94%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
     
     
-    <category term="机器学习" scheme="http://example.com/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    <category term="机器学习" scheme="http://blog.ctios.cn/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
     
-    <category term="吴恩达" scheme="http://example.com/tags/%E5%90%B4%E6%81%A9%E8%BE%BE/"/>
+    <category term="吴恩达" scheme="http://blog.ctios.cn/tags/%E5%90%B4%E6%81%A9%E8%BE%BE/"/>
     
-    <category term="线性回归" scheme="http://example.com/tags/%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92/"/>
+    <category term="线性回归" scheme="http://blog.ctios.cn/tags/%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92/"/>
     
   </entry>
   
