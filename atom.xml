@@ -144,6 +144,33 @@ s</summary>
   </entry>
   
   <entry>
+    <title>01_1.2 A simple two-dimensional vector class</title>
+    <link href="http://blog.ctios.cn/2020/12/02/python/fluentpython/chapter-03-dictionaries-and-sets/3.2-set/"/>
+    <id>http://blog.ctios.cn/2020/12/02/python/fluentpython/chapter-03-dictionaries-and-sets/3.2-set/</id>
+    <published>2020-12-02T08:12:53.000Z</published>
+    <updated>2020-12-06T15:03:52.592Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;pre class=&quot;line-numbers language-python&quot; data-language=&quot;python&quot;&gt;&lt;code class=&quot;language-python&quot;&gt;&lt;span class=&quot;token</summary>
+        
+      
+    
+    
+    
+    <category term="FluentPython" scheme="http://blog.ctios.cn/categories/FluentPython/"/>
+    
+    <category term="Python_Data_Model" scheme="http://blog.ctios.cn/categories/FluentPython/Python-Data-Model/"/>
+    
+    
+    <category term="python" scheme="http://blog.ctios.cn/tags/python/"/>
+    
+  </entry>
+  
+  <entry>
     <title>01_2.1 tuple</title>
     <link href="http://blog.ctios.cn/2020/12/02/python/fluentpython/chapter-02-an-array-of-sequences/2.1-tuple/"/>
     <id>http://blog.ctios.cn/2020/12/02/python/fluentpython/chapter-02-an-array-of-sequences/2.1-tuple/</id>
@@ -156,34 +183,6 @@ s</summary>
         
         
     <summary type="html">&lt;pre class=&quot;line-numbers language-python&quot; data-language=&quot;python&quot;&gt;&lt;code class=&quot;language-python&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;#</summary>
-        
-      
-    
-    
-    
-    <category term="FluentPython" scheme="http://blog.ctios.cn/categories/FluentPython/"/>
-    
-    <category term="An_Array_of_Sequences" scheme="http://blog.ctios.cn/categories/FluentPython/An-Array-of-Sequences/"/>
-    
-    
-    <category term="python" scheme="http://blog.ctios.cn/tags/python/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>01_2.2 slice</title>
-    <link href="http://blog.ctios.cn/2020/12/02/python/fluentpython/chapter-02-an-array-of-sequences/2.2-slice/"/>
-    <id>http://blog.ctios.cn/2020/12/02/python/fluentpython/chapter-02-an-array-of-sequences/2.2-slice/</id>
-    <published>2020-12-02T08:12:53.000Z</published>
-    <updated>2020-12-06T15:05:49.890Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;pre class=&quot;line-numbers language-python&quot; data-language=&quot;python&quot;&gt;&lt;code class=&quot;language-python&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;# 切片&lt;/span&gt;
-s</summary>
         
       
     
@@ -229,11 +228,11 @@ s</summary>
   </entry>
   
   <entry>
-    <title>01_2.6 queue</title>
-    <link href="http://blog.ctios.cn/2020/12/02/python/fluentpython/chapter-02-an-array-of-sequences/2.4-sort-and-bisect/"/>
-    <id>http://blog.ctios.cn/2020/12/02/python/fluentpython/chapter-02-an-array-of-sequences/2.4-sort-and-bisect/</id>
+    <title>01_2.3 +,*,+=,*=</title>
+    <link href="http://blog.ctios.cn/2020/12/02/python/fluentpython/chapter-02-an-array-of-sequences/2.3/"/>
+    <id>http://blog.ctios.cn/2020/12/02/python/fluentpython/chapter-02-an-array-of-sequences/2.3/</id>
     <published>2020-12-02T08:12:53.000Z</published>
-    <updated>2020-12-06T15:06:39.336Z</updated>
+    <updated>2020-12-06T15:05:52.003Z</updated>
     
     
       
@@ -256,19 +255,18 @@ s</summary>
   </entry>
   
   <entry>
-    <title>01_2.5 array and memoryview</title>
-    <link href="http://blog.ctios.cn/2020/12/02/python/fluentpython/chapter-02-an-array-of-sequences/2.5-array-and-memoryview/"/>
-    <id>http://blog.ctios.cn/2020/12/02/python/fluentpython/chapter-02-an-array-of-sequences/2.5-array-and-memoryview/</id>
+    <title>01_2.6 queue</title>
+    <link href="http://blog.ctios.cn/2020/12/02/python/fluentpython/chapter-02-an-array-of-sequences/2.4-sort-and-bisect/"/>
+    <id>http://blog.ctios.cn/2020/12/02/python/fluentpython/chapter-02-an-array-of-sequences/2.4-sort-and-bisect/</id>
     <published>2020-12-02T08:12:53.000Z</published>
-    <updated>2020-12-06T15:06:20.062Z</updated>
+    <updated>2020-12-06T15:06:39.336Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;p&gt;此模块定义了一种对象类型，可以紧凑地表示基本类型值的数组：字符、整数、浮点数等。 数组属于序列类型，其行为与列表非常相似，不同之处在于其中存储的对象类型是受限的。 类型在对象创建时使用单个字符的 &lt;em&gt;类型码&lt;/em&gt; 来指定。 已定义的类型码如下：&lt;/p&gt;
-&lt;div</summary>
+    <summary type="html">&lt;pre class=&quot;line-numbers language-python&quot; data-language=&quot;python&quot;&gt;&lt;code class=&quot;language-python&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;#</summary>
         
       
     
@@ -311,18 +309,19 @@ s</summary>
   </entry>
   
   <entry>
-    <title>01_1.2 A simple two-dimensional vector class</title>
-    <link href="http://blog.ctios.cn/2020/12/02/python/fluentpython/chapter-03-dictionaries-and-sets/3.2-set/"/>
-    <id>http://blog.ctios.cn/2020/12/02/python/fluentpython/chapter-03-dictionaries-and-sets/3.2-set/</id>
+    <title>01_2.5 array and memoryview</title>
+    <link href="http://blog.ctios.cn/2020/12/02/python/fluentpython/chapter-02-an-array-of-sequences/2.5-array-and-memoryview/"/>
+    <id>http://blog.ctios.cn/2020/12/02/python/fluentpython/chapter-02-an-array-of-sequences/2.5-array-and-memoryview/</id>
     <published>2020-12-02T08:12:53.000Z</published>
-    <updated>2020-12-06T15:03:52.592Z</updated>
+    <updated>2020-12-06T15:06:20.062Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;pre class=&quot;line-numbers language-python&quot; data-language=&quot;python&quot;&gt;&lt;code class=&quot;language-python&quot;&gt;&lt;span class=&quot;token</summary>
+    <summary type="html">&lt;p&gt;此模块定义了一种对象类型，可以紧凑地表示基本类型值的数组：字符、整数、浮点数等。 数组属于序列类型，其行为与列表非常相似，不同之处在于其中存储的对象类型是受限的。 类型在对象创建时使用单个字符的 &lt;em&gt;类型码&lt;/em&gt; 来指定。 已定义的类型码如下：&lt;/p&gt;
+&lt;div</summary>
         
       
     
@@ -330,7 +329,7 @@ s</summary>
     
     <category term="FluentPython" scheme="http://blog.ctios.cn/categories/FluentPython/"/>
     
-    <category term="Python_Data_Model" scheme="http://blog.ctios.cn/categories/FluentPython/Python-Data-Model/"/>
+    <category term="An_Array_of_Sequences" scheme="http://blog.ctios.cn/categories/FluentPython/An-Array-of-Sequences/"/>
     
     
     <category term="python" scheme="http://blog.ctios.cn/tags/python/"/>
@@ -338,18 +337,19 @@ s</summary>
   </entry>
   
   <entry>
-    <title>01_2.3 +,*,+=,*=</title>
-    <link href="http://blog.ctios.cn/2020/12/02/python/fluentpython/chapter-02-an-array-of-sequences/2.3/"/>
-    <id>http://blog.ctios.cn/2020/12/02/python/fluentpython/chapter-02-an-array-of-sequences/2.3/</id>
+    <title>01_2.2 slice</title>
+    <link href="http://blog.ctios.cn/2020/12/02/python/fluentpython/chapter-02-an-array-of-sequences/2.2-slice/"/>
+    <id>http://blog.ctios.cn/2020/12/02/python/fluentpython/chapter-02-an-array-of-sequences/2.2-slice/</id>
     <published>2020-12-02T08:12:53.000Z</published>
-    <updated>2020-12-06T15:05:52.003Z</updated>
+    <updated>2020-12-06T15:05:49.890Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;pre class=&quot;line-numbers language-python&quot; data-language=&quot;python&quot;&gt;&lt;code class=&quot;language-python&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;#</summary>
+    <summary type="html">&lt;pre class=&quot;line-numbers language-python&quot; data-language=&quot;python&quot;&gt;&lt;code class=&quot;language-python&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;# 切片&lt;/span&gt;
+s</summary>
         
       
     
@@ -369,7 +369,7 @@ s</summary>
     <link href="http://blog.ctios.cn/2020/12/01/python/fluentpython/chapter-01-the-python-data-model/"/>
     <id>http://blog.ctios.cn/2020/12/01/python/fluentpython/chapter-01-the-python-data-model/</id>
     <published>2020-11-30T16:00:00.000Z</published>
-    <updated>2020-12-06T15:26:06.450Z</updated>
+    <updated>2020-12-06T15:56:36.261Z</updated>
     
     
       
