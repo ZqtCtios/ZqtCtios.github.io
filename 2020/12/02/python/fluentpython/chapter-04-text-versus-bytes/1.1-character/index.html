@@ -429,8 +429,8 @@ s <span class="token operator">=</span> b<span class="token punctuation">.</span
 <span class="token keyword">print</span><span class="token punctuation">(</span>s<span class="token punctuation">,</span> <span class="token builtin">len</span><span class="token punctuation">(</span>s<span class="token punctuation">)</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <pre><code>caf中国 5
 b'caf\xe4\xb8\xad\xe5\x9b\xbd' 9
-caf中国 5</code></pre>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python">s1 <span class="token operator">=</span> <span class="token string">'café'</span>
+caf中国 5
+</code></pre><pre class="line-numbers language-python" data-language="python"><code class="language-python">s1 <span class="token operator">=</span> <span class="token string">'café'</span>
 <span class="token keyword">print</span><span class="token punctuation">(</span>s1<span class="token punctuation">,</span> <span class="token builtin">len</span><span class="token punctuation">(</span>s1<span class="token punctuation">)</span><span class="token punctuation">)</span>
 b <span class="token operator">=</span> s1<span class="token punctuation">.</span>encode<span class="token punctuation">(</span><span class="token string">'utf-8'</span><span class="token punctuation">)</span>
 <span class="token keyword">print</span><span class="token punctuation">(</span>b<span class="token punctuation">,</span> <span class="token builtin">len</span><span class="token punctuation">(</span>b<span class="token punctuation">)</span><span class="token punctuation">)</span>
@@ -441,11 +441,11 @@ b <span class="token operator">=</span> s2<span class="token punctuation">.</spa
 <pre><code>café 5
 b'cafe\xcc\x81' 6
 café 4
-b'caf\xc3\xa9' 5</code></pre>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">from</span> unicodedata <span class="token keyword">import</span> normalize
+b'caf\xc3\xa9' 5
+</code></pre><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">from</span> unicodedata <span class="token keyword">import</span> normalize
 <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token builtin">len</span><span class="token punctuation">(</span>normalize<span class="token punctuation">(</span><span class="token string">'NFC'</span><span class="token punctuation">,</span>s1<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token builtin">len</span><span class="token punctuation">(</span>normalize<span class="token punctuation">(</span><span class="token string">'NFC'</span><span class="token punctuation">,</span>s2<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<pre><code>4 4</code></pre>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># bytes和bytearray，bytes存储的是整数</span>
+<pre><code>4 4
+</code></pre><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># bytes和bytearray，bytes存储的是整数</span>
 <span class="token comment"># bytes切片还是bytes对象，bytearray同样</span>
 cafe <span class="token operator">=</span> <span class="token builtin">bytes</span><span class="token punctuation">(</span><span class="token string">'café'</span><span class="token punctuation">,</span> encoding<span class="token operator">=</span><span class="token string">'utf-8'</span><span class="token punctuation">)</span>
 <span class="token keyword">print</span><span class="token punctuation">(</span>cafe<span class="token punctuation">)</span>
@@ -463,13 +463,13 @@ b'c'
 195
 169
 bytearray(b'caf\xc3\xa9')
-bytearray(b'\xa9')</code></pre>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> array
+bytearray(b'\xa9')
+</code></pre><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> array
 numbers<span class="token operator">=</span>array<span class="token punctuation">.</span>array<span class="token punctuation">(</span><span class="token string">'h'</span><span class="token punctuation">,</span><span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
 octets<span class="token operator">=</span><span class="token builtin">bytes</span><span class="token punctuation">(</span>numbers<span class="token punctuation">)</span>
 <span class="token keyword">print</span><span class="token punctuation">(</span>octets<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-<pre><code>b'\xfe\xff\xff\xff\x00\x00\x01\x00\x02\x00'</code></pre>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># 默认编码</span>
+<pre><code>b'\xfe\xff\xff\xff\x00\x00\x01\x00\x02\x00'
+</code></pre><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># 默认编码</span>
 <span class="token keyword">import</span> sys<span class="token punctuation">,</span> locale
 expressions <span class="token operator">=</span> <span class="token triple-quoted-string string">"""
         locale.getpreferredencoding()
@@ -498,8 +498,8 @@ my_file <span class="token operator">=</span> <span class="token builtin">open</
            sys.stderr.isatty() -&gt; False
            sys.stderr.encoding -&gt; 'UTF-8'
       sys.getdefaultencoding() -&gt; 'utf-8'
-   sys.getfilesystemencoding() -&gt; 'utf-8'</code></pre>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+   sys.getfilesystemencoding() -&gt; 'utf-8'
+</code></pre><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
                 
             </div>

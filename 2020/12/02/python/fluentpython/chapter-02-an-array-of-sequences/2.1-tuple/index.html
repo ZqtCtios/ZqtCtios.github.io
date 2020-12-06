@@ -430,8 +430,8 @@ tshirts<span aria-hidden="true" class="line-numbers-rows"><span></span><span></s
  ('black', 'L'),
  ('white', 'S'),
  ('white', 'M'),
- ('white', 'L')]</code></pre>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># 列表生成器 就是吧[]变成()可以调用next生成</span>
+ ('white', 'L')]
+</code></pre><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># 列表生成器 就是吧[]变成()可以调用next生成</span>
 tshirts <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f"</span><span class="token interpolation"><span class="token punctuation">{</span>color<span class="token punctuation">}</span></span><span class="token string"> </span><span class="token interpolation"><span class="token punctuation">{</span>size<span class="token punctuation">}</span></span><span class="token string">"</span></span> <span class="token keyword">for</span> color <span class="token keyword">in</span> colors <span class="token keyword">for</span> size <span class="token keyword">in</span> sizes<span class="token punctuation">)</span>
 <span class="token keyword">print</span><span class="token punctuation">(</span>tshirts<span class="token punctuation">)</span>
 <span class="token keyword">for</span> tshirt <span class="token keyword">in</span> tshirts<span class="token punctuation">:</span>
@@ -442,8 +442,8 @@ black M
 black L
 white S
 white M
-white L</code></pre>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># 元组的用法</span>
+white L
+</code></pre><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># 元组的用法</span>
 lax_coordinates <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token number">33.9425</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">118.408056</span><span class="token punctuation">)</span>
 city<span class="token punctuation">,</span> year<span class="token punctuation">,</span> pop<span class="token punctuation">,</span> chg<span class="token punctuation">,</span> area <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token string">'Tokyo'</span><span class="token punctuation">,</span> <span class="token number">2003</span><span class="token punctuation">,</span> <span class="token number">32450</span><span class="token punctuation">,</span> <span class="token number">0.66</span><span class="token punctuation">,</span> <span class="token number">8014</span><span class="token punctuation">)</span>
 traveler_ids <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">(</span><span class="token string">'USA'</span><span class="token punctuation">,</span> <span class="token string">'31195855'</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token string">'BRA'</span><span class="token punctuation">,</span> <span class="token string">'CE342567'</span><span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token punctuation">(</span><span class="token string">'ESP'</span><span class="token punctuation">,</span> <span class="token string">'XDA205856'</span><span class="token punctuation">)</span><span class="token punctuation">]</span>
@@ -456,24 +456,24 @@ ESP/XDA205856
 USA/31195855
 USA
 BRA
-ESP</code></pre>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># 元组拆包</span>
+ESP
+</code></pre><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># 元组拆包</span>
 lax_coordinates <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token number">33.9425</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">118.408056</span><span class="token punctuation">)</span>
 latitude<span class="token punctuation">,</span> longitude <span class="token operator">=</span> lax_coordinates <span class="token comment"># tuple unpacking</span>
 <span class="token keyword">print</span><span class="token punctuation">(</span>latitude<span class="token punctuation">,</span> longitude<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-<pre><code>33.9425 -118.408056</code></pre>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python">t <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token number">20</span><span class="token punctuation">,</span><span class="token number">8</span><span class="token punctuation">)</span>
+<pre><code>33.9425 -118.408056
+</code></pre><pre class="line-numbers language-python" data-language="python"><code class="language-python">t <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token number">20</span><span class="token punctuation">,</span><span class="token number">8</span><span class="token punctuation">)</span>
 quotient<span class="token punctuation">,</span> remainder <span class="token operator">=</span> <span class="token builtin">divmod</span><span class="token punctuation">(</span><span class="token operator">*</span>t<span class="token punctuation">)</span>
 <span class="token keyword">print</span><span class="token punctuation">(</span>quotient<span class="token punctuation">,</span> remainder<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-<pre><code>2 4</code></pre>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> os
+<pre><code>2 4
+</code></pre><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> os
 _<span class="token punctuation">,</span> filename <span class="token operator">=</span> os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>split<span class="token punctuation">(</span><span class="token string">'/home/ctios/.ssh/idrsa.pub'</span><span class="token punctuation">)</span>
 filename<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-<pre><code>'idrsa.pub'</code></pre>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python">a<span class="token punctuation">,</span> <span class="token operator">*</span>body<span class="token punctuation">,</span> c<span class="token punctuation">,</span> d <span class="token operator">=</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span>
+<pre><code>'idrsa.pub'
+</code></pre><pre class="line-numbers language-python" data-language="python"><code class="language-python">a<span class="token punctuation">,</span> <span class="token operator">*</span>body<span class="token punctuation">,</span> c<span class="token punctuation">,</span> d <span class="token operator">=</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span>
 a<span class="token punctuation">,</span> body<span class="token punctuation">,</span> c<span class="token punctuation">,</span> d<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<pre><code>(0, [1, 2, 3, 4, 5, 6, 7], 8, 9)</code></pre>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python">metro_areas <span class="token operator">=</span> <span class="token punctuation">[</span>
+<pre><code>(0, [1, 2, 3, 4, 5, 6, 7], 8, 9)
+</code></pre><pre class="line-numbers language-python" data-language="python"><code class="language-python">metro_areas <span class="token operator">=</span> <span class="token punctuation">[</span>
     <span class="token punctuation">(</span><span class="token string">'Tokyo'</span><span class="token punctuation">,</span><span class="token string">'JP'</span><span class="token punctuation">,</span><span class="token number">36.933</span><span class="token punctuation">,</span><span class="token punctuation">(</span><span class="token number">35.689722</span><span class="token punctuation">,</span><span class="token number">139.691667</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
     <span class="token punctuation">(</span><span class="token string">'Delhi NCR'</span><span class="token punctuation">,</span> <span class="token string">'IN'</span><span class="token punctuation">,</span> <span class="token number">21.935</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token number">28.613889</span><span class="token punctuation">,</span> <span class="token number">77.208889</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span> 
     <span class="token punctuation">(</span><span class="token string">'Mexico City'</span><span class="token punctuation">,</span> <span class="token string">'MX'</span><span class="token punctuation">,</span> <span class="token number">20.142</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token number">19.433333</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">99.133333</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
@@ -489,8 +489,8 @@ fmt <span class="token operator">=</span> <span class="token string">'{:15} | {:
 <pre><code>                |   lat.    |   long.  
 Mexico City     |   19.4333 |  -99.1333
 New York-Newark |   40.8086 |  -74.0204
-Sao Paulo       |  -23.5478 |  -46.6358</code></pre>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># 具名元组 namedtuple</span>
+Sao Paulo       |  -23.5478 |  -46.6358
+</code></pre><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># 具名元组 namedtuple</span>
 <span class="token keyword">from</span> collections <span class="token keyword">import</span> namedtuple
 City <span class="token operator">=</span> namedtuple<span class="token punctuation">(</span><span class="token string">'City'</span><span class="token punctuation">,</span> <span class="token string">'name country population coordinates'</span><span class="token punctuation">)</span>
 tokyo <span class="token operator">=</span> City<span class="token punctuation">(</span><span class="token string">'Tokyo'</span><span class="token punctuation">,</span> <span class="token string">'JP'</span><span class="token punctuation">,</span> <span class="token number">36.933</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token number">35.689722</span><span class="token punctuation">,</span> <span class="token number">139.691667</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
@@ -499,8 +499,8 @@ tokyo<span class="token punctuation">,</span> tokyo<span class="token punctuatio
 <pre><code>(City(name='Tokyo', country='JP', population=36.933, coordinates=(35.689722, 139.691667)),
  36.933,
  (35.689722, 139.691667),
- 'JP')</code></pre>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># 具名元组的属性和方法</span>
+ 'JP')
+</code></pre><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># 具名元组的属性和方法</span>
 City<span class="token punctuation">.</span>_fields
 <span class="token punctuation">(</span><span class="token string">'name'</span><span class="token punctuation">,</span> <span class="token string">'country'</span><span class="token punctuation">,</span> <span class="token string">'population'</span><span class="token punctuation">,</span> <span class="token string">'coordinates'</span><span class="token punctuation">)</span>
 LatLong <span class="token operator">=</span> namedtuple<span class="token punctuation">(</span><span class="token string">'LatLong'</span><span class="token punctuation">,</span> <span class="token string">'lat long'</span><span class="token punctuation">)</span>
@@ -513,8 +513,8 @@ delhi <span class="token operator">=</span> City<span class="token punctuation">
 name: Delhi NCR
 country: IN
 population: 21.935
-coordinates: LatLong(lat=28.613889, long=77.208889)</code></pre>
-
+coordinates: LatLong(lat=28.613889, long=77.208889)
+</code></pre>
                 
             </div>
             <hr/>

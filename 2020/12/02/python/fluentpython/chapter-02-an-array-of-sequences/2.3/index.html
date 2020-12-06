@@ -431,8 +431,8 @@ weird_board<span class="token punctuation">[</span><span class="token number">1<
 <span class="token keyword">print</span><span class="token punctuation">(</span>weird_board<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <pre><code>[['_', '_', '_'], ['_', '_', '_'], ['_', '_', '_']]
 [['_', '_', '_'], ['_', '_', 'X'], ['_', '_', '_']]
-[['_', '_', '0'], ['_', '_', '0'], ['_', '_', '0']]</code></pre>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># 增量赋值 +=,*=</span>
+[['_', '_', '0'], ['_', '_', '0'], ['_', '_', '0']]
+</code></pre><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># 增量赋值 +=,*=</span>
 <span class="token comment"># 如果对象实现了__iadd__,__imul__的话，就是在原基础上增加</span>
 <span class="token comment"># 否则就是调用__add__，__mul__，得到一个新对象，例如</span>
 l <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">]</span>
@@ -448,8 +448,8 @@ t<span class="token operator">*=</span><span class="token number">2</span>
 <pre><code>l=[1, 2, 3], id=140216592790216
 l=[1, 2, 3, 1, 2, 3], id=140216592790216
 t=(1, 2, 3), id=140216592745168
-t=(1, 2, 3, 1, 2, 3), id=140216592237672</code></pre>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># 关于+=的谜题</span>
+t=(1, 2, 3, 1, 2, 3), id=140216592237672
+</code></pre><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># 关于+=的谜题</span>
 t <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token number">30</span><span class="token punctuation">,</span> <span class="token number">40</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
 t<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span> <span class="token operator">+=</span> <span class="token punctuation">[</span><span class="token number">50</span><span class="token punctuation">,</span> <span class="token number">60</span><span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <pre><code>---------------------------------------------------------------------------
@@ -462,10 +462,10 @@ TypeError                                 Traceback (most recent call last)
 ----&gt; 3 t[2] += [50, 60]
 
 
-TypeError: 'tuple' object does not support item assignment</code></pre>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">print</span><span class="token punctuation">(</span>t<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<pre><code>(1, 2, [30, 40, 50, 60])</code></pre>
-
+TypeError: 'tuple' object does not support item assignment
+</code></pre><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">print</span><span class="token punctuation">(</span>t<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre><code>(1, 2, [30, 40, 50, 60])
+</code></pre>
                 
             </div>
             <hr/>

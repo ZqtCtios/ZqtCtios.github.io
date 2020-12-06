@@ -391,7 +391,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    831
+                    829
                 </div>
                 
 
@@ -416,9 +416,7 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="chapter_01_the_python_data_model">Chapter_01_The_Python_Data_Model</h1>
-<h2 id="playing-cards">1.1 Playing Cards</h2>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> collections
+                <h1 id="Chapter-01-The-Python-Data-Model"><a href="#Chapter-01-The-Python-Data-Model" class="headerlink" title="Chapter_01_The_Python_Data_Model"></a>Chapter_01_The_Python_Data_Model</h1><h2 id="1-1-Playing-Cards"><a href="#1-1-Playing-Cards" class="headerlink" title="1.1 Playing Cards"></a>1.1 Playing Cards</h2><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> collections
 Card <span class="token operator">=</span> collections<span class="token punctuation">.</span>namedtuple<span class="token punctuation">(</span><span class="token string">'Card'</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token string">'rank'</span><span class="token punctuation">,</span> <span class="token string">'suit'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
 
 
@@ -439,36 +437,36 @@ Card <span class="token operator">=</span> collections<span class="token punctua
 beer_card <span class="token operator">=</span> Card<span class="token punctuation">(</span><span class="token string">'7'</span><span class="token punctuation">,</span> <span class="token string">'diamonds'</span><span class="token punctuation">)</span>
 beer_card<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <blockquote>
-<p>Card(rank='7', suit='diamonds')</p>
+<p>   Card(rank=’7’, suit=’diamonds’)</p>
 </blockquote>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># 定义了len之后可以查看len</span>
 desk <span class="token operator">=</span> FrenchDesk<span class="token punctuation">(</span><span class="token punctuation">)</span>
 <span class="token builtin">len</span><span class="token punctuation">(</span>desk<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <blockquote>
-<p>52</p>
+<p>   52</p>
 </blockquote>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># 定义了getitem可以让对象变成可迭代的</span>
 desk<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <blockquote>
-<p>Card(rank='2', suit='spades')</p>
+<p>   Card(rank=’2’, suit=’spades’)</p>
 </blockquote>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python">desk<span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <blockquote>
-<p>Card(rank='A', suit='hearts')</p>
+<p>   Card(rank=’A’, suit=’hearts’)</p>
 </blockquote>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">from</span> random <span class="token keyword">import</span> choice
 choice<span class="token punctuation">(</span>desk<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <blockquote>
-<p>Card(rank='6', suit='clubs')</p>
+<p>   Card(rank=’6’, suit=’clubs’)</p>
 </blockquote>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python">desk<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token number">3</span><span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <blockquote>
-<p>[Card(rank='2', suit='spades'), Card(rank='3', suit='spades'), Card(rank='4', suit='spades')]</p>
+<p>[Card(rank=’2’, suit=’spades’),<br> Card(rank=’3’, suit=’spades’),<br> Card(rank=’4’, suit=’spades’)]</p>
 </blockquote>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">for</span> card <span class="token keyword">in</span> desk<span class="token punctuation">:</span>
     <span class="token keyword">print</span><span class="token punctuation">(</span>card<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <blockquote>
-<p>Card(rank='2', suit='spades') Card(rank='3', suit='spades') Card(rank='4', suit='spades') Card(rank='5', suit='spades') Card(rank='6', suit='spades') Card(rank='7', suit='spades') Card(rank='8', suit='spades') Card(rank='9', suit='spades') Card(rank='10', suit='spades') Card(rank='J', suit='spades') Card(rank='Q', suit='spades') Card(rank='K', suit='spades') Card(rank='A', suit='spades') Card(rank='2', suit='diamonds') Card(rank='3', suit='diamonds') Card(rank='4', suit='diamonds') Card(rank='5', suit='diamonds') Card(rank='6', suit='diamonds') Card(rank='7', suit='diamonds') Card(rank='8', suit='diamonds') Card(rank='9', suit='diamonds') Card(rank='10', suit='diamonds') Card(rank='J', suit='diamonds') Card(rank='Q', suit='diamonds') Card(rank='K', suit='diamonds') Card(rank='A', suit='diamonds') Card(rank='2', suit='clubs') Card(rank='3', suit='clubs') Card(rank='4', suit='clubs') Card(rank='5', suit='clubs') Card(rank='6', suit='clubs') Card(rank='7', suit='clubs') Card(rank='8', suit='clubs') Card(rank='9', suit='clubs') Card(rank='10', suit='clubs') Card(rank='J', suit='clubs') Card(rank='Q', suit='clubs') Card(rank='K', suit='clubs') Card(rank='A', suit='clubs') Card(rank='2', suit='hearts') Card(rank='3', suit='hearts') Card(rank='4', suit='hearts') Card(rank='5', suit='hearts') Card(rank='6', suit='hearts') Card(rank='7', suit='hearts') Card(rank='8', suit='hearts') Card(rank='9', suit='hearts') Card(rank='10', suit='hearts') Card(rank='J', suit='hearts') Card(rank='Q', suit='hearts') Card(rank='K', suit='hearts') Card(rank='A', suit='hearts')</p>
+<p>Card(rank=’2’, suit=’spades’)<br>Card(rank=’3’, suit=’spades’)<br>Card(rank=’4’, suit=’spades’)<br>Card(rank=’5’, suit=’spades’)<br>Card(rank=’6’, suit=’spades’)<br>Card(rank=’7’, suit=’spades’)<br>Card(rank=’8’, suit=’spades’)<br>Card(rank=’9’, suit=’spades’)<br>Card(rank=’10’, suit=’spades’)<br>Card(rank=’J’, suit=’spades’)<br>Card(rank=’Q’, suit=’spades’)<br>Card(rank=’K’, suit=’spades’)<br>Card(rank=’A’, suit=’spades’)<br>Card(rank=’2’, suit=’diamonds’)<br>Card(rank=’3’, suit=’diamonds’)<br>Card(rank=’4’, suit=’diamonds’)<br>Card(rank=’5’, suit=’diamonds’)<br>Card(rank=’6’, suit=’diamonds’)<br>Card(rank=’7’, suit=’diamonds’)<br>Card(rank=’8’, suit=’diamonds’)<br>Card(rank=’9’, suit=’diamonds’)<br>Card(rank=’10’, suit=’diamonds’)<br>Card(rank=’J’, suit=’diamonds’)<br>Card(rank=’Q’, suit=’diamonds’)<br>Card(rank=’K’, suit=’diamonds’)<br>Card(rank=’A’, suit=’diamonds’)<br>Card(rank=’2’, suit=’clubs’)<br>Card(rank=’3’, suit=’clubs’)<br>Card(rank=’4’, suit=’clubs’)<br>Card(rank=’5’, suit=’clubs’)<br>Card(rank=’6’, suit=’clubs’)<br>Card(rank=’7’, suit=’clubs’)<br>Card(rank=’8’, suit=’clubs’)<br>Card(rank=’9’, suit=’clubs’)<br>Card(rank=’10’, suit=’clubs’)<br>Card(rank=’J’, suit=’clubs’)<br>Card(rank=’Q’, suit=’clubs’)<br>Card(rank=’K’, suit=’clubs’)<br>Card(rank=’A’, suit=’clubs’)<br>Card(rank=’2’, suit=’hearts’)<br>Card(rank=’3’, suit=’hearts’)<br>Card(rank=’4’, suit=’hearts’)<br>Card(rank=’5’, suit=’hearts’)<br>Card(rank=’6’, suit=’hearts’)<br>Card(rank=’7’, suit=’hearts’)<br>Card(rank=’8’, suit=’hearts’)<br>Card(rank=’9’, suit=’hearts’)<br>Card(rank=’10’, suit=’hearts’)<br>Card(rank=’J’, suit=’hearts’)<br>Card(rank=’Q’, suit=’hearts’)<br>Card(rank=’K’, suit=’hearts’)<br>Card(rank=’A’, suit=’hearts’)</p>
 </blockquote>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python">Card<span class="token punctuation">(</span><span class="token string">'Q'</span><span class="token punctuation">,</span> <span class="token string">'hearts'</span><span class="token punctuation">)</span> <span class="token keyword">in</span> desk<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <blockquote>
@@ -484,10 +482,9 @@ suits_value <span class="token operator">=</span> <span class="token builtin">di
 <span class="token keyword">for</span> card <span class="token keyword">in</span> <span class="token builtin">sorted</span><span class="token punctuation">(</span>desk<span class="token punctuation">,</span> key<span class="token operator">=</span>spades_high<span class="token punctuation">)</span><span class="token punctuation">:</span>
     <span class="token keyword">print</span><span class="token punctuation">(</span>card<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <blockquote>
-<p>Card(rank='2', suit='clubs') Card(rank='2', suit='diamonds') Card(rank='2', suit='hearts') Card(rank='2', suit='spades') Card(rank='3', suit='clubs') Card(rank='3', suit='diamonds') Card(rank='3', suit='hearts') Card(rank='3', suit='spades') Card(rank='4', suit='clubs') Card(rank='4', suit='diamonds') Card(rank='4', suit='hearts') Card(rank='4', suit='spades') Card(rank='5', suit='clubs') Card(rank='5', suit='diamonds') Card(rank='5', suit='hearts') Card(rank='5', suit='spades') Card(rank='6', suit='clubs') Card(rank='6', suit='diamonds') Card(rank='6', suit='hearts') Card(rank='6', suit='spades') Card(rank='7', suit='clubs') Card(rank='7', suit='diamonds') Card(rank='7', suit='hearts') Card(rank='7', suit='spades') Card(rank='8', suit='clubs') Card(rank='8', suit='diamonds') Card(rank='8', suit='hearts') Card(rank='8', suit='spades') Card(rank='9', suit='clubs') Card(rank='9', suit='diamonds') Card(rank='9', suit='hearts') Card(rank='9', suit='spades') Card(rank='10', suit='clubs') Card(rank='10', suit='diamonds') Card(rank='10', suit='hearts') Card(rank='10', suit='spades') Card(rank='J', suit='clubs') Card(rank='J', suit='diamonds') Card(rank='J', suit='hearts') Card(rank='J', suit='spades') Card(rank='Q', suit='clubs') Card(rank='Q', suit='diamonds') Card(rank='Q', suit='hearts') Card(rank='Q', suit='spades') Card(rank='K', suit='clubs') Card(rank='K', suit='diamonds') Card(rank='K', suit='hearts') Card(rank='K', suit='spades') Card(rank='A', suit='clubs') Card(rank='A', suit='diamonds') Card(rank='A', suit='hearts') Card(rank='A', suit='spades')</p>
+<p>Card(rank=’2’, suit=’clubs’)<br>Card(rank=’2’, suit=’diamonds’)<br>Card(rank=’2’, suit=’hearts’)<br>Card(rank=’2’, suit=’spades’)<br>Card(rank=’3’, suit=’clubs’)<br>Card(rank=’3’, suit=’diamonds’)<br>Card(rank=’3’, suit=’hearts’)<br>Card(rank=’3’, suit=’spades’)<br>Card(rank=’4’, suit=’clubs’)<br>Card(rank=’4’, suit=’diamonds’)<br>Card(rank=’4’, suit=’hearts’)<br>Card(rank=’4’, suit=’spades’)<br>Card(rank=’5’, suit=’clubs’)<br>Card(rank=’5’, suit=’diamonds’)<br>Card(rank=’5’, suit=’hearts’)<br>Card(rank=’5’, suit=’spades’)<br>Card(rank=’6’, suit=’clubs’)<br>Card(rank=’6’, suit=’diamonds’)<br>Card(rank=’6’, suit=’hearts’)<br>Card(rank=’6’, suit=’spades’)<br>Card(rank=’7’, suit=’clubs’)<br>Card(rank=’7’, suit=’diamonds’)<br>Card(rank=’7’, suit=’hearts’)<br>Card(rank=’7’, suit=’spades’)<br>Card(rank=’8’, suit=’clubs’)<br>Card(rank=’8’, suit=’diamonds’)<br>Card(rank=’8’, suit=’hearts’)<br>Card(rank=’8’, suit=’spades’)<br>Card(rank=’9’, suit=’clubs’)<br>Card(rank=’9’, suit=’diamonds’)<br>Card(rank=’9’, suit=’hearts’)<br>Card(rank=’9’, suit=’spades’)<br>Card(rank=’10’, suit=’clubs’)<br>Card(rank=’10’, suit=’diamonds’)<br>Card(rank=’10’, suit=’hearts’)<br>Card(rank=’10’, suit=’spades’)<br>Card(rank=’J’, suit=’clubs’)<br>Card(rank=’J’, suit=’diamonds’)<br>Card(rank=’J’, suit=’hearts’)<br>Card(rank=’J’, suit=’spades’)<br>Card(rank=’Q’, suit=’clubs’)<br>Card(rank=’Q’, suit=’diamonds’)<br>Card(rank=’Q’, suit=’hearts’)<br>Card(rank=’Q’, suit=’spades’)<br>Card(rank=’K’, suit=’clubs’)<br>Card(rank=’K’, suit=’diamonds’)<br>Card(rank=’K’, suit=’hearts’)<br>Card(rank=’K’, suit=’spades’)<br>Card(rank=’A’, suit=’clubs’)<br>Card(rank=’A’, suit=’diamonds’)<br>Card(rank=’A’, suit=’hearts’)<br>Card(rank=’A’, suit=’spades’)</p>
 </blockquote>
-<h2 id="a-simple-two-dimensional-vector-class">1.2 A simple two-dimensional vector class</h2>
-<p><img src="https://cdn.jsdelivr.net/gh/ZqtCtios/Image/img/20201206232143.png" alt="Special method names (operators excluded)"> <img src="https://cdn.jsdelivr.net/gh/ZqtCtios/Image/img/20201206232143.png" alt="Special method names for operators"></p>
+<h2 id="1-2-A-simple-two-dimensional-vector-class"><a href="#1-2-A-simple-two-dimensional-vector-class" class="headerlink" title="1.2 A simple two-dimensional vector class"></a>1.2 A simple two-dimensional vector class</h2><p><img src="https://cdn.jsdelivr.net/gh/ZqtCtios/Image/img/20201206232143.png" alt="Special method names (operators excluded)"><br><img src="https://cdn.jsdelivr.net/gh/ZqtCtios/Image/img/20201206232143.png" alt="Special method names for operators"></p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">from</span> math <span class="token keyword">import</span> hypot
 
 <span class="token keyword">class</span> <span class="token class-name">Vector</span><span class="token punctuation">:</span>

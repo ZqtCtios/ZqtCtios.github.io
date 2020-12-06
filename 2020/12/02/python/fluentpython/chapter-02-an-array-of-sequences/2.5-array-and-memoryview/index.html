@@ -421,116 +421,117 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <p>此模块定义了一种对象类型，可以紧凑地表示基本类型值的数组：字符、整数、浮点数等。 数组属于序列类型，其行为与列表非常相似，不同之处在于其中存储的对象类型是受限的。 类型在对象创建时使用单个字符的 <em>类型码</em> 来指定。 已定义的类型码如下：</p>
+<div class="table-container">
 <table>
 <thead>
-<tr class="header">
-<th style="text-align: left;">类型码</th>
-<th style="text-align: left;">C 类型</th>
-<th style="text-align: left;">Python 类型</th>
-<th style="text-align: left;">以字节表示的最小尺寸</th>
-<th style="text-align: left;">注释</th>
+<tr>
+<th style="text-align:left">类型码</th>
+<th style="text-align:left">C 类型</th>
+<th style="text-align:left">Python 类型</th>
+<th style="text-align:left">以字节表示的最小尺寸</th>
+<th style="text-align:left">注释</th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
-<td style="text-align: left;"><code>'b'</code></td>
-<td style="text-align: left;">signed char</td>
-<td style="text-align: left;">int</td>
-<td style="text-align: left;">1</td>
-<td style="text-align: left;"></td>
+<tr>
+<td style="text-align:left"><code>'b'</code></td>
+<td style="text-align:left">signed char</td>
+<td style="text-align:left">int</td>
+<td style="text-align:left">1</td>
+<td style="text-align:left"></td>
 </tr>
-<tr class="even">
-<td style="text-align: left;"><code>'B'</code></td>
-<td style="text-align: left;">unsigned char</td>
-<td style="text-align: left;">int</td>
-<td style="text-align: left;">1</td>
-<td style="text-align: left;"></td>
+<tr>
+<td style="text-align:left"><code>'B'</code></td>
+<td style="text-align:left">unsigned char</td>
+<td style="text-align:left">int</td>
+<td style="text-align:left">1</td>
+<td style="text-align:left"></td>
 </tr>
-<tr class="odd">
-<td style="text-align: left;"><code>'u'</code></td>
-<td style="text-align: left;">Py_UNICODE</td>
-<td style="text-align: left;">Unicode 字符</td>
-<td style="text-align: left;">2</td>
-<td style="text-align: left;">(1)</td>
+<tr>
+<td style="text-align:left"><code>'u'</code></td>
+<td style="text-align:left">Py_UNICODE</td>
+<td style="text-align:left">Unicode 字符</td>
+<td style="text-align:left">2</td>
+<td style="text-align:left">(1)</td>
 </tr>
-<tr class="even">
-<td style="text-align: left;"><code>'h'</code></td>
-<td style="text-align: left;">signed short</td>
-<td style="text-align: left;">int</td>
-<td style="text-align: left;">2</td>
-<td style="text-align: left;"></td>
+<tr>
+<td style="text-align:left"><code>'h'</code></td>
+<td style="text-align:left">signed short</td>
+<td style="text-align:left">int</td>
+<td style="text-align:left">2</td>
+<td style="text-align:left"></td>
 </tr>
-<tr class="odd">
-<td style="text-align: left;"><code>'H'</code></td>
-<td style="text-align: left;">unsigned short</td>
-<td style="text-align: left;">int</td>
-<td style="text-align: left;">2</td>
-<td style="text-align: left;"></td>
+<tr>
+<td style="text-align:left"><code>'H'</code></td>
+<td style="text-align:left">unsigned short</td>
+<td style="text-align:left">int</td>
+<td style="text-align:left">2</td>
+<td style="text-align:left"></td>
 </tr>
-<tr class="even">
-<td style="text-align: left;"><code>'i'</code></td>
-<td style="text-align: left;">signed int</td>
-<td style="text-align: left;">int</td>
-<td style="text-align: left;">2</td>
-<td style="text-align: left;"></td>
+<tr>
+<td style="text-align:left"><code>'i'</code></td>
+<td style="text-align:left">signed int</td>
+<td style="text-align:left">int</td>
+<td style="text-align:left">2</td>
+<td style="text-align:left"></td>
 </tr>
-<tr class="odd">
-<td style="text-align: left;"><code>'I'</code></td>
-<td style="text-align: left;">unsigned int</td>
-<td style="text-align: left;">int</td>
-<td style="text-align: left;">2</td>
-<td style="text-align: left;"></td>
+<tr>
+<td style="text-align:left"><code>'I'</code></td>
+<td style="text-align:left">unsigned int</td>
+<td style="text-align:left">int</td>
+<td style="text-align:left">2</td>
+<td style="text-align:left"></td>
 </tr>
-<tr class="even">
-<td style="text-align: left;"><code>'l'</code></td>
-<td style="text-align: left;">signed long</td>
-<td style="text-align: left;">int</td>
-<td style="text-align: left;">4</td>
-<td style="text-align: left;"></td>
+<tr>
+<td style="text-align:left"><code>'l'</code></td>
+<td style="text-align:left">signed long</td>
+<td style="text-align:left">int</td>
+<td style="text-align:left">4</td>
+<td style="text-align:left"></td>
 </tr>
-<tr class="odd">
-<td style="text-align: left;"><code>'L'</code></td>
-<td style="text-align: left;">unsigned long</td>
-<td style="text-align: left;">int</td>
-<td style="text-align: left;">4</td>
-<td style="text-align: left;"></td>
+<tr>
+<td style="text-align:left"><code>'L'</code></td>
+<td style="text-align:left">unsigned long</td>
+<td style="text-align:left">int</td>
+<td style="text-align:left">4</td>
+<td style="text-align:left"></td>
 </tr>
-<tr class="even">
-<td style="text-align: left;"><code>'q'</code></td>
-<td style="text-align: left;">signed long long</td>
-<td style="text-align: left;">int</td>
-<td style="text-align: left;">8</td>
-<td style="text-align: left;">(2)</td>
+<tr>
+<td style="text-align:left"><code>'q'</code></td>
+<td style="text-align:left">signed long long</td>
+<td style="text-align:left">int</td>
+<td style="text-align:left">8</td>
+<td style="text-align:left">(2)</td>
 </tr>
-<tr class="odd">
-<td style="text-align: left;"><code>'Q'</code></td>
-<td style="text-align: left;">unsigned long long</td>
-<td style="text-align: left;">int</td>
-<td style="text-align: left;">8</td>
-<td style="text-align: left;">(2)</td>
+<tr>
+<td style="text-align:left"><code>'Q'</code></td>
+<td style="text-align:left">unsigned long long</td>
+<td style="text-align:left">int</td>
+<td style="text-align:left">8</td>
+<td style="text-align:left">(2)</td>
 </tr>
-<tr class="even">
-<td style="text-align: left;"><code>'f'</code></td>
-<td style="text-align: left;">float</td>
-<td style="text-align: left;">float</td>
-<td style="text-align: left;">4</td>
-<td style="text-align: left;"></td>
+<tr>
+<td style="text-align:left"><code>'f'</code></td>
+<td style="text-align:left">float</td>
+<td style="text-align:left">float</td>
+<td style="text-align:left">4</td>
+<td style="text-align:left"></td>
 </tr>
-<tr class="odd">
-<td style="text-align: left;"><code>'d'</code></td>
-<td style="text-align: left;">double</td>
-<td style="text-align: left;">float</td>
-<td style="text-align: left;">8</td>
-<td style="text-align: left;"></td>
+<tr>
+<td style="text-align:left"><code>'d'</code></td>
+<td style="text-align:left">double</td>
+<td style="text-align:left">float</td>
+<td style="text-align:left">8</td>
 </tr>
 </tbody>
 </table>
+</div>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">from</span> array <span class="token keyword">import</span> array
 <span class="token keyword">from</span> random <span class="token keyword">import</span> random
 floats<span class="token operator">=</span>array<span class="token punctuation">(</span><span class="token string">'d'</span><span class="token punctuation">,</span><span class="token punctuation">(</span>random<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token operator">**</span><span class="token number">7</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
 floats<span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-<pre><code>0.4585058847207508</code></pre>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python">fp<span class="token operator">=</span><span class="token builtin">open</span><span class="token punctuation">(</span><span class="token string">'floats.bin'</span><span class="token punctuation">,</span><span class="token string">'wb+'</span><span class="token punctuation">)</span>
+<pre><code>0.4585058847207508
+</code></pre><pre class="line-numbers language-python" data-language="python"><code class="language-python">fp<span class="token operator">=</span><span class="token builtin">open</span><span class="token punctuation">(</span><span class="token string">'floats.bin'</span><span class="token punctuation">,</span><span class="token string">'wb+'</span><span class="token punctuation">)</span>
 floats<span class="token punctuation">.</span>tofile<span class="token punctuation">(</span>fp<span class="token punctuation">)</span>
 fp<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span>
 floats2<span class="token operator">=</span>array<span class="token punctuation">(</span><span class="token string">'d'</span><span class="token punctuation">)</span>
@@ -538,11 +539,11 @@ fp<span class="token operator">=</span><span class="token builtin">open</span><s
 floats2<span class="token punctuation">.</span>fromfile<span class="token punctuation">(</span>fp<span class="token punctuation">,</span><span class="token number">10</span><span class="token operator">**</span><span class="token number">7</span><span class="token punctuation">)</span>
 fp<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span>
 floats2<span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<pre><code>0.4585058847207508</code></pre>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python">floats<span class="token operator">=</span>array<span class="token punctuation">(</span>floats<span class="token punctuation">.</span>typecode<span class="token punctuation">,</span><span class="token builtin">sorted</span><span class="token punctuation">(</span>floats<span class="token punctuation">)</span><span class="token punctuation">)</span>
+<pre><code>0.4585058847207508
+</code></pre><pre class="line-numbers language-python" data-language="python"><code class="language-python">floats<span class="token operator">=</span>array<span class="token punctuation">(</span>floats<span class="token punctuation">.</span>typecode<span class="token punctuation">,</span><span class="token builtin">sorted</span><span class="token punctuation">(</span>floats<span class="token punctuation">)</span><span class="token punctuation">)</span>
 <span class="token keyword">print</span><span class="token punctuation">(</span>floats<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token number">10</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<pre><code>array('d', [3.67431575165611e-08, 3.475699940080901e-07, 3.7822653908836656e-07, 4.061706841973489e-07, 6.074053917615174e-07, 6.484837163922563e-07, 6.683984088429185e-07, 7.039884853954348e-07, 7.172446871983595e-07, 7.357147590036917e-07])</code></pre>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># memeryview</span>
+<pre><code>array('d', [3.67431575165611e-08, 3.475699940080901e-07, 3.7822653908836656e-07, 4.061706841973489e-07, 6.074053917615174e-07, 6.484837163922563e-07, 6.683984088429185e-07, 7.039884853954348e-07, 7.172446871983595e-07, 7.357147590036917e-07])
+</code></pre><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># memeryview</span>
 <span class="token keyword">import</span> this<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <pre><code>The Zen of Python, by Tim Peters
 
@@ -564,8 +565,8 @@ Now is better than never.
 Although never is often better than *right* now.
 If the implementation is hard to explain, it's a bad idea.
 If the implementation is easy to explain, it may be a good idea.
-Namespaces are one honking great idea -- let's do more of those!</code></pre>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+Namespaces are one honking great idea -- let's do more of those!
+</code></pre><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
                 
             </div>

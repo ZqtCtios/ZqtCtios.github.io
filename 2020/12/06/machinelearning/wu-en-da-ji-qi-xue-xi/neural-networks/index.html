@@ -424,50 +424,35 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="神经网络neural-network">神经网络Neural Network</h1>
-<h2 id="非线性假设">1.非线性假设</h2>
-<p>线性回归还是逻辑回归都有这样一个缺点，即:当特征太多时， 计算的负荷会非常大。例如下面的例子：</p>
-<figure>
-<img src="https://cdn.jsdelivr.net/gh/ZqtCtios/Image/img/20201206183433.png" alt="示例图"><figcaption>示例图</figcaption>
-</figure>
-<p>之前我们已经看到过，使用非线性的多项式项，能够帮助我们建立更好的分类模型。假设我们有非常多的特征, 例如大于 100 个变量, 我们希望用这 100 个特征来构建一个非线性的多项式模型, 结果将是数量非常惊人的特征组合, 即便我们只采用两两特征的组合 <span class="math inline">\(\left(x_{1} x_{2}+\right.\left.x_{1} x_{3}+x_{1} x_{4}+\ldots+x_{2} x_{3}+x_{2} x_{4}+\ldots+x_{99} x_{100}\right),\)</span> 我们也会有接近 5000 个组合而成的特征。这对于一般的逻辑回归来说需要计算的特征太多了。</p>
+                <h1 id="神经网络Neural-Network"><a href="#神经网络Neural-Network" class="headerlink" title="神经网络Neural Network"></a>神经网络Neural Network</h1><h2 id="1-非线性假设"><a href="#1-非线性假设" class="headerlink" title="1.非线性假设"></a>1.非线性假设</h2><p>线性回归还是逻辑回归都有这样一个缺点，即:当特征太多时， 计算的负荷会非常大。例如下面的例子：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/ZqtCtios/Image/img/20201206183433.png" alt="示例图"></p>
+<p>之前我们已经看到过，使用非线性的多项式项，能够帮助我们建立更好的分类模型。假设我们有非常多的特征, 例如大于 100 个变量, 我们希望用这 100 个特征来构建一个非线性的多项式模型, 结果将是数量非常惊人的特征组合, 即便我们只采用两两特征的组合 $\left(x<em>{1} x</em>{2}+\right.\left.x<em>{1} x</em>{3}+x<em>{1} x</em>{4}+\ldots+x<em>{2} x</em>{3}+x<em>{2} x</em>{4}+\ldots+x<em>{99} x</em>{100}\right),$ 我们也会有接近 5000 个组合而成的特征。这对于一般的逻辑回归来说需要计算的特征太多了。</p>
 <p>假设我们希望训练一个模型来识别视觉对象（例如识别一张图片上是否是一辆汽车）， 我们怎样才能这么做呢?一种方法是我们利用很多汽车的图片和很多非汽车的图片，然后利用这些图片上一个个像素的值（饱和度或亮度）来作为特征。</p>
 <p>假如我们只选用灰度图片，每个像素则只有一个值（而非 RGB 值），我们可以选取图片上的两个不同位置上的两个像素，然后训练一个逻辑回归算法利用这两个像素的值来判断图片上是否是汽车:</p>
-<figure>
-<img src="https://cdn.jsdelivr.net/gh/ZqtCtios/Image/img/20201206183716.png" alt="汽车识别"><figcaption>汽车识别</figcaption>
-</figure>
+<p><img src="https://cdn.jsdelivr.net/gh/ZqtCtios/Image/img/20201206183716.png" alt="汽车识别"></p>
 <p>假使我们采用的都是 50x50 像素的小图片，并且我们将所有的像素视为特征，则会有 2500 个特征，如果我们要进一步将两两特征组合构成一个多项式模型，则会有约25002/2个 （接近 3 百万个）特征。普通的逻辑回归模型，不能有效地处理这么多的特征，这时候我们需要神经网络。</p>
-<h2 id="模型表示-1">2.模型表示 1</h2>
-<p>为了构建神经网络模型，我们需要首先思考大脑中的神经网络是怎样的?每一个神经元 都可以被认为是一个处理单元/神经核（processing unit/Nucleus），它含有许多输入/树突 （input/Dendrite），并且有一个输出/轴突（output/Axon）。神经网络是大量神经元相互链 接并通过电脉冲来交流的一个网络。</p>
-<figure>
-<img src="https://cdn.jsdelivr.net/gh/ZqtCtios/Image/img/20201206223440.png" alt="人体神经网络图"><figcaption>人体神经网络图</figcaption>
-</figure>
+<h2 id="2-模型表示-1"><a href="#2-模型表示-1" class="headerlink" title="2.模型表示 1"></a>2.模型表示 1</h2><p>为了构建神经网络模型，我们需要首先思考大脑中的神经网络是怎样的?每一个神经元 都可以被认为是一个处理单元/神经核（processing unit/Nucleus），它含有许多输入/树突 （input/Dendrite），并且有一个输出/轴突（output/Axon）。神经网络是大量神经元相互链 接并通过电脉冲来交流的一个网络。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/ZqtCtios/Image/img/20201206223440.png" alt="人体神经网络图"></p>
 <p>神经网络模型建立在很多神经元之上，每一个神经元又是一个个学习模型。这些神经元 （也叫激活单元，activation unit）采纳一些特征作为输出，并且根据本身的模型提供一个输出。下图是一个以逻辑回归模型作为自身学习模型的神经元示例，在神经网络中，参数又可 被成为权重（weight）。</p>
-<figure>
-<img src="https://cdn.jsdelivr.net/gh/ZqtCtios/Image/img/20201206184747.png" alt="神经元示例"><figcaption>神经元示例</figcaption>
-</figure>
+<p><img src="https://cdn.jsdelivr.net/gh/ZqtCtios/Image/img/20201206184747.png" alt="神经元示例"></p>
 <p>我们设计出了类似于神经元的神经网络，效果如下:</p>
-<figure>
-<img src="https://cdn.jsdelivr.net/gh/ZqtCtios/Image/img/20201206223511.png" alt="神经网络模型"><figcaption>神经网络模型</figcaption>
-</figure>
-<p>其中 <span class="math inline">\(x_{1}, x_{2}, x_{3}\)</span> 是输入单元（input units），我们将原始数据输入给它们。<span class="math inline">\(a_{1}, a_{2}, a_{3}\)</span> 是中间单元，它们负责将数据进行处理，然后呈递到下一层。最后是输出单元，它负责计算 <span class="math inline">\(h_{\theta}(x)\)</span> 。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/ZqtCtios/Image/img/20201206223511.png" alt="神经网络模型"></p>
+<p>其中 $x<em>{1}, x</em>{2}, x<em>{3}$ 是输入单元（input units），我们将原始数据输入给它们。$a</em>{1}, a<em>{2}, a</em>{3}$ 是中间单元，它们负责将数据进行处理，然后呈递到下一层。最后是输出单元，它负责计算 $h_{\theta}(x)$ 。</p>
 <p>神经网络模型是许多逻辑单元按照不同层级组织起来的网络，每一层的输出变量都是下 一层的输入变量。下图为一个 3 层的神经网络，第一层成为输入层（Input Layer），最后一 层称为输出层（Output Layer），中间一层成为隐藏层（Hidden Layers）。我们为每一层都增 加一个偏差单位（bias unit），下面引入一些标记法来帮助描述模型:</p>
-<p><span class="math inline">\(a_{i}^{(j)}\)</span> 代表第j 层的第 <span class="math inline">\(i\)</span> 个激活单元。 <span class="math inline">\(\theta^{(j)}\)</span> 代表从第 <span class="math inline">\(j\)</span> 层映射到第 <span class="math inline">\(j+1\)</span> 层时的权重的矩阵，例如 <span class="math inline">\(\theta^{(1)}\)</span> 代表从第一层映射到第二层的权重的矩阵。其尺寸为: 以第 <span class="math inline">\(j+1\)</span> 层的激活单元数量为行数，以第 <span class="math inline">\(j\)</span> 层的激活单元数加一为列数的矩阵。例如：上图所示的神经网络中<span class="math inline">\(\theta^{(1)}\)</span> 的尺寸为 <span class="math inline">\(3^{*} 4\)</span> 。</p>
-<p>对于上图所示的模型，激活单元和输出分别表达为: <span class="math display">\[
+<p>$a_{i}^{(j)}$ 代表第j 层的第 $i$ 个激活单元。 $\theta^{(j)}$ 代表从第 $j$ 层映射到第 $j+1$ 层时的权重的矩阵，例如 $\theta^{(1)}$ 代表从第一层映射到第二层的权重的矩阵。其尺寸为: 以第 $j+1$ 层的激活单元数量为行数，以第 $j$ 层的激活单元数加一为列数的矩阵。例如：上图所示的神经网络中$\theta^{(1)}$ 的尺寸为 $3^{*} 4$ 。</p>
+<p>对于上图所示的模型，激活单元和输出分别表达为:</p>
+<script type="math/tex; mode=display">
 \begin{array}{l}
 a_{1}^{(2)}=g\left(\Theta_{10}^{(1)} x_{0}+\Theta_{11}^{(1)} x_{1}+\Theta_{12}^{(1)} x_{2}+\Theta_{13}^{(1)} x_{3}\right) \\
 a_{2}^{(2)}=g\left(\theta_{20}^{(1)} x_{0}+\Theta_{21}^{(1)} x_{1}+\Theta_{22}^{(1)} x_{2}+\theta_{23}^{(1)} x_{3}\right) \\
 a_{3}^{(2)}=g\left(\theta_{30}^{(1)} x_{0}+\Theta_{31}^{(1)} x_{1}+\theta_{32}^{(1)} x_{2}+\theta_{33}^{(1)} x_{3}\right) \\
 h_{\theta}(x)=g\left(\Theta_{10}^{(2)} a_{0}^{(2)}+\Theta_{11}^{(2)} a_{1}^{(2)}+\Theta_{12}^{(2)} a_{2}^{(2)}+\Theta_{13}^{(2)} a_{3}^{(2)}\right)
-\end{array}
-\]</span> 上面进行的讨论中只是将特征矩阵中的一行（一个训练实例）喂给了神经网络，我们需要将整个训练集都喂给我们的神经网络算法来学习模型。</p>
+\end{array}</script><p>上面进行的讨论中只是将特征矩阵中的一行（一个训练实例）喂给了神经网络，我们需要将整个训练集都喂给我们的神经网络算法来学习模型。</p>
 <p>我们可以知道:每一个𝑎都是由上一层所有的𝑥和每一个𝑥所对应的决定的。 （我们把这样从左到右的算法称为前向传播算法（FORWARD PROPAGATION））</p>
 <p>把𝑥, 𝜃, 𝑎 分别用矩阵表示，我们可以得到𝜃 ⋅ 𝑋 = 𝑎 :</p>
-<figure>
-<img src="https://cdn.jsdelivr.net/gh/ZqtCtios/Image/img/20201206223520.png" alt="image-20201206185810317"><figcaption>image-20201206185810317</figcaption>
-</figure>
-<h2 id="模型表示-2">3.模型表示 2</h2>
-<p>（FORWARD PROPAGATION）相对于使用循环来编码，利用向量化的方法会使得计算更 为简便。以上面的神经网络为例，试着计算第二层的值: <span class="math display">\[
+<p><img src="https://cdn.jsdelivr.net/gh/ZqtCtios/Image/img/20201206223520.png" alt="image-20201206185810317"></p>
+<h2 id="3-模型表示-2"><a href="#3-模型表示-2" class="headerlink" title="3.模型表示 2"></a>3.模型表示 2</h2><p>（FORWARD PROPAGATION）相对于使用循环来编码，利用向量化的方法会使得计算更 为简便。以上面的神经网络为例，试着计算第二层的值:</p>
+<script type="math/tex; mode=display">
 x=\left[\begin{array}{l}
 x_{0} \\
 x_{1} \\
@@ -477,19 +462,15 @@ x_{3}
 z_{1}^{(2)} \\
 z_{2}^{(2)} \\
 z_{3}^{(2)}
-\end{array}\right]
-\]</span></p>
-<p><span class="math display">\[
+\end{array}\right]</script><script type="math/tex; mode=display">
 \begin{array}{l}
 z^{(2)}=\Theta^{(1)} x \\
 a^{(2)}=g\left(z^{(2)}\right)
-\end{array}
-\]</span></p>
-<p><span class="math display">\[
+\end{array}</script><script type="math/tex; mode=display">
 g\left(\left[\begin{array}{llll}
-\theta_{10}^{(1)} &amp; \theta_{11}^{(1)} &amp; \theta_{12}^{(1)} &amp; \theta_{13}^{(1)} \\
-\theta_{20}^{(1)} &amp; \theta_{21}^{(1)} &amp; \theta_{22}^{(1)} &amp; \theta_{23}^{(1)} \\
-\theta_{30}^{(1)} &amp; \theta_{31}^{(1)} &amp; \theta_{32}^{(1)} &amp; \theta_{33}^{(1)}
+\theta_{10}^{(1)} & \theta_{11}^{(1)} & \theta_{12}^{(1)} & \theta_{13}^{(1)} \\
+\theta_{20}^{(1)} & \theta_{21}^{(1)} & \theta_{22}^{(1)} & \theta_{23}^{(1)} \\
+\theta_{30}^{(1)} & \theta_{31}^{(1)} & \theta_{32}^{(1)} & \theta_{33}^{(1)}
 \end{array}\right] \times\left[\begin{array}{l}
 x_{0} \\
 x_{1} \\
@@ -503,79 +484,52 @@ x_{3}
 a_{1}^{(2)} \\
 a_{2}^{(2)} \\
 a_{3}^{(2)}
-\end{array}\right]
-\]</span></p>
-<p>我们令 <span class="math inline">\(z^{(2)}=\theta^{(1)} x,\)</span> 则 <span class="math inline">\(a^{(2)}=g\left(z^{(2)}\right),\)</span> 计算后添加 <span class="math inline">\(a_{0}^{(2)}=1\)</span>。计算输出的值为 : <span class="math display">\[
+\end{array}\right]</script><p>我们令 $z^{(2)}=\theta^{(1)} x,$ 则 $a^{(2)}=g\left(z^{(2)}\right),$ 计算后添加 $a_{0}^{(2)}=1$。计算输出的值为 :</p>
+<script type="math/tex; mode=display">
 \left.g\left(\left[\begin{array}{llll}
-\theta_{10}^{(2)} &amp; \theta_{11}^{(2)} &amp; \theta_{12}^{(2)} &amp; \theta_{13}^{(2)}
+\theta_{10}^{(2)} & \theta_{11}^{(2)} & \theta_{12}^{(2)} & \theta_{13}^{(2)}
 \end{array}\right] \times \mid \begin{array}{l}
 u_{0} \\
 a_{1}^{(2)} \\
 a_{2}^{(2)} \\
 a_{3}^{(2)}
-\end{array}\right]\right)=g\left(\theta_{10}^{(2)} a_{0}^{(2)}+\theta_{11}^{(2)} a_{1}^{(2)}+\theta_{12}^{(2)} a_{2}^{(2)}+\theta_{13}^{(2)} a_{3}^{(2)}\right)=h_{\theta}(x)
-\]</span> 我们令 <span class="math inline">\(z^{(3)}=\theta^{(2)} a^{(2)},\)</span> 则 <span class="math inline">\(h_{\theta}(x)=a^{(3)}=g\left(z^{(3)}\right)\)</span> 。</p>
-<p>这只是针对训练集中一个训练实例所进行的计算。如果我们要对整个训练集进行计算， 我们需要将训练集特征矩阵进行转置，使得同一个实例的特征都在同一列里。即: <span class="math display">\[
+\end{array}\right]\right)=g\left(\theta_{10}^{(2)} a_{0}^{(2)}+\theta_{11}^{(2)} a_{1}^{(2)}+\theta_{12}^{(2)} a_{2}^{(2)}+\theta_{13}^{(2)} a_{3}^{(2)}\right)=h_{\theta}(x)</script><p>我们令 $z^{(3)}=\theta^{(2)} a^{(2)},$ 则 $h_{\theta}(x)=a^{(3)}=g\left(z^{(3)}\right)$ 。</p>
+<p>这只是针对训练集中一个训练实例所进行的计算。如果我们要对整个训练集进行计算， 我们需要将训练集特征矩阵进行转置，使得同一个实例的特征都在同一列里。即:</p>
+<script type="math/tex; mode=display">
 \begin{array}{l}
 z^{(2)}=\Theta^{(1)} \times X^{T} \\
 a^{(2)}=g\left(z^{(2)}\right)
-\end{array}
-\]</span> 为了更好了了解 Neuron Networks 的工作原理，我们先把左半部分遮住:</p>
-<figure>
-<img src="https://cdn.jsdelivr.net/gh/ZqtCtios/Image/img/20201206192646.png" alt="遮住"><figcaption>遮住</figcaption>
-</figure>
-<p>其实神经网络就像是 logistic regression， 只不过我们把 logistic regression 中的输入向量 <span class="math inline">\(\left[x_{1} \sim x_{3}\right]\)</span> 变成了中间层的 <span class="math inline">\(\left[a_{1}^{(2)} \sim a_{3}^{(2)}\right],\)</span> 即:</p>
-<p><span class="math inline">\(h_{\theta}(x)=g\left(\theta_{0}^{(2)} a_{0}^{(2)}+\theta_{1}^{(2)} a_{1}^{(2)}+\theta_{2}^{(2)} a_{2}^{(2)}+\theta_{3}^{(2)} a_{3}^{(2)}\right)\)</span></p>
-<p>我们可以把 <span class="math inline">\(a_{0}, a_{1}, a_{2}, a_{3}\)</span> 看成更为高级的特征值, 也就是 <span class="math inline">\(x_{0}, x_{1}, x_{2}, x_{3}\)</span> 的进化体, 并且它们是由 <span class="math inline">\(x\)</span> 与决定的, 因为是梯度下降的，所以 <span class="math inline">\(a\)</span> 是变化的，并且变得越来越厉害，所以这些更高级的特征值远比仅仅将 <span class="math inline">\(x\)</span> 次方厉害，也能更好的预测新数据。这就是神经网络相比于逻辑回归和线性回归的优势。</p>
-<h2 id="特征和直观理解-1">4.特征和直观理解 1</h2>
-<p>神经网络中，单层神经元（无中间层）的计算可用来表示逻辑运算，比如逻辑与（AND）、 逻辑或（OR）。</p>
+\end{array}</script><p>为了更好了了解 Neuron Networks 的工作原理，我们先把左半部分遮住:</p>
+<p><img src="https://cdn.jsdelivr.net/gh/ZqtCtios/Image/img/20201206192646.png" alt="遮住"></p>
+<p>其实神经网络就像是 logistic regression， 只不过我们把 logistic regression 中的输入向量<br>$\left[x<em>{1} \sim x</em>{3}\right]$ 变成了中间层的 $\left[a<em>{1}^{(2)} \sim a</em>{3}^{(2)}\right],$ 即:</p>
+<p>$h<em>{\theta}(x)=g\left(\theta</em>{0}^{(2)} a<em>{0}^{(2)}+\theta</em>{1}^{(2)} a<em>{1}^{(2)}+\theta</em>{2}^{(2)} a<em>{2}^{(2)}+\theta</em>{3}^{(2)} a_{3}^{(2)}\right)$</p>
+<p>我们可以把 $a<em>{0}, a</em>{1}, a<em>{2}, a</em>{3}$ 看成更为高级的特征值, 也就是 $x<em>{0}, x</em>{1}, x<em>{2}, x</em>{3}$ 的进化体, 并且它们是由 $x$ 与决定的, 因为是梯度下降的，所以 $a$ 是变化的，并且变得越来越厉害，所以这些更高级的特征值远比仅仅将 $x$ 次方厉害，也能更好的预测新数据。这就是神经网络相比于逻辑回归和线性回归的优势。</p>
+<h2 id="4-特征和直观理解-1"><a href="#4-特征和直观理解-1" class="headerlink" title="4.特征和直观理解 1"></a>4.特征和直观理解 1</h2><p>神经网络中，单层神经元（无中间层）的计算可用来表示逻辑运算，比如逻辑与（AND）、 逻辑或（OR）。</p>
 <p>举例说明:逻辑与（AND）;下图中左半部分是神经网络的设计与 output 层表达式，右边 上部分是 sigmod 函数，下半部分是真值表。</p>
 <p>我们可以用这样的一个神经网络表示 AND 函数:</p>
-<figure>
-<img src="https://cdn.jsdelivr.net/gh/ZqtCtios/Image/img/20201206194031.png" alt="神经网络表示 AND 函数"><figcaption>神经网络表示 AND 函数</figcaption>
-</figure>
-<p>其中 <span class="math inline">\(\theta_{0}=-30, \theta_{1}=20, \theta_{2}=20\)</span> 我们的输出函数 <span class="math inline">\(h_{\theta}(x)\)</span> 即为: <span class="math inline">\(h_{\theta}(x)=g\left(-30+20 x_{1}+20 x_{2}\right)\)</span></p>
-<p>我们知道 <span class="math inline">\(g(x)\)</span> 的图像是:</p>
-<figure>
-<img src="https://cdn.jsdelivr.net/gh/ZqtCtios/Image/img/20201206194157.png" alt="Sigmoid Function"><figcaption>Sigmoid Function</figcaption>
-</figure>
-<figure>
-<img src="https://cdn.jsdelivr.net/gh/ZqtCtios/Image/img/20201206223530.png" alt="image-20201206194239927"><figcaption>image-20201206194239927</figcaption>
-</figure>
-<p>所以我们有: <span class="math inline">\(h_{\theta}(x) \approx \mathrm{x}_{1} \mathrm{AND} \mathrm{x}_{2}\)</span> 接下来再介绍一个 OR 函数:</p>
-<figure>
-<img src="https://cdn.jsdelivr.net/gh/ZqtCtios/Image/img/20201206194319.png" alt="OR 函数"><figcaption>OR 函数</figcaption>
-</figure>
-<h2 id="样本和直观理解-ii">5.样本和直观理解 II</h2>
-<p>二元逻辑运算符（BINARY LOGICAL OPERATORS）当输入特征为布尔值（0 或 1）时，我 们可以用一个单一的激活层可以作为二元逻辑运算符，为了表示不同的运算符，我们只需要 选择不同的权重即可。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/ZqtCtios/Image/img/20201206194031.png" alt="神经网络表示 AND 函数"></p>
+<p>其中 $\theta<em>{0}=-30, \theta</em>{1}=20, \theta<em>{2}=20$ 我们的输出函数 $h</em>{\theta}(x)$ 即为: $h<em>{\theta}(x)=g\left(-30+20 x</em>{1}+20 x_{2}\right)$</p>
+<p>我们知道 $g(x)$ 的图像是:</p>
+<p><img src="https://cdn.jsdelivr.net/gh/ZqtCtios/Image/img/20201206194157.png" alt="Sigmoid Function"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/ZqtCtios/Image/img/20201206223530.png" alt="image-20201206194239927"></p>
+<p>所以我们有: $h<em>{\theta}(x) \approx \mathrm{x}</em>{1} \mathrm{AND} \mathrm{x}_{2}$<br>接下来再介绍一个 OR 函数:</p>
+<p><img src="https://cdn.jsdelivr.net/gh/ZqtCtios/Image/img/20201206194319.png" alt="OR 函数"></p>
+<h2 id="5-样本和直观理解-II"><a href="#5-样本和直观理解-II" class="headerlink" title="5.样本和直观理解 II"></a>5.样本和直观理解 II</h2><p>二元逻辑运算符（BINARY LOGICAL OPERATORS）当输入特征为布尔值（0 或 1）时，我 们可以用一个单一的激活层可以作为二元逻辑运算符，为了表示不同的运算符，我们只需要 选择不同的权重即可。</p>
 <p>下图的神经元（三个权重分别为-30，20，20）可以被视为作用同于逻辑与（AND）:</p>
-<figure>
-<img src="https://cdn.jsdelivr.net/gh/ZqtCtios/Image/img/20201206222420.png" alt="AND"><figcaption>AND</figcaption>
-</figure>
+<p><img src="https://cdn.jsdelivr.net/gh/ZqtCtios/Image/img/20201206222420.png" alt="AND"></p>
 <p>下图的神经元（三个权重分别为-10，20，20）可以被视为作用等同于逻辑或（OR）:</p>
-<figure>
-<img src="https://cdn.jsdelivr.net/gh/ZqtCtios/Image/img/20201206223540.png" alt="OR"><figcaption>OR</figcaption>
-</figure>
+<p><img src="https://cdn.jsdelivr.net/gh/ZqtCtios/Image/img/20201206223540.png" alt="OR"></p>
 <p>下图的神经元（两个权重分别为 10，-20）可以被视为作用等同于逻辑非（NOT）:</p>
-<figure>
-<img src="https://cdn.jsdelivr.net/gh/ZqtCtios/Image/img/20201206223543.png" alt="NOT"><figcaption>NOT</figcaption>
-</figure>
-<p>我们可以利用神经元来组合成更为复杂的神经网络以实现更复杂的运算。例如我们要实现 XNOR 功能（输入的两个值必须一样，均为 1 或均为 0），即: <span class="math display">\[
-\mathrm{XNOR}=\left(\mathrm{x}_{1} \mathrm{AND} \mathrm{x}_{2}\right) \mathrm{OR}\left(\left(\mathrm{NOT} \mathrm{x}_{1}\right) \mathrm{AND}\left(\mathrm{NOT} \mathrm{x}_{2}\right)\right)
-\]</span> 首先构造一个能表达<span class="math inline">\((NOTx_{1}) AND(NOT x_{2})\)</span> 部分的神经元:</p>
-<figure>
-<img src="https://cdn.jsdelivr.net/gh/ZqtCtios/Image/img/20201206223611.png" alt="AND"><figcaption>AND</figcaption>
-</figure>
-<p>然后将表示 AND 的神经元和表示 <span class="math inline">\(\left(\mathrm{NOT} \mathrm{x}_{1}\right) \mathrm{AND}\left(\mathrm{NOT} \mathrm{x}_{2}\right)\)</span> 的神经元以及表示 <span class="math inline">\(\mathrm{OR}\)</span> 的神经元进行组合:</p>
-<figure>
-<img src="https://cdn.jsdelivr.net/gh/ZqtCtios/Image/img/20201206222706.png" alt="XNOR"><figcaption>XNOR</figcaption>
-</figure>
+<p><img src="https://cdn.jsdelivr.net/gh/ZqtCtios/Image/img/20201206223543.png" alt="NOT"></p>
+<p>我们可以利用神经元来组合成更为复杂的神经网络以实现更复杂的运算。例如我们要实现 XNOR 功能（输入的两个值必须一样，均为 1 或均为 0），即:</p>
+<script type="math/tex; mode=display">
+\mathrm{XNOR}=\left(\mathrm{x}_{1} \mathrm{AND} \mathrm{x}_{2}\right) \mathrm{OR}\left(\left(\mathrm{NOT} \mathrm{x}_{1}\right) \mathrm{AND}\left(\mathrm{NOT} \mathrm{x}_{2}\right)\right)</script><p>首先构造一个能表达$(NOTx<em>{1}) AND(NOT x</em>{2})$ 部分的神经元:</p>
+<p><img src="https://cdn.jsdelivr.net/gh/ZqtCtios/Image/img/20201206223611.png" alt="AND"></p>
+<p>然后将表示 AND 的神经元和表示 $\left(\mathrm{NOT} \mathrm{x}<em>{1}\right) \mathrm{AND}\left(\mathrm{NOT} \mathrm{x}</em>{2}\right)$ 的神经元以及表示 $\mathrm{OR}$ 的神经元进行组合:</p>
+<p><img src="https://cdn.jsdelivr.net/gh/ZqtCtios/Image/img/20201206222706.png" alt="XNOR"></p>
 <p>按这种方法我们可以逐渐构造出越来越复杂的函数，也能得到更加厉害的特征值。 这就是神经网络的厉害之处。</p>
-<h2 id="多类分类">6.多类分类</h2>
-<p>当我们有不止两种分类时 （也就是 $y=1,2,3 <span class="math inline">\(.）比如以下这种情况，该怎么办？如果我们要训练一个神经网络算法来识别路人、汽车、摩托车和卡车，在输出层我们应该有 4 个值。例如，第一个值为 1 或 0 用于预测是否是行人，第二个值用于判断是否为汽车。输入向量x有三个维度，两个中间层，输出层 4 个神经元分别用来表示 4 类，也就是每一个数据在输出层都会出现\)</span>[a,b,c,d]^{T},$ 且 <span class="math inline">\(a, b, c, d\)</span> 中仅有一个为 <span class="math inline">\(1,\)</span> 表示当前类。下面是该神经网络的可能结构示例:</p>
-<figure>
-<img src="https://cdn.jsdelivr.net/gh/ZqtCtios/Image/img/20201206223146.png" alt="多类分类网络"><figcaption>多类分类网络</figcaption>
-</figure>
+<h2 id="6-多类分类"><a href="#6-多类分类" class="headerlink" title="6.多类分类"></a>6.多类分类</h2><p>当我们有不止两种分类时 （也就是 $y=1,2,3 \ldots $.）比如以下这种情况，该怎么办？如果我们要训练一个神经网络算法来识别路人、汽车、摩托车和卡车，在输出层我们应该有 4 个值。例如，第一个值为 1 或 0 用于预测是否是行人，第二个值用于判断是否为汽车。输入向量x有三个维度，两个中间层，输出层 4 个神经元分别用来表示 4 类，也就是每一个数据在输出层都会出现$[a,b,c,d]^{T},$ 且 $a, b, c, d$ 中仅有一个为 $1,$ 表示当前类。下面是该神经网络的可能结构示例:</p>
+<p><img src="https://cdn.jsdelivr.net/gh/ZqtCtios/Image/img/20201206223146.png" alt="多类分类网络"></p>
 
                 
             </div>

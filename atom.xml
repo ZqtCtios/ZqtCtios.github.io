@@ -41,9 +41,7 @@
       
         
         
-    <summary type="html">&lt;h1 id=&quot;神经网络neural-network&quot;&gt;神经网络Neural Network&lt;/h1&gt;
-&lt;h2 id=&quot;非线性假设&quot;&gt;1.非线性假设&lt;/h2&gt;
-&lt;p&gt;线性回归还是逻辑回归都有这样一个缺点，即:当特征太多时，</summary>
+    <summary type="html">&lt;h1 id=&quot;神经网络Neural-Network&quot;&gt;&lt;a href=&quot;#神经网络Neural-Network&quot; class=&quot;headerlink&quot; title=&quot;神经网络Neural Network&quot;&gt;&lt;/a&gt;神经网络Neural Network&lt;/h1&gt;&lt;h2</summary>
         
       
     
@@ -72,8 +70,7 @@
       
         
         
-    <summary type="html">&lt;h1 id=&quot;逻辑回归logistic-regression&quot;&gt;逻辑回归（Logistic Regression）&lt;/h1&gt;
-&lt;h2</summary>
+    <summary type="html">&lt;h1 id=&quot;逻辑回归（Logistic-Regression）&quot;&gt;&lt;a href=&quot;#逻辑回归（Logistic-Regression）&quot; class=&quot;headerlink&quot; title=&quot;逻辑回归（Logistic</summary>
         
       
     
@@ -102,12 +99,8 @@
       
         
         
-    <summary type="html">&lt;blockquote&gt;
-
-&lt;/blockquote&gt;
-&lt;h1 id=&quot;泛映射类型&quot;&gt;泛映射类型&lt;/h1&gt;
-&lt;ul&gt;
-&lt;li&gt;collections.abc中有Mapping和MutableMapping这两个抽象类，作用dict的接口 &lt;img</summary>
+    <summary type="html">&lt;p&gt;&amp;gt;&lt;/p&gt;
+&lt;h1 id=&quot;泛映射类型&quot;&gt;&lt;a href=&quot;#泛映射类型&quot; class=&quot;headerlink&quot;</summary>
         
       
     
@@ -217,9 +210,8 @@ s</summary>
       
         
         
-    <summary type="html">&lt;h1 id=&quot;线性回归&quot;&gt;线性回归&lt;/h1&gt;
-&lt;p&gt;回归本质上是利用离散的值来试着推测出一个连续值的结果，对其他值进行预测&lt;/p&gt;
-&lt;h2 id=&quot;单变量线性回归linear-regression-with-one-variable&quot;&gt;1 单变量线性回归（Linear</summary>
+    <summary type="html">&lt;h1 id=&quot;线性回归&quot;&gt;&lt;a href=&quot;#线性回归&quot; class=&quot;headerlink&quot; title=&quot;线性回归&quot;&gt;&lt;/a&gt;线性回归&lt;/h1&gt;&lt;p&gt;回归本质上是利用离散的值来试着推测出一个连续值的结果，对其他值进行预测&lt;/p&gt;
+&lt;h2</summary>
         
       
     
@@ -275,7 +267,8 @@ s</summary>
       
         
         
-    <summary type="html">&lt;p&gt;此模块定义了一种对象类型，可以紧凑地表示基本类型值的数组：字符、整数、浮点数等。 数组属于序列类型，其行为与列表非常相似，不同之处在于其中存储的对象类型是受限的。 类型在对象创建时使用单个字符的 &lt;em&gt;类型码&lt;/em&gt; 来指定。</summary>
+    <summary type="html">&lt;p&gt;此模块定义了一种对象类型，可以紧凑地表示基本类型值的数组：字符、整数、浮点数等。 数组属于序列类型，其行为与列表非常相似，不同之处在于其中存储的对象类型是受限的。 类型在对象创建时使用单个字符的 &lt;em&gt;类型码&lt;/em&gt; 来指定。 已定义的类型码如下：&lt;/p&gt;
+&lt;div</summary>
         
       
     
@@ -383,9 +376,7 @@ s</summary>
       
         
         
-    <summary type="html">&lt;h1 id=&quot;chapter_01_the_python_data_model&quot;&gt;Chapter_01_The_Python_Data_Model&lt;/h1&gt;
-&lt;h2 id=&quot;playing-cards&quot;&gt;1.1 Playing Cards&lt;/h2&gt;
-&lt;pre</summary>
+    <summary type="html">&lt;h1 id=&quot;Chapter-01-The-Python-Data-Model&quot;&gt;&lt;a href=&quot;#Chapter-01-The-Python-Data-Model&quot; class=&quot;headerlink&quot;</summary>
         
       
     
