@@ -6,7 +6,7 @@
   <link href="http://blog.ctios.cn/atom.xml" rel="self"/>
   
   <link href="http://blog.ctios.cn/"/>
-  <updated>2020-12-05T16:14:11.797Z</updated>
+  <updated>2020-12-06T15:24:57.859Z</updated>
   <id>http://blog.ctios.cn/</id>
   
   <author>
@@ -15,6 +15,50 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title></title>
+    <link href="http://blog.ctios.cn/2020/12/06/python/fluentpython/chapter-02-an-array-of-sequences/"/>
+    <id>http://blog.ctios.cn/2020/12/06/python/fluentpython/chapter-02-an-array-of-sequences/</id>
+    <published>2020-12-06T15:24:34.227Z</published>
+    <updated>2020-12-06T15:24:57.859Z</updated>
+    
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>03_神经网络_Neura_ Network</title>
+    <link href="http://blog.ctios.cn/2020/12/06/machinelearning/wu-en-da-ji-qi-xue-xi/neural-networks/"/>
+    <id>http://blog.ctios.cn/2020/12/06/machinelearning/wu-en-da-ji-qi-xue-xi/neural-networks/</id>
+    <published>2020-12-06T08:12:53.000Z</published>
+    <updated>2020-12-06T14:45:51.410Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;神经网络neural-network&quot;&gt;神经网络Neural Network&lt;/h1&gt;
+&lt;h2 id=&quot;非线性假设&quot;&gt;1.非线性假设&lt;/h2&gt;
+&lt;p&gt;线性回归还是逻辑回归都有这样一个缺点，即:当特征太多时，</summary>
+        
+      
+    
+    
+    
+    <category term="吴恩达——机器学习" scheme="http://blog.ctios.cn/categories/%E5%90%B4%E6%81%A9%E8%BE%BE%E2%80%94%E2%80%94%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+    <category term="机器学习" scheme="http://blog.ctios.cn/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    
+    <category term="吴恩达" scheme="http://blog.ctios.cn/tags/%E5%90%B4%E6%81%A9%E8%BE%BE/"/>
+    
+    <category term="神经网络" scheme="http://blog.ctios.cn/tags/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/"/>
+    
+  </entry>
   
   <entry>
     <title>02_逻辑回归_Logistic_Regression</title>
@@ -28,7 +72,8 @@
       
         
         
-    <summary type="html">&lt;h1 id=&quot;逻辑回归（Logistic-Regression）&quot;&gt;&lt;a href=&quot;#逻辑回归（Logistic-Regression）&quot; class=&quot;headerlink&quot; title=&quot;逻辑回归（Logistic</summary>
+    <summary type="html">&lt;h1 id=&quot;逻辑回归logistic-regression&quot;&gt;逻辑回归（Logistic Regression）&lt;/h1&gt;
+&lt;h2</summary>
         
       
     
@@ -46,6 +91,121 @@
   </entry>
   
   <entry>
+    <title>01_1.2 A simple two-dimensional vector class</title>
+    <link href="http://blog.ctios.cn/2020/12/02/python/fluentpython/chapter-03-dictionaries-and-sets/3.1-dict/"/>
+    <id>http://blog.ctios.cn/2020/12/02/python/fluentpython/chapter-03-dictionaries-and-sets/3.1-dict/</id>
+    <published>2020-12-02T08:12:53.000Z</published>
+    <updated>2020-12-06T15:11:11.330Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;blockquote&gt;
+
+&lt;/blockquote&gt;
+&lt;h1 id=&quot;泛映射类型&quot;&gt;泛映射类型&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;collections.abc中有Mapping和MutableMapping这两个抽象类，作用dict的接口 &lt;img</summary>
+        
+      
+    
+    
+    
+    <category term="FluentPython" scheme="http://blog.ctios.cn/categories/FluentPython/"/>
+    
+    <category term="Dictionaries_and_Sets" scheme="http://blog.ctios.cn/categories/FluentPython/Dictionaries-and-Sets/"/>
+    
+    
+    <category term="python" scheme="http://blog.ctios.cn/tags/python/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>01_1.2 A simple two-dimensional vector class</title>
+    <link href="http://blog.ctios.cn/2020/12/02/python/fluentpython/chapter-04-text-versus-bytes/1.1-character/"/>
+    <id>http://blog.ctios.cn/2020/12/02/python/fluentpython/chapter-04-text-versus-bytes/1.1-character/</id>
+    <published>2020-12-02T08:12:53.000Z</published>
+    <updated>2020-12-06T15:03:55.853Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;pre class=&quot;line-numbers language-python&quot; data-language=&quot;python&quot;&gt;&lt;code class=&quot;language-python&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;# 编码和解码&lt;/span&gt;
+s</summary>
+        
+      
+    
+    
+    
+    <category term="FluentPython" scheme="http://blog.ctios.cn/categories/FluentPython/"/>
+    
+    <category term="Python_Data_Model" scheme="http://blog.ctios.cn/categories/FluentPython/Python-Data-Model/"/>
+    
+    
+    <category term="python" scheme="http://blog.ctios.cn/tags/python/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>01_2.1 tuple</title>
+    <link href="http://blog.ctios.cn/2020/12/02/python/fluentpython/chapter-02-an-array-of-sequences/2.1-tuple/"/>
+    <id>http://blog.ctios.cn/2020/12/02/python/fluentpython/chapter-02-an-array-of-sequences/2.1-tuple/</id>
+    <published>2020-12-02T08:12:53.000Z</published>
+    <updated>2020-12-06T15:05:48.894Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;pre class=&quot;line-numbers language-python&quot; data-language=&quot;python&quot;&gt;&lt;code class=&quot;language-python&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;#</summary>
+        
+      
+    
+    
+    
+    <category term="FluentPython" scheme="http://blog.ctios.cn/categories/FluentPython/"/>
+    
+    <category term="An_Array_of_Sequences" scheme="http://blog.ctios.cn/categories/FluentPython/An-Array-of-Sequences/"/>
+    
+    
+    <category term="python" scheme="http://blog.ctios.cn/tags/python/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>01_2.2 slice</title>
+    <link href="http://blog.ctios.cn/2020/12/02/python/fluentpython/chapter-02-an-array-of-sequences/2.2-slice/"/>
+    <id>http://blog.ctios.cn/2020/12/02/python/fluentpython/chapter-02-an-array-of-sequences/2.2-slice/</id>
+    <published>2020-12-02T08:12:53.000Z</published>
+    <updated>2020-12-06T15:05:49.890Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;pre class=&quot;line-numbers language-python&quot; data-language=&quot;python&quot;&gt;&lt;code class=&quot;language-python&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;# 切片&lt;/span&gt;
+s</summary>
+        
+      
+    
+    
+    
+    <category term="FluentPython" scheme="http://blog.ctios.cn/categories/FluentPython/"/>
+    
+    <category term="An_Array_of_Sequences" scheme="http://blog.ctios.cn/categories/FluentPython/An-Array-of-Sequences/"/>
+    
+    
+    <category term="python" scheme="http://blog.ctios.cn/tags/python/"/>
+    
+  </entry>
+  
+  <entry>
     <title>01_线性回归_Linear_Regression</title>
     <link href="http://blog.ctios.cn/2020/12/02/machinelearning/wu-en-da-ji-qi-xue-xi/linear-regression/"/>
     <id>http://blog.ctios.cn/2020/12/02/machinelearning/wu-en-da-ji-qi-xue-xi/linear-regression/</id>
@@ -57,8 +217,9 @@
       
         
         
-    <summary type="html">&lt;h1 id=&quot;线性回归&quot;&gt;&lt;a href=&quot;#线性回归&quot; class=&quot;headerlink&quot; title=&quot;线性回归&quot;&gt;&lt;/a&gt;线性回归&lt;/h1&gt;&lt;p&gt;回归本质上是利用离散的值来试着推测出一个连续值的结果，对其他值进行预测&lt;/p&gt;
-&lt;h2</summary>
+    <summary type="html">&lt;h1 id=&quot;线性回归&quot;&gt;线性回归&lt;/h1&gt;
+&lt;p&gt;回归本质上是利用离散的值来试着推测出一个连续值的结果，对其他值进行预测&lt;/p&gt;
+&lt;h2 id=&quot;单变量线性回归linear-regression-with-one-variable&quot;&gt;1 单变量线性回归（Linear</summary>
         
       
     
@@ -72,6 +233,168 @@
     <category term="吴恩达" scheme="http://blog.ctios.cn/tags/%E5%90%B4%E6%81%A9%E8%BE%BE/"/>
     
     <category term="线性回归" scheme="http://blog.ctios.cn/tags/%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>01_2.6 queue</title>
+    <link href="http://blog.ctios.cn/2020/12/02/python/fluentpython/chapter-02-an-array-of-sequences/2.4-sort-and-bisect/"/>
+    <id>http://blog.ctios.cn/2020/12/02/python/fluentpython/chapter-02-an-array-of-sequences/2.4-sort-and-bisect/</id>
+    <published>2020-12-02T08:12:53.000Z</published>
+    <updated>2020-12-06T15:06:39.336Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;pre class=&quot;line-numbers language-python&quot; data-language=&quot;python&quot;&gt;&lt;code class=&quot;language-python&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;#</summary>
+        
+      
+    
+    
+    
+    <category term="FluentPython" scheme="http://blog.ctios.cn/categories/FluentPython/"/>
+    
+    <category term="An_Array_of_Sequences" scheme="http://blog.ctios.cn/categories/FluentPython/An-Array-of-Sequences/"/>
+    
+    
+    <category term="python" scheme="http://blog.ctios.cn/tags/python/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>01_2.5 array and memoryview</title>
+    <link href="http://blog.ctios.cn/2020/12/02/python/fluentpython/chapter-02-an-array-of-sequences/2.5-array-and-memoryview/"/>
+    <id>http://blog.ctios.cn/2020/12/02/python/fluentpython/chapter-02-an-array-of-sequences/2.5-array-and-memoryview/</id>
+    <published>2020-12-02T08:12:53.000Z</published>
+    <updated>2020-12-06T15:06:20.062Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;此模块定义了一种对象类型，可以紧凑地表示基本类型值的数组：字符、整数、浮点数等。 数组属于序列类型，其行为与列表非常相似，不同之处在于其中存储的对象类型是受限的。 类型在对象创建时使用单个字符的 &lt;em&gt;类型码&lt;/em&gt; 来指定。</summary>
+        
+      
+    
+    
+    
+    <category term="FluentPython" scheme="http://blog.ctios.cn/categories/FluentPython/"/>
+    
+    <category term="An_Array_of_Sequences" scheme="http://blog.ctios.cn/categories/FluentPython/An-Array-of-Sequences/"/>
+    
+    
+    <category term="python" scheme="http://blog.ctios.cn/tags/python/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>01_1.2 A simple two-dimensional vector class</title>
+    <link href="http://blog.ctios.cn/2020/12/02/python/fluentpython/chapter-02-an-array-of-sequences/2.6-queue/"/>
+    <id>http://blog.ctios.cn/2020/12/02/python/fluentpython/chapter-02-an-array-of-sequences/2.6-queue/</id>
+    <published>2020-12-02T08:12:53.000Z</published>
+    <updated>2020-12-06T15:06:22.786Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;pre class=&quot;line-numbers language-python&quot; data-language=&quot;python&quot;&gt;&lt;code class=&quot;language-python&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;# deque</summary>
+        
+      
+    
+    
+    
+    <category term="FluentPython" scheme="http://blog.ctios.cn/categories/FluentPython/"/>
+    
+    <category term="Python_Data_Model" scheme="http://blog.ctios.cn/categories/FluentPython/Python-Data-Model/"/>
+    
+    
+    <category term="python" scheme="http://blog.ctios.cn/tags/python/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>01_1.2 A simple two-dimensional vector class</title>
+    <link href="http://blog.ctios.cn/2020/12/02/python/fluentpython/chapter-03-dictionaries-and-sets/3.2-set/"/>
+    <id>http://blog.ctios.cn/2020/12/02/python/fluentpython/chapter-03-dictionaries-and-sets/3.2-set/</id>
+    <published>2020-12-02T08:12:53.000Z</published>
+    <updated>2020-12-06T15:03:52.592Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;pre class=&quot;line-numbers language-python&quot; data-language=&quot;python&quot;&gt;&lt;code class=&quot;language-python&quot;&gt;&lt;span class=&quot;token</summary>
+        
+      
+    
+    
+    
+    <category term="FluentPython" scheme="http://blog.ctios.cn/categories/FluentPython/"/>
+    
+    <category term="Python_Data_Model" scheme="http://blog.ctios.cn/categories/FluentPython/Python-Data-Model/"/>
+    
+    
+    <category term="python" scheme="http://blog.ctios.cn/tags/python/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>01_2.3 +,*,+=,*=</title>
+    <link href="http://blog.ctios.cn/2020/12/02/python/fluentpython/chapter-02-an-array-of-sequences/2.3/"/>
+    <id>http://blog.ctios.cn/2020/12/02/python/fluentpython/chapter-02-an-array-of-sequences/2.3/</id>
+    <published>2020-12-02T08:12:53.000Z</published>
+    <updated>2020-12-06T15:05:52.003Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;pre class=&quot;line-numbers language-python&quot; data-language=&quot;python&quot;&gt;&lt;code class=&quot;language-python&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;#</summary>
+        
+      
+    
+    
+    
+    <category term="FluentPython" scheme="http://blog.ctios.cn/categories/FluentPython/"/>
+    
+    <category term="An_Array_of_Sequences" scheme="http://blog.ctios.cn/categories/FluentPython/An-Array-of-Sequences/"/>
+    
+    
+    <category term="python" scheme="http://blog.ctios.cn/tags/python/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Chapter_01_The_Python_Data_Model</title>
+    <link href="http://blog.ctios.cn/2020/12/01/python/fluentpython/chapter-01-the-python-data-model/"/>
+    <id>http://blog.ctios.cn/2020/12/01/python/fluentpython/chapter-01-the-python-data-model/</id>
+    <published>2020-11-30T16:00:00.000Z</published>
+    <updated>2020-12-06T15:26:06.450Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;chapter_01_the_python_data_model&quot;&gt;Chapter_01_The_Python_Data_Model&lt;/h1&gt;
+&lt;h2 id=&quot;playing-cards&quot;&gt;1.1 Playing Cards&lt;/h2&gt;
+&lt;pre</summary>
+        
+      
+    
+    
+    
+    <category term="FluentPython" scheme="http://blog.ctios.cn/categories/FluentPython/"/>
+    
+    
+    <category term="python" scheme="http://blog.ctios.cn/tags/python/"/>
     
   </entry>
   

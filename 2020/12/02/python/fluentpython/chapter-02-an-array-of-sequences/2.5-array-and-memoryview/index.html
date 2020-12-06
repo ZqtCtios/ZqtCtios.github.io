@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="01_线性回归_Linear_Regression, 曾先森的Blog">
+    <meta name="keywords" content="01_2.5 array and memoryview, 曾先森的Blog">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -27,7 +27,7 @@
 </script>
 
 
-    <title>01_线性回归_Linear_Regression | 曾先森的Blog</title>
+    <title>01_2.5 array and memoryview | 曾先森的Blog</title>
     <link rel="icon" type="image/png" href="https://cdn.jsdelivr.net/gh/ZqtCtios/ZqtCtios.github.io/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/ZqtCtios/ZqtCtios.github.io/libs/awesome/css/all.css">
@@ -231,12 +231,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/ZqtCtios/ZqtCtios.github.io/medias/featureimages/14.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/ZqtCtios/ZqtCtios.github.io/medias/featureimages/21.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">01_线性回归_Linear_Regression</h1>
+                    <h1 class="description center-align post-title">01_2.5 array and memoryview</h1>
                 </div>
             </div>
         </div>
@@ -352,16 +352,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/">
-                                <span class="chip bg-color">机器学习</span>
-                            </a>
-                        
-                            <a href="/tags/%E5%90%B4%E6%81%A9%E8%BE%BE/">
-                                <span class="chip bg-color">吴恩达</span>
-                            </a>
-                        
-                            <a href="/tags/%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92/">
-                                <span class="chip bg-color">线性回归</span>
+                            <a href="/tags/python/">
+                                <span class="chip bg-color">python</span>
                             </a>
                         
                     </div>
@@ -372,8 +364,12 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E5%90%B4%E6%81%A9%E8%BE%BE%E2%80%94%E2%80%94%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" class="post-category">
-                                吴恩达——机器学习
+                            <a href="/categories/FluentPython/" class="post-category">
+                                FluentPython
+                            </a>
+                        
+                            <a href="/categories/FluentPython/An-Array-of-Sequences/" class="post-category">
+                                An_Array_of_Sequences
                             </a>
                         
                     </div>
@@ -392,14 +388,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-12-04
+                    2020-12-06
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.8k
+                    434
                 </div>
                 
 
@@ -424,154 +420,152 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="线性回归">线性回归</h1>
-<p>回归本质上是利用离散的值来试着推测出一个连续值的结果，对其他值进行预测</p>
-<h2 id="单变量线性回归linear-regression-with-one-variable">1 单变量线性回归（Linear Regression with One Variable）</h2>
-<figure>
-<img src="https://cdn.jsdelivr.net/gh/ZqtCtios/Image/img/20201202232210.png" alt="image-20201202232210402"><figcaption>image-20201202232210402</figcaption>
-</figure>
-<h3 id="例子房价预测问题">1.1 例子房价预测问题：</h3>
-<p>假使回归问题的训练集(Training Set)如下表所示</p>
-<figure>
-<img src="https://cdn.jsdelivr.net/gh/ZqtCtios/Image/img/20201202232330.png" alt="image-20201202232330802"><figcaption>image-20201202232330802</figcaption>
-</figure>
-<p>我们将要用来描述这个回归问题的标记如下:</p>
-<ul>
-<li><p><span class="math inline">\(𝑚\)</span>代表训练集中实例的数量</p></li>
-<li><span class="math inline">\(𝑥\)</span> 代表特征/输入变量</li>
-<li><span class="math inline">\(𝑦\)</span> 代表目标变量/输出变量</li>
-<li><span class="math inline">\((𝑥,𝑦)\)</span> 代表训练集中的实例</li>
-<li><span class="math inline">\((𝑥^{(𝑖)},𝑦^{(𝑖)})\)</span>代表第<span class="math inline">\(𝑖\)</span> 个观察实例</li>
-<li><p><span class="math inline">\(h\)</span> 代表学习算法的解决方案或函数也称为假设(hypothesis)</p></li>
-</ul>
-<figure>
-<img src="https://cdn.jsdelivr.net/gh/ZqtCtios/Image/img/20201202232830.png" alt="image-20201202232830677"><figcaption>image-20201202232830677</figcaption>
-</figure>
-<p>我们该如何表达 h?</p>
-<p>一种可能的表达方式为:<span class="math inline">\(h_𝜃(𝑥) = 𝜃_0 + 𝜃_1𝑥\)</span>，因为只含有一个特征/输入变量，因此这样 的问题叫作单变量线性回归问题。</p>
-<h3 id="代价函数">1.2 代价函数</h3>
-<h4 id="误差定义">误差定义：</h4>
-<p>预测值与实际值的的差距。<span class="math inline">\(h_𝜃(x)-y\)</span></p>
-<h4 id="代价函数-1">代价函数</h4>
-<p>对于<span class="math inline">\(h_𝜃(𝑥) = 𝜃_0 + 𝜃_1𝑥\)</span>，目的是找到两个变量<span class="math inline">\(𝜃_0,𝜃_1\)</span>来使得整体误差的值最小，即误差平方和最小，代价公式为： <span class="math display">\[
-MSE=J\left(\theta_{0}, \theta_{1}\right)=\frac{1}{2 m} \sum_{i=1}^{m}\left(h_{\theta}\left(x^{(i)}\right)-y^{(i)}\right)^{2}
-\]</span> <img src="https://cdn.jsdelivr.net/gh/ZqtCtios/Image/img/20201202233929.png" alt="image-20201202233929481"></p>
-<h3 id="梯度下降">1.3 梯度下降</h3>
-<p>批量梯度下降(batch gradient descent): <span class="math display">\[
-\begin{aligned}
-&amp;\text { repeat until convergence \{}\\
-&amp;\theta_{j}:=\theta_{j}-\alpha \frac{\partial}{\partial \theta_{j}} J\left(\theta_{0}, \theta_{1}\right) \quad(\text { for } j=0 \text { and } j=1)\\
-&amp;\text{\}}
-\end{aligned}
-\]</span> 其中<span class="math inline">\(𝑎\)</span>是学习率(learning rate)，它决定了我们沿着能让代价函数下降程度最大的方向 向下迈出的步子有多大，在批量梯度下降中，我们每一次都同时让所有的参数减去学习速率乘以代价函数的导数，参数更新的步骤如下 <span class="math display">\[
-\begin{array}{l}
-\text { temp } 0:=\theta_{0}-\alpha \frac{\partial}{\partial \theta_{0}} J\left(\theta_{0}, \theta_{1}\right) \\
-\text { templ }:=\theta_{1}-\alpha \frac{\partial}{\partial \theta_{1}} J\left(\theta_{0}, \theta_{1}\right) \\
-\theta_{0}:=\text { temp } 0 \\
-\theta_{1}:=\text { temp } 1
-\end{array}
-\]</span></p>
-<ul>
-<li><span class="math inline">\(a\)</span>太小收敛速度太慢</li>
-<li><span class="math inline">\(a\)</span>太大可能不收敛</li>
-</ul>
-<h3 id="梯度下降的线性回归">1.4 梯度下降的线性回归</h3>
-<p><span class="math display">\[
-\begin{array}{c}
-\frac{\partial}{\partial \theta_{j}} J\left(\theta_{0}, \theta_{1}\right)=\frac{\partial}{\partial \theta_{j}} \frac{1}{2 m} \sum_{i=1}^{m}\left(h_{\theta}\left(x^{(i)}\right)-y^{(i)}\right)^{2} \\
-j=0 \text { 时: } \frac{\partial}{\partial \theta_{0}} J\left(\theta_{0}, \theta_{1}\right)=\frac{1}{m} \sum_{i=1}^{m}\left(h_{\theta}\left(x^{(i)}\right)-y^{(i)}\right) \\
-j=1 \text { 时: } \quad \frac{\partial}{\partial \theta_{1}} J\left(\theta_{0}, \theta_{1}\right)=\frac{1}{m} \sum_{i=1}^{m}\left(\left(h_{\theta}\left(x^{(i)}\right)-y^{(i)}\right) \cdot x^{(i)}\right)
-\end{array}
-\]</span></p>
-<h2 id="多变量线性回归linear-regression-with-multiple-variables">2 多变量线性回归(Linear Regression with Multiple Variables)</h2>
-<p>对上面的模型增加更多的特征，模型中的特征为<span class="math inline">\((x_1,x_2,....,x_n)\)</span></p>
-<figure>
-<img src="https://cdn.jsdelivr.net/gh/ZqtCtios/Image/img/20201203163630.png" alt="image-20201203150333545"><figcaption>image-20201203150333545</figcaption>
-</figure>
-<p>增添更多特征后，我们引入一系列新的注释:</p>
-<ul>
-<li><p><span class="math inline">\(𝑛\)</span> 代表特征的数量</p></li>
-<li><p><span class="math inline">\(𝑥^{(𝑖)}\)</span>代表第 <span class="math inline">\(𝑖\)</span> 个训练实例，是特征矩阵中的第<span class="math inline">\(𝑖\)</span>行，是一个向量(vector)。</p></li>
-<li><p>比方说，上图的 <span class="math display">\[
-x^{(2)}=\left[\begin{array}{c}
-1416 \\
-3 \\
-2 \\
-40
-\end{array}\right]
-\]</span></p></li>
-<li><p><span class="math inline">\(𝑥^{(𝑖)}_j\)</span>代表特征矩阵中第$ 𝑖$ 行的第<span class="math inline">\(𝑗\)</span>个特征，也就是第 𝑖 个训练实例的第 𝑗 个特征。</p></li>
-<li><p>如上图的<span class="math inline">\(\mid x_{2}^{(2)}=3, x_{3}^{(2)}=2\)</span></p></li>
-<li><p>支持多变量的假设 h 表示为:<span class="math inline">\(h_{\theta}(x)=\theta_{0}+\theta_{1} x_{1}+\theta_{2} x_{2}+\ldots+\theta_{n} x_{n}\)</span></p></li>
-<li><p>这个公式中有𝑛 + 1个参数和𝑛个变量，为了使得公式能够简化一些，引入<span class="math inline">\(𝑥_0 = 1\)</span>，则公 式转化为:<span class="math inline">\(h_{\theta}(x)=\theta_{0} x_{0}+\theta_{1} x_{1}+\theta_{2} x_{2}+\ldots+\theta_{n} x_{n}\)</span></p></li>
-<li><p>此时模型中的参数是一个<span class="math inline">\(𝑛 + 1\)</span>维的向量，任何一个训练实例也都是𝑛 + 1维的向量，特 征矩阵𝑋的维度是 <span class="math inline">\(𝑚 ∗ (𝑛 + 1)\)</span>。 因此公式可以简化为:<span class="math inline">\(h_𝜃(𝑥) = 𝜃^𝑇𝑋\)</span>，其中上标𝑇代表矩阵转置。</p></li>
-</ul>
-<h3 id="多变量梯度下降gradient-descent-for-multiple-variables">2.1 多变量梯度下降Gradient Descent for Multiple Variables</h3>
-<p>与单变量线性回归类似，在多变量线性回归中，我们也构建一个代价函数，则这个代价 函数是所有建模误差的平方和，即: <span class="math display">\[
-J\left(\theta_{0}, \theta_{1} \ldots \theta_{n}\right)=\frac{1}{2 m} \sum_{i=1}^{m}\left(h_{\theta}\left(x^{(i)}\right)-y^{(i)}\right)^{2}
-\]</span> 梯度下降算法求导后：</p>
-<p>Repeat： <span class="math display">\[
-\theta_{j}:=\theta_{j}-\alpha \frac{1}{m} \sum_{i=1}^{m}\left(\left(h_{\theta}\left(x^{(i)}\right)-y^{(i)}\right) \cdot x_{j}^{(i)}\right)
-\]</span> ( simultaneously update <span class="math inline">\(\theta_{j}\)</span>$  =0,1, , )$</p>
-<p>计算Cost函数Python代码：</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">computeCost</span><span class="token punctuation">(</span>X<span class="token punctuation">,</span> y<span class="token punctuation">,</span> theta<span class="token punctuation">)</span><span class="token punctuation">:</span>
-  inner <span class="token operator">=</span> np<span class="token punctuation">.</span>power<span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">(</span>X <span class="token operator">*</span> theta<span class="token punctuation">.</span>T<span class="token punctuation">)</span> <span class="token operator">-</span> y<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span> 
-  <span class="token keyword">return</span> np<span class="token punctuation">.</span><span class="token builtin">sum</span><span class="token punctuation">(</span>inner<span class="token punctuation">)</span> <span class="token operator">/</span> <span class="token punctuation">(</span><span class="token number">2</span> <span class="token operator">*</span> <span class="token builtin">len</span><span class="token punctuation">(</span>X<span class="token punctuation">)</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-<h3 id="梯度下降法实践-1-特征缩放">2.2 梯度下降法实践 1-特征缩放</h3>
-<p>Gradient Descent in Practice I - Feature Scaling</p>
-<p>在我们面对多维特征问题的时候，我们要保证这些特征都具有相近的尺度，这将帮助梯度下降算法更快地收敛，解决的方法是尝试将所有特征的尺度都尽量缩放到-1到1之间。</p>
-<figure>
-<img src="https://cdn.jsdelivr.net/gh/ZqtCtios/Image/img/20201203153342.png" alt="image-20201203153342751"><figcaption>image-20201203153342751</figcaption>
-</figure>
-<p>最简单的方法是令:<span class="math inline">\(x_{n}=\frac{x_{n}-\mu_{n}}{s_{n}},\)</span> 其中 <span class="math inline">\(\mu_{n}\)</span> 是平均值, <span class="math inline">\(s_{n}\)</span> 是标准差。</p>
-<h3 id="梯度下降法实践-2-学习率">2.3 梯度下降法实践 2-学习率</h3>
-<p>Gradient Descent in Practice II - Learning Rate</p>
-<p>梯度下降算法的每次迭代受到学习率的影响，如果学习率𝑎过小，则达到收敛所需的迭 代次数会非常高;如果学习率𝑎过大，每次迭代可能不会减小代价函数，可能会越过局部最 小值导致无法收敛。</p>
-<h3 id="特征和多项式回归">2.4 特征和多项式回归</h3>
-<p>线性回归并不适用于所有数据，有时我们需要曲线来适应我们的数据，比如一个二次方模型: <span class="math inline">\(h_{\theta}(x)=\theta_{0}+\theta_{1} x_{1}+\theta_{2} x_{2}^{2}\)</span> 或者三次方模型: <span class="math inline">\(\quad h_{\theta}(x)=\theta_{0}+\theta_{1} x_{1}+\theta_{2} x_{2}^{2}+\theta_{3} x_{3}^{3}\)</span></p>
-<figure>
-<img src="https://cdn.jsdelivr.net/gh/ZqtCtios/Image/img/20201203155639.png" alt="image-20201203155639868"><figcaption>image-20201203155639868</figcaption>
-</figure>
-<p>通常我们需要先观察数据然后再决定准备尝试怎样的模型。 另外，我们可以令：<span class="math inline">\(x_{2}=x_{2}^{2}, x_{3}=x_{3}^{3},\)</span> 从而将模型转化为线性回归模型。</p>
-<p>从而将模型转化为线性回归模型。</p>
-<h3 id="正规方程">2.5 正规方程</h3>
-<p>正规方程是通过求解下面的方程来找出使得代价函数最小的参数的 <span class="math inline">\(： \frac{\partial}{\partial \theta_{j}} J\left(\theta_{j}\right)=0\)</span>，假设我们的训练集特征矩阵为 X（包含了 <span class="math inline">\(x_{0}=1\)</span> ）并且我们的训练集结果为向量 y，则利用正规方程解出向量 <span class="math inline">\(\theta=\left(X^{T} X\right)^{-1} X^{T} y\)</span> 。上标 T 代表矩阵转置，上标-1 代表矩阵的逆。设矩阵 <span class="math inline">\(A=X^{T} X,\)</span> 则: <span class="math inline">\(\left(X^{T} X\right)^{-1}=A^{-1}\)</span></p>
-<p>梯度下降与正规方程的比较:</p>
+                <p>此模块定义了一种对象类型，可以紧凑地表示基本类型值的数组：字符、整数、浮点数等。 数组属于序列类型，其行为与列表非常相似，不同之处在于其中存储的对象类型是受限的。 类型在对象创建时使用单个字符的 <em>类型码</em> 来指定。 已定义的类型码如下：</p>
 <table>
-<colgroup>
-<col style="width: 31%">
-<col style="width: 68%">
-</colgroup>
 <thead>
 <tr class="header">
-<th style="text-align: left;">梯度下降</th>
-<th>正规方程</th>
+<th style="text-align: left;">类型码</th>
+<th style="text-align: left;">C 类型</th>
+<th style="text-align: left;">Python 类型</th>
+<th style="text-align: left;">以字节表示的最小尺寸</th>
+<th style="text-align: left;">注释</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: left;">需要选择学习率𝛼</td>
-<td>不需要</td>
+<td style="text-align: left;"><code>'b'</code></td>
+<td style="text-align: left;">signed char</td>
+<td style="text-align: left;">int</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;"></td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">需要多次迭代</td>
-<td>一次运算得出</td>
+<td style="text-align: left;"><code>'B'</code></td>
+<td style="text-align: left;">unsigned char</td>
+<td style="text-align: left;">int</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;"></td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">当特征数量𝑛大时也能较好适用</td>
-<td>需要计算 <span class="math inline">\(\left(X^{T} X\right)^{-1}\)</span> 如果特征数量 <span class="math inline">\(n\)</span> 较大则运算代价大, 因为矩阵逆的计算时间复杂度 为 <span class="math inline">\(O\left(n^{3}\right),\)</span> 通常来说当n小于10000 时还是 可以接受的</td>
+<td style="text-align: left;"><code>'u'</code></td>
+<td style="text-align: left;">Py_UNICODE</td>
+<td style="text-align: left;">Unicode 字符</td>
+<td style="text-align: left;">2</td>
+<td style="text-align: left;">(1)</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">适用于各种类型的模型</td>
-<td>只适用于线性模型，不适合逻辑回归模型等 其他模型</td>
+<td style="text-align: left;"><code>'h'</code></td>
+<td style="text-align: left;">signed short</td>
+<td style="text-align: left;">int</td>
+<td style="text-align: left;">2</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>'H'</code></td>
+<td style="text-align: left;">unsigned short</td>
+<td style="text-align: left;">int</td>
+<td style="text-align: left;">2</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>'i'</code></td>
+<td style="text-align: left;">signed int</td>
+<td style="text-align: left;">int</td>
+<td style="text-align: left;">2</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>'I'</code></td>
+<td style="text-align: left;">unsigned int</td>
+<td style="text-align: left;">int</td>
+<td style="text-align: left;">2</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>'l'</code></td>
+<td style="text-align: left;">signed long</td>
+<td style="text-align: left;">int</td>
+<td style="text-align: left;">4</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>'L'</code></td>
+<td style="text-align: left;">unsigned long</td>
+<td style="text-align: left;">int</td>
+<td style="text-align: left;">4</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>'q'</code></td>
+<td style="text-align: left;">signed long long</td>
+<td style="text-align: left;">int</td>
+<td style="text-align: left;">8</td>
+<td style="text-align: left;">(2)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>'Q'</code></td>
+<td style="text-align: left;">unsigned long long</td>
+<td style="text-align: left;">int</td>
+<td style="text-align: left;">8</td>
+<td style="text-align: left;">(2)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>'f'</code></td>
+<td style="text-align: left;">float</td>
+<td style="text-align: left;">float</td>
+<td style="text-align: left;">4</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>'d'</code></td>
+<td style="text-align: left;">double</td>
+<td style="text-align: left;">float</td>
+<td style="text-align: left;">8</td>
+<td style="text-align: left;"></td>
 </tr>
 </tbody>
 </table>
-<p>正规方程的python实现：</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> numpy <span class="token keyword">as</span> np 
-<span class="token keyword">def</span> <span class="token function">normalEqn</span><span class="token punctuation">(</span>X<span class="token punctuation">,</span> y<span class="token punctuation">)</span><span class="token punctuation">:</span>
-  theta <span class="token operator">=</span> np<span class="token punctuation">.</span>linalg<span class="token punctuation">.</span>inv<span class="token punctuation">(</span>X<span class="token punctuation">.</span>T@X<span class="token punctuation">)</span>@X<span class="token punctuation">.</span>T@y <span class="token comment">#X.T@X 等价于 X.T.dot(X) </span>
-  <span class="token keyword">return</span> theta<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">from</span> array <span class="token keyword">import</span> array
+<span class="token keyword">from</span> random <span class="token keyword">import</span> random
+floats<span class="token operator">=</span>array<span class="token punctuation">(</span><span class="token string">'d'</span><span class="token punctuation">,</span><span class="token punctuation">(</span>random<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token operator">**</span><span class="token number">7</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+floats<span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<pre><code>0.4585058847207508</code></pre>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">fp<span class="token operator">=</span><span class="token builtin">open</span><span class="token punctuation">(</span><span class="token string">'floats.bin'</span><span class="token punctuation">,</span><span class="token string">'wb+'</span><span class="token punctuation">)</span>
+floats<span class="token punctuation">.</span>tofile<span class="token punctuation">(</span>fp<span class="token punctuation">)</span>
+fp<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span>
+floats2<span class="token operator">=</span>array<span class="token punctuation">(</span><span class="token string">'d'</span><span class="token punctuation">)</span>
+fp<span class="token operator">=</span><span class="token builtin">open</span><span class="token punctuation">(</span><span class="token string">'floats.bin'</span><span class="token punctuation">,</span><span class="token string">'rb'</span><span class="token punctuation">)</span>
+floats2<span class="token punctuation">.</span>fromfile<span class="token punctuation">(</span>fp<span class="token punctuation">,</span><span class="token number">10</span><span class="token operator">**</span><span class="token number">7</span><span class="token punctuation">)</span>
+fp<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span>
+floats2<span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre><code>0.4585058847207508</code></pre>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">floats<span class="token operator">=</span>array<span class="token punctuation">(</span>floats<span class="token punctuation">.</span>typecode<span class="token punctuation">,</span><span class="token builtin">sorted</span><span class="token punctuation">(</span>floats<span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>floats<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token number">10</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<pre><code>array('d', [3.67431575165611e-08, 3.475699940080901e-07, 3.7822653908836656e-07, 4.061706841973489e-07, 6.074053917615174e-07, 6.484837163922563e-07, 6.683984088429185e-07, 7.039884853954348e-07, 7.172446871983595e-07, 7.357147590036917e-07])</code></pre>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># memeryview</span>
+<span class="token keyword">import</span> this<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<pre><code>The Zen of Python, by Tim Peters
+
+Beautiful is better than ugly.
+Explicit is better than implicit.
+Simple is better than complex.
+Complex is better than complicated.
+Flat is better than nested.
+Sparse is better than dense.
+Readability counts.
+Special cases aren't special enough to break the rules.
+Although practicality beats purity.
+Errors should never pass silently.
+Unless explicitly silenced.
+In the face of ambiguity, refuse the temptation to guess.
+There should be one-- and preferably only one --obvious way to do it.
+Although that way may not be obvious at first unless you're Dutch.
+Now is better than never.
+Although never is often better than *right* now.
+If the implementation is hard to explain, it's a bad idea.
+If the implementation is easy to explain, it may be a good idea.
+Namespaces are one honking great idea -- let's do more of those!</code></pre>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
                 
             </div>
@@ -598,7 +592,7 @@ J\left(\theta_{0}, \theta_{1} \ldots \theta_{n}\right)=\frac{1}{2 m} \sum_{i=1}^
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://blog.ctios.cn/2020/12/02/machinelearning/wu-en-da-ji-qi-xue-xi/linear-regression/">http://blog.ctios.cn/2020/12/02/machinelearning/wu-en-da-ji-qi-xue-xi/linear-regression/</a>
+                    <a href="http://blog.ctios.cn/2020/12/02/python/fluentpython/chapter-02-an-array-of-sequences/2.5-array-and-memoryview/">http://blog.ctios.cn/2020/12/02/python/fluentpython/chapter-02-an-array-of-sequences/2.5-array-and-memoryview/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -636,16 +630,8 @@ J\left(\theta_{0}, \theta_{1} \ldots \theta_{n}\right)=\frac{1}{2 m} \sum_{i=1}^
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/">
-                                    <span class="chip bg-color">机器学习</span>
-                                </a>
-                            
-                                <a href="/tags/%E5%90%B4%E6%81%A9%E8%BE%BE/">
-                                    <span class="chip bg-color">吴恩达</span>
-                                </a>
-                            
-                                <a href="/tags/%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92/">
-                                    <span class="chip bg-color">线性回归</span>
+                                <a href="/tags/python/">
+                                    <span class="chip bg-color">python</span>
                                 </a>
                             
                         </div>
@@ -819,13 +805,13 @@ J\left(\theta_{0}, \theta_{1} \ldots \theta_{n}\right)=\frac{1}{2 m} \sum_{i=1}^
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2020/12/02/python/fluentpython/chapter-02-an-array-of-sequences/2.2-slice/">
+                <a href="/2020/12/02/python/fluentpython/chapter-02-an-array-of-sequences/2.4-sort-and-bisect/">
                     <div class="card-image">
                         
                         
-                        <img src="https://cdn.jsdelivr.net/gh/ZqtCtios/ZqtCtios.github.io/medias/featureimages/6.jpg" class="responsive-img" alt="01_2.2 slice">
+                        <img src="https://cdn.jsdelivr.net/gh/ZqtCtios/ZqtCtios.github.io/medias/featureimages/3.jpg" class="responsive-img" alt="01_2.6 queue">
                         
-                        <span class="card-title">01_2.2 slice</span>
+                        <span class="card-title">01_2.6 queue</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -872,13 +858,13 @@ J\left(\theta_{0}, \theta_{1} \ldots \theta_{n}\right)=\frac{1}{2 m} \sum_{i=1}^
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/12/02/python/fluentpython/chapter-02-an-array-of-sequences/2.4-sort-and-bisect/">
+                <a href="/2020/12/02/python/fluentpython/chapter-02-an-array-of-sequences/2.6-queue/">
                     <div class="card-image">
                         
                         
-                        <img src="https://cdn.jsdelivr.net/gh/ZqtCtios/ZqtCtios.github.io/medias/featureimages/3.jpg" class="responsive-img" alt="01_2.6 queue">
+                        <img src="https://cdn.jsdelivr.net/gh/ZqtCtios/ZqtCtios.github.io/medias/featureimages/15.jpg" class="responsive-img" alt="01_1.2 A simple two-dimensional vector class">
                         
-                        <span class="card-title">01_2.6 queue</span>
+                        <span class="card-title">01_1.2 A simple two-dimensional vector class</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -899,8 +885,8 @@ J\left(\theta_{0}, \theta_{1} \ldots \theta_{n}\right)=\frac{1}{2 m} \sum_{i=1}^
                                     FluentPython
                                 </a>
                             
-                            <a href="/categories/FluentPython/An-Array-of-Sequences/" class="post-category">
-                                    An_Array_of_Sequences
+                            <a href="/categories/FluentPython/Python-Data-Model/" class="post-category">
+                                    Python_Data_Model
                                 </a>
                             
                             
