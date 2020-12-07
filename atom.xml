@@ -6,7 +6,7 @@
   <link href="http://blog.ctios.cn/atom.xml" rel="self"/>
   
   <link href="http://blog.ctios.cn/"/>
-  <updated>2020-12-06T14:45:51.410Z</updated>
+  <updated>2020-12-07T08:46:28.053Z</updated>
   <id>http://blog.ctios.cn/</id>
   
   <author>
@@ -17,11 +17,40 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>03_神经网络_Neura_ Network</title>
-    <link href="http://blog.ctios.cn/2020/12/06/machinelearning/wu-en-da-ji-qi-xue-xi/neural-networks/"/>
-    <id>http://blog.ctios.cn/2020/12/06/machinelearning/wu-en-da-ji-qi-xue-xi/neural-networks/</id>
+    <title>05_神经网络的学习_Neural_Networks——Learning</title>
+    <link href="http://blog.ctios.cn/2020/12/07/machinelearning/wu-en-da-ji-qi-xue-xi/05-neural-networks-learning/"/>
+    <id>http://blog.ctios.cn/2020/12/07/machinelearning/wu-en-da-ji-qi-xue-xi/05-neural-networks-learning/</id>
+    <published>2020-12-07T08:12:53.000Z</published>
+    <updated>2020-12-07T08:46:28.053Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;神经网络的学习（Neural-Networks-Learning）&quot;&gt;&lt;a href=&quot;#神经网络的学习（Neural-Networks-Learning）&quot; class=&quot;headerlink&quot; title=&quot;神经网络的学习（Neural Networks:</summary>
+        
+      
+    
+    
+    
+    <category term="吴恩达——机器学习" scheme="http://blog.ctios.cn/categories/%E5%90%B4%E6%81%A9%E8%BE%BE%E2%80%94%E2%80%94%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+    <category term="机器学习" scheme="http://blog.ctios.cn/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    
+    <category term="吴恩达" scheme="http://blog.ctios.cn/tags/%E5%90%B4%E6%81%A9%E8%BE%BE/"/>
+    
+    <category term="神经网络" scheme="http://blog.ctios.cn/tags/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>04_神经网络_Neura_ Network</title>
+    <link href="http://blog.ctios.cn/2020/12/06/machinelearning/wu-en-da-ji-qi-xue-xi/04-neural-networks/"/>
+    <id>http://blog.ctios.cn/2020/12/06/machinelearning/wu-en-da-ji-qi-xue-xi/04-neural-networks/</id>
     <published>2020-12-06T08:12:53.000Z</published>
-    <updated>2020-12-06T14:45:51.410Z</updated>
+    <updated>2020-12-07T07:53:02.184Z</updated>
     
     
       
@@ -46,11 +75,40 @@
   </entry>
   
   <entry>
+    <title>03_正则化_Regularization</title>
+    <link href="http://blog.ctios.cn/2020/12/05/machinelearning/wu-en-da-ji-qi-xue-xi/03-regularization/"/>
+    <id>http://blog.ctios.cn/2020/12/05/machinelearning/wu-en-da-ji-qi-xue-xi/03-regularization/</id>
+    <published>2020-12-05T08:12:53.000Z</published>
+    <updated>2020-12-07T07:58:24.086Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;正则化（Regularization）&quot;&gt;&lt;a href=&quot;#正则化（Regularization）&quot; class=&quot;headerlink&quot; title=&quot;正则化（Regularization）&quot;&gt;&lt;/a&gt;正则化（Regularization）&lt;/h1&gt;&lt;h2</summary>
+        
+      
+    
+    
+    
+    <category term="吴恩达——机器学习" scheme="http://blog.ctios.cn/categories/%E5%90%B4%E6%81%A9%E8%BE%BE%E2%80%94%E2%80%94%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+    <category term="机器学习" scheme="http://blog.ctios.cn/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    
+    <category term="吴恩达" scheme="http://blog.ctios.cn/tags/%E5%90%B4%E6%81%A9%E8%BE%BE/"/>
+    
+    <category term="正则化" scheme="http://blog.ctios.cn/tags/%E6%AD%A3%E5%88%99%E5%8C%96/"/>
+    
+  </entry>
+  
+  <entry>
     <title>02_逻辑回归_Logistic_Regression</title>
-    <link href="http://blog.ctios.cn/2020/12/03/machinelearning/wu-en-da-ji-qi-xue-xi/logistic-regression/"/>
-    <id>http://blog.ctios.cn/2020/12/03/machinelearning/wu-en-da-ji-qi-xue-xi/logistic-regression/</id>
-    <published>2020-12-03T08:12:53.000Z</published>
-    <updated>2020-12-05T16:14:11.797Z</updated>
+    <link href="http://blog.ctios.cn/2020/12/04/machinelearning/wu-en-da-ji-qi-xue-xi/02-logistic-regression/"/>
+    <id>http://blog.ctios.cn/2020/12/04/machinelearning/wu-en-da-ji-qi-xue-xi/02-logistic-regression/</id>
+    <published>2020-12-04T08:12:53.000Z</published>
+    <updated>2020-12-07T07:52:27.896Z</updated>
     
     
       
@@ -71,6 +129,36 @@
     <category term="吴恩达" scheme="http://blog.ctios.cn/tags/%E5%90%B4%E6%81%A9%E8%BE%BE/"/>
     
     <category term="逻辑回归" scheme="http://blog.ctios.cn/tags/%E9%80%BB%E8%BE%91%E5%9B%9E%E5%BD%92/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>01_线性回归_Linear_Regression</title>
+    <link href="http://blog.ctios.cn/2020/12/03/machinelearning/wu-en-da-ji-qi-xue-xi/01-linear-regression/"/>
+    <id>http://blog.ctios.cn/2020/12/03/machinelearning/wu-en-da-ji-qi-xue-xi/01-linear-regression/</id>
+    <published>2020-12-03T08:12:53.000Z</published>
+    <updated>2020-12-07T07:56:31.983Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;线性回归&quot;&gt;&lt;a href=&quot;#线性回归&quot; class=&quot;headerlink&quot; title=&quot;线性回归&quot;&gt;&lt;/a&gt;线性回归&lt;/h1&gt;&lt;p&gt;回归本质上是利用离散的值来试着推测出一个连续值的结果，对其他值进行预测&lt;/p&gt;
+&lt;h2</summary>
+        
+      
+    
+    
+    
+    <category term="吴恩达——机器学习" scheme="http://blog.ctios.cn/categories/%E5%90%B4%E6%81%A9%E8%BE%BE%E2%80%94%E2%80%94%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+    <category term="机器学习" scheme="http://blog.ctios.cn/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    
+    <category term="吴恩达" scheme="http://blog.ctios.cn/tags/%E5%90%B4%E6%81%A9%E8%BE%BE/"/>
+    
+    <category term="线性回归" scheme="http://blog.ctios.cn/tags/%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92/"/>
     
   </entry>
   
@@ -96,36 +184,6 @@
     
     
     <category term="python" scheme="http://blog.ctios.cn/tags/python/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>01_线性回归_Linear_Regression</title>
-    <link href="http://blog.ctios.cn/2020/12/02/machinelearning/wu-en-da-ji-qi-xue-xi/linear-regression/"/>
-    <id>http://blog.ctios.cn/2020/12/02/machinelearning/wu-en-da-ji-qi-xue-xi/linear-regression/</id>
-    <published>2020-12-02T08:12:53.000Z</published>
-    <updated>2020-12-04T15:35:29.359Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;线性回归&quot;&gt;&lt;a href=&quot;#线性回归&quot; class=&quot;headerlink&quot; title=&quot;线性回归&quot;&gt;&lt;/a&gt;线性回归&lt;/h1&gt;&lt;p&gt;回归本质上是利用离散的值来试着推测出一个连续值的结果，对其他值进行预测&lt;/p&gt;
-&lt;h2</summary>
-        
-      
-    
-    
-    
-    <category term="吴恩达——机器学习" scheme="http://blog.ctios.cn/categories/%E5%90%B4%E6%81%A9%E8%BE%BE%E2%80%94%E2%80%94%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
-    
-    
-    <category term="机器学习" scheme="http://blog.ctios.cn/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
-    
-    <category term="吴恩达" scheme="http://blog.ctios.cn/tags/%E5%90%B4%E6%81%A9%E8%BE%BE/"/>
-    
-    <category term="线性回归" scheme="http://blog.ctios.cn/tags/%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92/"/>
     
   </entry>
   
