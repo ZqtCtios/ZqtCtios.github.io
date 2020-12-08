@@ -392,14 +392,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-12-07
+                    2020-12-08
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.5k
+                    2.4k
                 </div>
                 
 
@@ -476,6 +476,25 @@ D_{i j}^{(l)}:=\frac{1}{m} \Delta_{i j}^{(l)} \text { if } j=0
 <p>反向传播算法做的是:</p>
 <p><img src="https://cdn.jsdelivr.net/gh/ZqtCtios/Image/img/20201207164521.png" alt="Back propagation"></p>
 <p><img src="https://cdn.jsdelivr.net/gh/ZqtCtios/Image/img/20201207164616.png" alt="Back propagation"></p>
+<h2 id="4-梯度检测"><a href="#4-梯度检测" class="headerlink" title="4.梯度检测"></a>4.梯度检测</h2><p>当我们对一个较为复杂的模型（例如神经网络）使用梯度下降算法时，可能会存在一些 不容易察觉的错误，意味着，虽然代价看上去在不断减小，但最终的结果可能并不是最优解。</p>
+<p>为了避免这样的问题，我们采取一种叫做梯度的数值检验（Numerical Gradient Checking）方法。这种方法的思想是通过估计梯度值来检验我们计算的导数值是否真的是我们要求的。</p>
+<p>对梯度的估计采用的方法是在代价函数上沿着切线的方向选择离两个非常近的点然后计算两个点的平均值用以估计梯度。即对于某个特定的 $\theta,$ 我们计算出在 $\theta-\varepsilon$ 处和 $\theta+\varepsilon$ 的代价值 $(\varepsilon$ 是一个非常小的值，通常选取 0.001$)$ ，然后求两个代价的平均，用以估计在 $\theta$处的代价值。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/ZqtCtios/Image/img/20201208153537.png" alt="image-20201208153537013"></p>
+<p>当 $\theta$ 是一个向量时，我们则需要对偏导数进行检验。因为代价函数的偏导数检验只针对一个参数的改变进行检验，下面是一个只针对 $\theta_{1}$ 进行检验的示例:</p>
+<script type="math/tex; mode=display">
+\frac{\partial}{\partial \theta_{1}}=\frac{J\left(\theta_{1}+\varepsilon_{1}, \theta_{2}, \theta_{3} \ldots \theta_{n}\right)-J\left(\theta_{1}-\varepsilon_{1}, \theta_{2}, \theta_{3} \ldots \theta_{n}\right)}{2 \varepsilon}</script><p>根据上面的算法，计算出的偏导数存储在矩阵 $D_{i j}^{(l)}$ 中。检验时，我们要将该矩阵展开成为向量，同时我们也将 $\theta$ 矩阵展开为向量，我们针对每一个 $\theta$ 都计算一个近似的梯度值，将这些值存储于一个近似梯度矩阵中，最终将得出的这个矩阵同 $D_{i j}^{(l)}$ 进行比较。</p>
+<h2 id="5-随机初始化"><a href="#5-随机初始化" class="headerlink" title="5.随机初始化"></a>5.随机初始化</h2><p>任何优化算法都需要一些初始的参数。到目前为止我们都是初始所有参数为 0，这样的 初始方法对于逻辑回归来说是可行的，但是对于神经网络来说是不可行的。如果我们令所有 的初始参数都为 0，这将意味着我们第二层的所有激活单元都会有相同的值。同理，如果我 们初始所有的参数都为一个非 0 的数，结果也是一样的。我们通常初始参数为正负𝜀之间的随机值。</p>
+<h2 id="6-总结"><a href="#6-总结" class="headerlink" title="6.总结"></a>6.总结</h2><p> 小结一下使用神经网络时的步骤:</p>
+<p>网络结构:第一件要做的事是选择网络结构，即决定选择多少层以及决定每层分别有多少个单元。第一层的单元数即我们训练集的特征数量。 最后一层的单元数是我们训练集的结果的类的数量。如果隐藏层数大于 1，确保每个隐藏层的单元个数相同，通常情况下隐藏层单元的个数越多越好。我们真正要决定的是隐藏层的层数和每个中间层的单元数。</p>
+<p>训练神经网络:</p>
+<ul>
+<li>参数的随机初始化</li>
+<li>利用正向传播方法计算所有的h𝜃 (𝑥)</li>
+<li>编写计算代价函数 𝐽 的代码</li>
+<li>利用反向传播方法计算所有偏导数</li>
+<li>利用数值检验方法检验这些偏导数</li>
+<li>使用优化算法来最小化代价函数</li>
+</ul>
 
                 
             </div>
@@ -719,18 +738,17 @@ D_{i j}^{(l)}:=\frac{1}{m} \Delta_{i j}^{(l)} \text { if } j=0
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;本篇
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2020/12/07/machinelearning/wu-en-da-ji-qi-xue-xi/05-neural-networks-learning/">
+                <a href="/2020/12/08/machinelearning/wu-en-da-ji-qi-xue-xi/06-support-vector-machines/">
                     <div class="card-image">
                         
                         
-                        <img src="https://cdn.jsdelivr.net/gh/ZqtCtios/ZqtCtios.github.io/medias/featureimages/12.jpg" class="responsive-img" alt="05_神经网络的学习_Neural_Networks——Learning">
+                        <img src="https://cdn.jsdelivr.net/gh/ZqtCtios/ZqtCtios.github.io/medias/featureimages/18.jpg" class="responsive-img" alt="06_支持向量机(SupportVectorMachines)">
                         
-                        <span class="card-title">05_神经网络的学习_Neural_Networks——Learning</span>
+                        <span class="card-title">06_支持向量机(SupportVectorMachines)</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -740,9 +758,9 @@ D_{i j}^{(l)}:=\frac{1}{m} \Delta_{i j}^{(l)} \text { if } j=0
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-12-07
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-12-08
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -755,7 +773,6 @@ D_{i j}^{(l)}:=\frac{1}{m} \Delta_{i j}^{(l)} \text { if } j=0
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
@@ -767,8 +784,8 @@ D_{i j}^{(l)}:=\frac{1}{m} \Delta_{i j}^{(l)} \text { if } j=0
                         <span class="chip bg-color">吴恩达</span>
                     </a>
                     
-                    <a href="/tags/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/">
-                        <span class="chip bg-color">神经网络</span>
+                    <a href="/tags/SVM/">
+                        <span class="chip bg-color">SVM</span>
                     </a>
                     
                 </div>
@@ -1299,6 +1316,6 @@ $(function () {
     <script src="https://cdn.jsdelivr.net/gh/ZqtCtios/ZqtCtios.github.io/libs/instantpage/instantpage.js" type="module"></script>
     
 
-<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/tororo.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true},"react":{"opacity":0.7}});</script></body>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/tororo.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true},"react":{"opacity":1}});</script></body>
 
 </html>

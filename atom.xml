@@ -6,7 +6,7 @@
   <link href="http://blog.ctios.cn/atom.xml" rel="self"/>
   
   <link href="http://blog.ctios.cn/"/>
-  <updated>2020-12-07T08:46:28.053Z</updated>
+  <updated>2020-12-08T09:28:56.331Z</updated>
   <id>http://blog.ctios.cn/</id>
   
   <author>
@@ -17,11 +17,40 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>06_支持向量机(SupportVectorMachines)</title>
+    <link href="http://blog.ctios.cn/2020/12/08/machinelearning/wu-en-da-ji-qi-xue-xi/06-support-vector-machines/"/>
+    <id>http://blog.ctios.cn/2020/12/08/machinelearning/wu-en-da-ji-qi-xue-xi/06-support-vector-machines/</id>
+    <published>2020-12-08T08:12:53.000Z</published>
+    <updated>2020-12-08T09:28:56.331Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;支持向量机-Support-Vector-Machines&quot;&gt;&lt;a href=&quot;#支持向量机-Support-Vector-Machines&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="吴恩达——机器学习" scheme="http://blog.ctios.cn/categories/%E5%90%B4%E6%81%A9%E8%BE%BE%E2%80%94%E2%80%94%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+    <category term="机器学习" scheme="http://blog.ctios.cn/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    
+    <category term="吴恩达" scheme="http://blog.ctios.cn/tags/%E5%90%B4%E6%81%A9%E8%BE%BE/"/>
+    
+    <category term="SVM" scheme="http://blog.ctios.cn/tags/SVM/"/>
+    
+  </entry>
+  
+  <entry>
     <title>05_神经网络的学习_Neural_Networks——Learning</title>
     <link href="http://blog.ctios.cn/2020/12/07/machinelearning/wu-en-da-ji-qi-xue-xi/05-neural-networks-learning/"/>
     <id>http://blog.ctios.cn/2020/12/07/machinelearning/wu-en-da-ji-qi-xue-xi/05-neural-networks-learning/</id>
     <published>2020-12-07T08:12:53.000Z</published>
-    <updated>2020-12-07T08:46:28.053Z</updated>
+    <updated>2020-12-08T07:41:36.566Z</updated>
     
     
       
