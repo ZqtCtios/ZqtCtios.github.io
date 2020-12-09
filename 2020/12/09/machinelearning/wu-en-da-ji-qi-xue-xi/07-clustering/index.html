@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Chapter_01_The_Python_Data_Model, 曾先森的Blog">
+    <meta name="keywords" content="07_聚类(Clustering), 曾先森的Blog">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -27,7 +27,7 @@
 </script>
 
 
-    <title>Chapter_01_The_Python_Data_Model | 曾先森的Blog</title>
+    <title>07_聚类(Clustering) | 曾先森的Blog</title>
     <link rel="icon" type="image/png" href="https://cdn.jsdelivr.net/gh/ZqtCtios/ZqtCtios.github.io/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/ZqtCtios/ZqtCtios.github.io/libs/awesome/css/all.css">
@@ -231,12 +231,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/ZqtCtios/ZqtCtios.github.io/medias/featureimages/11.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/ZqtCtios/ZqtCtios.github.io/medias/featureimages/22.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Chapter_01_The_Python_Data_Model</h1>
+                    <h1 class="description center-align post-title">07_聚类(Clustering)</h1>
                 </div>
             </div>
         </div>
@@ -352,8 +352,16 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/python/">
-                                <span class="chip bg-color">python</span>
+                            <a href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/">
+                                <span class="chip bg-color">机器学习</span>
+                            </a>
+                        
+                            <a href="/tags/%E5%90%B4%E6%81%A9%E8%BE%BE/">
+                                <span class="chip bg-color">吴恩达</span>
+                            </a>
+                        
+                            <a href="/tags/%E8%81%9A%E7%B1%BB/">
+                                <span class="chip bg-color">聚类</span>
                             </a>
                         
                     </div>
@@ -364,8 +372,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/FluentPython/" class="post-category">
-                                FluentPython
+                            <a href="/categories/%E5%90%B4%E6%81%A9%E8%BE%BE%E2%80%94%E2%80%94%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" class="post-category">
+                                吴恩达——机器学习
                             </a>
                         
                     </div>
@@ -377,21 +385,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-12-01
+                    2020-12-09
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-12-06
+                    2020-12-09
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    829
+                    1.9k
                 </div>
                 
 
@@ -416,113 +424,77 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="Chapter-01-The-Python-Data-Model"><a href="#Chapter-01-The-Python-Data-Model" class="headerlink" title="Chapter_01_The_Python_Data_Model"></a>Chapter_01_The_Python_Data_Model</h1><h2 id="1-1-Playing-Cards"><a href="#1-1-Playing-Cards" class="headerlink" title="1.1 Playing Cards"></a>1.1 Playing Cards</h2><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> collections
-Card <span class="token operator">=</span> collections<span class="token punctuation">.</span>namedtuple<span class="token punctuation">(</span><span class="token string">'Card'</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token string">'rank'</span><span class="token punctuation">,</span> <span class="token string">'suit'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
-
-
-<span class="token keyword">class</span> <span class="token class-name">FrenchDesk</span><span class="token punctuation">:</span>
-    ranks <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token builtin">str</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span> <span class="token keyword">for</span> n <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">11</span><span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token operator">+</span><span class="token builtin">list</span><span class="token punctuation">(</span><span class="token string">'JQKA'</span><span class="token punctuation">)</span>
-    suits <span class="token operator">=</span> <span class="token string">'spades diamonds clubs hearts'</span><span class="token punctuation">.</span>split<span class="token punctuation">(</span><span class="token punctuation">)</span>
-
-    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
-        self<span class="token punctuation">.</span>_cards <span class="token operator">=</span> <span class="token punctuation">[</span>Card<span class="token punctuation">(</span>rank<span class="token punctuation">,</span> suit<span class="token punctuation">)</span>
-                       <span class="token keyword">for</span> suit <span class="token keyword">in</span> self<span class="token punctuation">.</span>suits <span class="token keyword">for</span> rank <span class="token keyword">in</span> self<span class="token punctuation">.</span>ranks<span class="token punctuation">]</span>
-
-    <span class="token keyword">def</span> <span class="token function">__len__</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
-        <span class="token keyword">return</span> <span class="token builtin">len</span><span class="token punctuation">(</span>self<span class="token punctuation">.</span>_cards<span class="token punctuation">)</span>
-
-    <span class="token keyword">def</span> <span class="token function">__getitem__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> position<span class="token punctuation">)</span><span class="token punctuation">:</span>
-        <span class="token keyword">return</span> self<span class="token punctuation">.</span>_cards<span class="token punctuation">[</span>position<span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment">#访问纸牌对象</span>
-beer_card <span class="token operator">=</span> Card<span class="token punctuation">(</span><span class="token string">'7'</span><span class="token punctuation">,</span> <span class="token string">'diamonds'</span><span class="token punctuation">)</span>
-beer_card<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-<blockquote>
-<p>   Card(rank=’7’, suit=’diamonds’)</p>
-</blockquote>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># 定义了len之后可以查看len</span>
-desk <span class="token operator">=</span> FrenchDesk<span class="token punctuation">(</span><span class="token punctuation">)</span>
-<span class="token builtin">len</span><span class="token punctuation">(</span>desk<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-<blockquote>
-<p>   52</p>
-</blockquote>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># 定义了getitem可以让对象变成可迭代的</span>
-desk<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<blockquote>
-<p>   Card(rank=’2’, suit=’spades’)</p>
-</blockquote>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python">desk<span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<blockquote>
-<p>   Card(rank=’A’, suit=’hearts’)</p>
-</blockquote>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">from</span> random <span class="token keyword">import</span> choice
-choice<span class="token punctuation">(</span>desk<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<blockquote>
-<p>   Card(rank=’6’, suit=’clubs’)</p>
-</blockquote>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python">desk<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token number">3</span><span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<blockquote>
-<p>[Card(rank=’2’, suit=’spades’),<br> Card(rank=’3’, suit=’spades’),<br> Card(rank=’4’, suit=’spades’)]</p>
-</blockquote>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">for</span> card <span class="token keyword">in</span> desk<span class="token punctuation">:</span>
-    <span class="token keyword">print</span><span class="token punctuation">(</span>card<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<blockquote>
-<p>Card(rank=’2’, suit=’spades’)<br>Card(rank=’3’, suit=’spades’)<br>Card(rank=’4’, suit=’spades’)<br>Card(rank=’5’, suit=’spades’)<br>Card(rank=’6’, suit=’spades’)<br>Card(rank=’7’, suit=’spades’)<br>Card(rank=’8’, suit=’spades’)<br>Card(rank=’9’, suit=’spades’)<br>Card(rank=’10’, suit=’spades’)<br>Card(rank=’J’, suit=’spades’)<br>Card(rank=’Q’, suit=’spades’)<br>Card(rank=’K’, suit=’spades’)<br>Card(rank=’A’, suit=’spades’)<br>Card(rank=’2’, suit=’diamonds’)<br>Card(rank=’3’, suit=’diamonds’)<br>Card(rank=’4’, suit=’diamonds’)<br>Card(rank=’5’, suit=’diamonds’)<br>Card(rank=’6’, suit=’diamonds’)<br>Card(rank=’7’, suit=’diamonds’)<br>Card(rank=’8’, suit=’diamonds’)<br>Card(rank=’9’, suit=’diamonds’)<br>Card(rank=’10’, suit=’diamonds’)<br>Card(rank=’J’, suit=’diamonds’)<br>Card(rank=’Q’, suit=’diamonds’)<br>Card(rank=’K’, suit=’diamonds’)<br>Card(rank=’A’, suit=’diamonds’)<br>Card(rank=’2’, suit=’clubs’)<br>Card(rank=’3’, suit=’clubs’)<br>Card(rank=’4’, suit=’clubs’)<br>Card(rank=’5’, suit=’clubs’)<br>Card(rank=’6’, suit=’clubs’)<br>Card(rank=’7’, suit=’clubs’)<br>Card(rank=’8’, suit=’clubs’)<br>Card(rank=’9’, suit=’clubs’)<br>Card(rank=’10’, suit=’clubs’)<br>Card(rank=’J’, suit=’clubs’)<br>Card(rank=’Q’, suit=’clubs’)<br>Card(rank=’K’, suit=’clubs’)<br>Card(rank=’A’, suit=’clubs’)<br>Card(rank=’2’, suit=’hearts’)<br>Card(rank=’3’, suit=’hearts’)<br>Card(rank=’4’, suit=’hearts’)<br>Card(rank=’5’, suit=’hearts’)<br>Card(rank=’6’, suit=’hearts’)<br>Card(rank=’7’, suit=’hearts’)<br>Card(rank=’8’, suit=’hearts’)<br>Card(rank=’9’, suit=’hearts’)<br>Card(rank=’10’, suit=’hearts’)<br>Card(rank=’J’, suit=’hearts’)<br>Card(rank=’Q’, suit=’hearts’)<br>Card(rank=’K’, suit=’hearts’)<br>Card(rank=’A’, suit=’hearts’)</p>
-</blockquote>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python">Card<span class="token punctuation">(</span><span class="token string">'Q'</span><span class="token punctuation">,</span> <span class="token string">'hearts'</span><span class="token punctuation">)</span> <span class="token keyword">in</span> desk<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<blockquote>
-<p>True</p>
-</blockquote>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># 加上排序的key</span>
-suits_value <span class="token operator">=</span> <span class="token builtin">dict</span><span class="token punctuation">(</span>spades<span class="token operator">=</span><span class="token number">3</span><span class="token punctuation">,</span> hearts<span class="token operator">=</span><span class="token number">2</span><span class="token punctuation">,</span> diamonds<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">,</span> clubs<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">)</span>
-
-<span class="token keyword">def</span> <span class="token function">spades_high</span><span class="token punctuation">(</span>card<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    rank_value <span class="token operator">=</span> FrenchDesk<span class="token punctuation">.</span>ranks<span class="token punctuation">.</span>index<span class="token punctuation">(</span>card<span class="token punctuation">.</span>rank<span class="token punctuation">)</span>
-    <span class="token keyword">return</span> rank_value<span class="token operator">*</span><span class="token builtin">len</span><span class="token punctuation">(</span>suits_value<span class="token punctuation">)</span><span class="token operator">+</span>suits_value<span class="token punctuation">[</span>card<span class="token punctuation">.</span>suit<span class="token punctuation">]</span>
-
-<span class="token keyword">for</span> card <span class="token keyword">in</span> <span class="token builtin">sorted</span><span class="token punctuation">(</span>desk<span class="token punctuation">,</span> key<span class="token operator">=</span>spades_high<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token keyword">print</span><span class="token punctuation">(</span>card<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<blockquote>
-<p>Card(rank=’2’, suit=’clubs’)<br>Card(rank=’2’, suit=’diamonds’)<br>Card(rank=’2’, suit=’hearts’)<br>Card(rank=’2’, suit=’spades’)<br>Card(rank=’3’, suit=’clubs’)<br>Card(rank=’3’, suit=’diamonds’)<br>Card(rank=’3’, suit=’hearts’)<br>Card(rank=’3’, suit=’spades’)<br>Card(rank=’4’, suit=’clubs’)<br>Card(rank=’4’, suit=’diamonds’)<br>Card(rank=’4’, suit=’hearts’)<br>Card(rank=’4’, suit=’spades’)<br>Card(rank=’5’, suit=’clubs’)<br>Card(rank=’5’, suit=’diamonds’)<br>Card(rank=’5’, suit=’hearts’)<br>Card(rank=’5’, suit=’spades’)<br>Card(rank=’6’, suit=’clubs’)<br>Card(rank=’6’, suit=’diamonds’)<br>Card(rank=’6’, suit=’hearts’)<br>Card(rank=’6’, suit=’spades’)<br>Card(rank=’7’, suit=’clubs’)<br>Card(rank=’7’, suit=’diamonds’)<br>Card(rank=’7’, suit=’hearts’)<br>Card(rank=’7’, suit=’spades’)<br>Card(rank=’8’, suit=’clubs’)<br>Card(rank=’8’, suit=’diamonds’)<br>Card(rank=’8’, suit=’hearts’)<br>Card(rank=’8’, suit=’spades’)<br>Card(rank=’9’, suit=’clubs’)<br>Card(rank=’9’, suit=’diamonds’)<br>Card(rank=’9’, suit=’hearts’)<br>Card(rank=’9’, suit=’spades’)<br>Card(rank=’10’, suit=’clubs’)<br>Card(rank=’10’, suit=’diamonds’)<br>Card(rank=’10’, suit=’hearts’)<br>Card(rank=’10’, suit=’spades’)<br>Card(rank=’J’, suit=’clubs’)<br>Card(rank=’J’, suit=’diamonds’)<br>Card(rank=’J’, suit=’hearts’)<br>Card(rank=’J’, suit=’spades’)<br>Card(rank=’Q’, suit=’clubs’)<br>Card(rank=’Q’, suit=’diamonds’)<br>Card(rank=’Q’, suit=’hearts’)<br>Card(rank=’Q’, suit=’spades’)<br>Card(rank=’K’, suit=’clubs’)<br>Card(rank=’K’, suit=’diamonds’)<br>Card(rank=’K’, suit=’hearts’)<br>Card(rank=’K’, suit=’spades’)<br>Card(rank=’A’, suit=’clubs’)<br>Card(rank=’A’, suit=’diamonds’)<br>Card(rank=’A’, suit=’hearts’)<br>Card(rank=’A’, suit=’spades’)</p>
-</blockquote>
-<h2 id="1-2-A-simple-two-dimensional-vector-class"><a href="#1-2-A-simple-two-dimensional-vector-class" class="headerlink" title="1.2 A simple two-dimensional vector class"></a>1.2 A simple two-dimensional vector class</h2><p><img src="https://cdn.jsdelivr.net/gh/ZqtCtios/Image/img/20201206232143.png" alt="Special method names (operators excluded)"><br><img src="https://cdn.jsdelivr.net/gh/ZqtCtios/Image/img/20201206232143.png" alt="Special method names for operators"></p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">from</span> math <span class="token keyword">import</span> hypot
-
-<span class="token keyword">class</span> <span class="token class-name">Vector</span><span class="token punctuation">:</span>
-    
-    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> x<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">,</span> y<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-        self<span class="token punctuation">.</span>x <span class="token operator">=</span> x
-        self<span class="token punctuation">.</span>y <span class="token operator">=</span> y
-    
-    <span class="token keyword">def</span> <span class="token function">__repr__</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
-        <span class="token keyword">return</span> <span class="token string-interpolation"><span class="token string">f'Vector(</span><span class="token interpolation"><span class="token punctuation">{</span>self<span class="token punctuation">.</span>x<span class="token punctuation">}</span></span><span class="token string">, </span><span class="token interpolation"><span class="token punctuation">{</span>self<span class="token punctuation">.</span>y<span class="token punctuation">}</span></span><span class="token string">)'</span></span>
-    
-    <span class="token keyword">def</span> <span class="token function">__abs__</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
-        <span class="token keyword">return</span> hypot<span class="token punctuation">(</span>self<span class="token punctuation">.</span>x<span class="token punctuation">,</span> self<span class="token punctuation">.</span>y<span class="token punctuation">)</span>
-    
-    <span class="token keyword">def</span> <span class="token function">__bool__</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
-        <span class="token keyword">return</span> <span class="token builtin">bool</span><span class="token punctuation">(</span><span class="token builtin">abs</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">)</span>
-    
-    <span class="token keyword">def</span> <span class="token function">__add__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> other<span class="token punctuation">)</span><span class="token punctuation">:</span>
-        x <span class="token operator">=</span> self<span class="token punctuation">.</span>x <span class="token operator">+</span> other<span class="token punctuation">.</span>x
-        y <span class="token operator">=</span> self<span class="token punctuation">.</span>y <span class="token operator">+</span> other<span class="token punctuation">.</span>y
-        <span class="token keyword">return</span> Vector<span class="token punctuation">(</span>x<span class="token punctuation">,</span> y<span class="token punctuation">)</span>
-    
-    <span class="token keyword">def</span> <span class="token function">__mul__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> scalar<span class="token punctuation">)</span><span class="token punctuation">:</span>
-        <span class="token keyword">return</span> Vector<span class="token punctuation">(</span>self<span class="token punctuation">.</span>x<span class="token operator">*</span>scalar<span class="token punctuation">,</span> self<span class="token punctuation">.</span>y<span class="token operator">*</span>scalar<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python">v1 <span class="token operator">=</span> Vector<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">)</span>
-v2 <span class="token operator">=</span> Vector<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">)</span>
-v1 <span class="token operator">+</span> v2<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-<blockquote>
-<p>Vector(3, 6)</p>
-</blockquote>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token builtin">abs</span><span class="token punctuation">(</span>v1<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<blockquote>
-<p>2.23606797749979</p>
-</blockquote>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python">v1<span class="token operator">*</span><span class="token number">3</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<blockquote>
-<p>Vector(3, 6)</p>
-</blockquote>
+                <h1 id="聚类-Clustering"><a href="#聚类-Clustering" class="headerlink" title="聚类_Clustering"></a>聚类_Clustering</h1><h2 id="1-K-均值算法（K-Means）"><a href="#1-K-均值算法（K-Means）" class="headerlink" title="1.K-均值算法（K-Means）"></a>1.K-均值算法（K-Means）</h2><p>K-均值是最普及的聚类算法，算法接受一个未标记的数据集，然后将数据聚类成不同的 组。</p>
+<p>K-均值是一个迭代算法，假设我们想要将数据聚类成 n 个组，其方法为:</p>
+<ol>
+<li>首先选择𝐾个随机的点，称为聚类中心（cluster centroids）</li>
+<li>对于数据集中的每一个数据，按照距离𝐾个中心点的距离，将其与距离最近的中心点关联起来，与同一个中心点关联的所有点聚成一类。</li>
+<li>计算每一个组的平均值，将该组所关联的中心点移动到平均值的位置。</li>
+<li>重复上述步骤2-3直至中心点不再变化</li>
+</ol>
+<p>用 $\mu^{1}, \mu^{2}, \ldots, \mu^{k}$ 来表示聚类中心, 用 $c^{(1)}, c^{(2)}, \ldots, c^{(m)}$ 来存储与第i个实例数据最近的聚类中心的索引，K-均值算法的代码如下:</p>
+<h2 id="2-优化目标"><a href="#2-优化目标" class="headerlink" title="2.优化目标"></a>2.优化目标</h2><p>K-均值最小化问题，是要最小化所有的数据点与其所关联的聚类中心点之间的距离之和， 因此 K-均值的代价函数（又称畸变函数 Distortion function）为:</p>
+<script type="math/tex; mode=display">
+J\left(c^{(1)}, \ldots, c^{(m)}, \mu_{1}, \ldots, \mu_{K}\right)=\frac{1}{m} \sum_{i=1}^{m}\left\|X^{(i)}-\mu_{c^{(i)}}\right\|^{2}</script><p>其中 $\mu_{c^{(i)}}$ 代表与 $x^{(i)}$ 最近的聚类中心点。 我们的的优化目标便是找出使得代价函数最小的 $c^{(1)}, c^{(2)}, \ldots, c^{(m)}$ 和 $\mu^{1}, \mu^{2}, \ldots, \mu^{k}$ :</p>
+<script type="math/tex; mode=display">
+\min _{c^{(1)}, \ldots, c^{(m)}, \atop \mu_{1}, \ldots, \mu_{K}} J\left(c^{(1)}, \ldots, c^{(m)}, \mu_{1}, \ldots, \mu_{K}\right)</script><p>回顾刚才给出的: K-均值迭代算法，我们知道，第一个循环是用于减小$𝑐^{(𝑖)}$引起的代价， 而第二个循环则是用于减小$\mu^{i}$引起的代价。迭代的过程一定会是每一次迭代都在减小代价函数，不然便是出现了错误。</p>
+<h2 id="3-随机初始化"><a href="#3-随机初始化" class="headerlink" title="3.随机初始化"></a>3.随机初始化</h2><p>在运行 K-均值算法的之前，我们首先要随机初始化所有的聚类中心点，下面介绍怎样做:</p>
+<ol>
+<li>我们应该选择$𝐾 &lt; 𝑚$，即聚类中心点的个数要小于所有训练集实例的数量。</li>
+<li>随机选择$𝐾$个训练实例，然后令$𝐾$个聚类中心分别与这$𝐾$个训练实例相等。</li>
+</ol>
+<p>K-均值的一个问题在于，它有可能会停留在一个局部最小值处，而这取决于初始化的情况。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/ZqtCtios/Image/img/20201209110404.png" alt="image-20201209110404386"></p>
+<p>为了解决这个问题，我们通常需要多次运行 K-均值算法，每一次都重新进行随机初始化，最后再比较多次运行K-均值的结果，选择代价函数最小的结果。这种方法在𝐾较小的时候还是可行的，但是如果𝐾较大，这么做也可能不会有明显地改善。</p>
+<h2 id="4-选择聚类数"><a href="#4-选择聚类数" class="headerlink" title="4.选择聚类数"></a>4.选择聚类数</h2><p>没有所谓最好的选择聚类数的方法，通常是需要根据不同的问题，人工进行选择的。选择的时候思考我们运用 K-均值算法聚类的动机是什么，然后选择能最好服务于该目的标聚类数。</p>
+<p>当人们在讨论，选择聚类数目的方法时，有一个可能会谈及的方法叫作“肘部法则”。关 于“肘部法则”，我们所需要做的是改变𝐾值，也就是聚类类别数目的总数。我们用一个聚类 来运行 K 均值聚类方法。这就意味着，所有的数据都会分到一个聚类里，然后计算成本函数或者计算畸变函数𝐽。𝐾代表聚类数字。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/ZqtCtios/Image/img/20201209110610.png" alt="image-20201209110610896"></p>
+<p>我们可能会得到一条类似于这样的曲线。像一个人的肘部。这就是“肘部法则”所做的， 让我们来看这样一个图，看起来就好像有一个很清楚的肘在那儿。好像人的手臂，如果你伸 出你的胳膊，那么这就是你的肩关节、肘关节、手。这就是“肘部法则”。你会发现这种模式， 它的畸变值会迅速下降，从 1 到 2，从 2 到 3 之后，你会在 3 的时候达到一个肘点。在此之 后，畸变值就下降的非常慢，看起来就像使用 3 个聚类来进行聚类是正确的，这是因为那个 点是曲线的肘点，畸变值下降得很快，𝐾 = 3之后就下降得很慢，那么我们就选𝐾 = 3。当你 应用“肘部法则”的时候，如果你得到了一个像上面这样的图，那么这将是一种用来选择聚类 个数的合理方法。</p>
+<p>聚类参考资料:</p>
+<ol>
+<li><p>相似度/距离计算方法总结</p>
+<ul>
+<li>闵可夫斯基距离 Minkowski/（其中欧式距离： $p=2$ )<script type="math/tex; mode=display">
+\operatorname{dist}(X, Y)=\left(\sum_{i=1}^{n}\left|x_{i}-y_{i}\right|\right)^{\frac{1}{p}}</script></li>
+<li>杰卡德相似系数(Jaccard):<script type="math/tex; mode=display">
+       J(A, B)=\frac{|A \cap B|}{|A \cup B|}</script></li>
+<li><p>余弦相似度(cosine similarity):$n$ 维向量 $x$ 和 $y$ 的夹角记做 $\theta$, 根据余弦定理，其余弦值为:</p>
+<script type="math/tex; mode=display">
+\cos (\theta)=\frac{x^{T} y}{|x| \cdot|y|}=\frac{\sum_{i=1}^{n} x_{i} y_{i}}{\sqrt{\sum_{i=1}^{n} x_{i}^{2}} \sqrt{\sum_{i=1}^{n} y_{i}^{2}}}</script></li>
+<li><p>Pearson 皮尔逊相关系数:Pearson 相关系数即将 $x 、 y$ 坐标向量各自平移到原点后的夹角余弦。</p>
+<script type="math/tex; mode=display">
+\rho_{X Y}=\frac{\operatorname{cov}(X, Y)}{\sigma_{X} \sigma_{Y}}=\frac{E\left[\left(X-\mu_{X}\right)\left(Y-\mu_{Y}\right)\right]}{\sigma_{X} \sigma_{Y}}=\frac{\sum_{i=1}^{n}\left(x-\mu_{X}\right)\left(y-\mu_{Y}\right)}{\sqrt{\sum_{i=1}^{n}\left(x-\mu_{X}\right)^{2}} \sqrt{\sum_{i=1}^{n}\left(y-\mu_{Y}\right)^{2}}}</script></li>
+</ul>
+</li>
+<li><p>聚类的衡量指标</p>
+<ul>
+<li><p>均一性:𝑝</p>
+<p>类似于精确率，一个簇中只包含一个类别的样本，则满足均一性。其实也可以认为就是正确率（每个聚簇中正确分类的样本数占该聚簇总样本数的比例和）</p>
+</li>
+<li><p>完整性:𝑟</p>
+<p>类似于召回率，同类别样本被归类到相同簇中，则满足完整性;(每个聚簇中正确分类的 样本数占该类型的总样本数比例的和)</p>
+</li>
+<li><p>V-measure:</p>
+<p>均一性和完整性的加权平均：</p>
+<script type="math/tex; mode=display">
+V=\frac{\left(1+\beta^{2}\right) * p r}{\beta^{2} * p+r}</script></li>
+<li><p>轮廓系数</p>
+<p>样本i的轮廓系数: $s(i)$<br>族内不相似度:计算样本i到同族其它样本的平均距离为 $a(i),$ 应尽可能小。<br>族间不相似度:计算样本 $i$ 到其它族 $C_{j}$ 的所有样本的平均距离 $b_{i j},$ 应尽可能大。<br>轮廓系数 $s(i)$ 值越接近 1 表示样本 $i$ 聚类越合理，越接近-1，表示样本 $i$ 应该分类到另外的簇中，近似为 0，表示样本$𝑖$应该在边界上，所有样本的$𝑠(𝑖)$的均值被成为聚类结果的轮廓系数。</p>
+<script type="math/tex; mode=display">
+s(i)=\frac{b(i)-a(i)}{\max \{a(i), b(i)\}}</script></li>
+</ul>
+</li>
+</ol>
+<ul>
+<li><p>ARI</p>
+<p>数据集S共有N个元素， 两个聚类结果分别是:</p>
+<script type="math/tex; mode=display">
+X=\left\{X_{1}, X_{2}, \ldots, X_{r}\right\}, Y=\left\{Y_{1}, Y_{2}, \ldots, Y_{S}\right\}</script><p>  $X$ 和 $Y$ 的元素个数为:</p>
+<script type="math/tex; mode=display">
+  a=\left\{a_{1}, a_{2}, \ldots, a_{r}\right\}, b=\left\{b_{1}, b_{2}, \ldots, b_{s}\right\}</script><p>  记: $n_{i j}=\left|X_{i} \cap Y_{i}\right|$</p>
+<script type="math/tex; mode=display">
+  A R I=\frac{\sum_{i, j} C_{n_{i j}}^{2}-\left[\left(\sum_{i} C_{a_{i}}^{2}\right) \cdot\left(\sum_{i} C_{b_{i}}^{2}\right)\right] / C_{n}^{2}}{\frac{1}{2}\left[\left(\sum_{i} C_{a_{i}}^{2}\right)+\left(\Sigma_{i} C_{b_{i}}^{2}\right)\right]-\left[\left(\sum_{i} C_{a_{i}}^{2}\right) \cdot\left(\sum_{i} C_{b_{i}}^{2}\right)\right] / C_{n}^{2}}</script></li>
+</ul>
 
                 
             </div>
@@ -549,7 +521,7 @@ v1 <span class="token operator">+</span> v2<span aria-hidden="true" class="line-
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://blog.ctios.cn/2020/12/01/python/fluentpython/chapter-01-the-python-data-model/">http://blog.ctios.cn/2020/12/01/python/fluentpython/chapter-01-the-python-data-model/</a>
+                    <a href="http://blog.ctios.cn/2020/12/09/machinelearning/wu-en-da-ji-qi-xue-xi/07-clustering/">http://blog.ctios.cn/2020/12/09/machinelearning/wu-en-da-ji-qi-xue-xi/07-clustering/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -587,8 +559,16 @@ v1 <span class="token operator">+</span> v2<span aria-hidden="true" class="line-
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/python/">
-                                    <span class="chip bg-color">python</span>
+                                <a href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/">
+                                    <span class="chip bg-color">机器学习</span>
+                                </a>
+                            
+                                <a href="/tags/%E5%90%B4%E6%81%A9%E8%BE%BE/">
+                                    <span class="chip bg-color">吴恩达</span>
+                                </a>
+                            
+                                <a href="/tags/%E8%81%9A%E7%B1%BB/">
+                                    <span class="chip bg-color">聚类</span>
                                 </a>
                             
                         </div>
@@ -762,13 +742,13 @@ v1 <span class="token operator">+</span> v2<span aria-hidden="true" class="line-
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2020/12/01/python/fluentpython/chapter-04-text-versus-bytes/">
+                <a href="/2020/12/09/machinelearning/wu-en-da-ji-qi-xue-xi/08-dimensionality-reduction/">
                     <div class="card-image">
                         
                         
-                        <img src="https://cdn.jsdelivr.net/gh/ZqtCtios/ZqtCtios.github.io/medias/featureimages/11.jpg" class="responsive-img" alt="Chapter_04_Text_versus_Bytes">
+                        <img src="https://cdn.jsdelivr.net/gh/ZqtCtios/ZqtCtios.github.io/medias/featureimages/11.jpg" class="responsive-img" alt="08_降维_Dimensionality_Reduction_">
                         
-                        <span class="card-title">Chapter_04_Text_versus_Bytes</span>
+                        <span class="card-title">08_降维_Dimensionality_Reduction_</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -779,14 +759,14 @@ v1 <span class="token operator">+</span> v2<span aria-hidden="true" class="line-
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-12-01
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-12-09
                         </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/FluentPython/" class="post-category">
-                                    FluentPython
+                            <a href="/categories/%E5%90%B4%E6%81%A9%E8%BE%BE%E2%80%94%E2%80%94%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" class="post-category">
+                                    吴恩达——机器学习
                                 </a>
                             
                             
@@ -796,8 +776,16 @@ v1 <span class="token operator">+</span> v2<span aria-hidden="true" class="line-
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/python/">
-                        <span class="chip bg-color">python</span>
+                    <a href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/">
+                        <span class="chip bg-color">机器学习</span>
+                    </a>
+                    
+                    <a href="/tags/%E5%90%B4%E6%81%A9%E8%BE%BE/">
+                        <span class="chip bg-color">吴恩达</span>
+                    </a>
+                    
+                    <a href="/tags/%E9%99%8D%E7%BB%B4/">
+                        <span class="chip bg-color">降维</span>
                     </a>
                     
                 </div>
@@ -808,16 +796,16 @@ v1 <span class="token operator">+</span> v2<span aria-hidden="true" class="line-
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
-                本篇&nbsp;<i class="far fa-dot-circle"></i>
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/12/01/python/fluentpython/chapter-01-the-python-data-model/">
+                <a href="/2020/12/08/machinelearning/wu-en-da-ji-qi-xue-xi/06-support-vector-machines/">
                     <div class="card-image">
                         
                         
-                        <img src="https://cdn.jsdelivr.net/gh/ZqtCtios/ZqtCtios.github.io/medias/featureimages/11.jpg" class="responsive-img" alt="Chapter_01_The_Python_Data_Model">
+                        <img src="https://cdn.jsdelivr.net/gh/ZqtCtios/ZqtCtios.github.io/medias/featureimages/18.jpg" class="responsive-img" alt="06_支持向量机(SupportVectorMachines)">
                         
-                        <span class="card-title">Chapter_01_The_Python_Data_Model</span>
+                        <span class="card-title">06_支持向量机(SupportVectorMachines)</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -828,26 +816,33 @@ v1 <span class="token operator">+</span> v2<span aria-hidden="true" class="line-
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-12-01
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-12-08
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/FluentPython/" class="post-category">
-                                    FluentPython
+                            <a href="/categories/%E5%90%B4%E6%81%A9%E8%BE%BE%E2%80%94%E2%80%94%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" class="post-category">
+                                    吴恩达——机器学习
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/python/">
-                        <span class="chip bg-color">python</span>
+                    <a href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/">
+                        <span class="chip bg-color">机器学习</span>
+                    </a>
+                    
+                    <a href="/tags/%E5%90%B4%E6%81%A9%E8%BE%BE/">
+                        <span class="chip bg-color">吴恩达</span>
+                    </a>
+                    
+                    <a href="/tags/SVM/">
+                        <span class="chip bg-color">SVM</span>
                     </a>
                     
                 </div>
@@ -978,6 +973,13 @@ v1 <span class="token operator">+</span> v2<span aria-hidden="true" class="line-
 
 </main>
 
+
+<script src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script>
+    MathJax.Hub.Config({
+        tex2jax: {inlineMath: [['$', '$'], ['\(', '\)']]}
+    });
+</script>
 
 
 

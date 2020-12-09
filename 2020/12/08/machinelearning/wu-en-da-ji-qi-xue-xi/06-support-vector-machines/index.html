@@ -392,14 +392,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-12-08
+                    2020-12-09
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    3.8k
+                    5.8k
                 </div>
                 
 
@@ -467,6 +467,75 @@
 \end{array}\right.</script><p>事实上，支持向量机现在要比这个大间距分类器所体现得更成熟，尤其是当你使用大间 距分类器的时候，你的学习算法会受异常点（outlier） 的影响。比如我们加入一个额外的正样本。</p>
 <p><img src="https://cdn.jsdelivr.net/gh/ZqtCtios/Image/img/20201208172038.png" alt="image-20201208172018848"></p>
 <p>在这里，如果你加了这个样本，为了将样本用最大间距分开，也许我最终会得到一条类似这样的决策界，就是这条粉色的线，仅仅基于一个异常值，仅仅基于一个样本，就将我的决策界从这条黑线变到这条粉线，这实在是不明智的。而如果正则化参数𝐶，设置的非常大，这事实上正是支持向量机将会做的。它将决策界，从黑线变到了粉线，但是如果𝐶设置的小一点，如果你将 C 设置的不要太大，则你最终会得到这条黑线，当然数据如果不是 线性可分的，如果你在这里有一些正样本或者你在这里有一些负样本，则支持向量机也会将 它们恰当分开。因此，大间距分类器的描述，仅仅是从直观上给出了正则化参数𝐶非常大的 情形，同时，要提醒你𝐶的作用类似于$1/𝜆$，$𝜆$是我们之前使用过的正则化参数。这只是𝐶非 常大的情形，或者等价地 $𝜆$ 非常小的情形。你最终会得到类似粉线这样的决策界，但是实 际上应用支持向量机的时候，当𝐶不是非常非常大的时候，它可以忽略掉一些异常点的影响， 得到更好的决策界。甚至当你的数据不是线性可分的时候，支持向量机也可以给出好的结果。</p>
+<h2 id="3-核函数"><a href="#3-核函数" class="headerlink" title="3.核函数"></a>3.核函数</h2><p>回顾我们之前讨论过可以使用高级数的多项式模型来解决无法用直线进行分隔的分类问题:</p>
+<p><img src="https://cdn.jsdelivr.net/gh/ZqtCtios/Image/img/20201209090403.png" alt="image-20201209090403405"></p>
+<p>为了获得上图所示的判定边界，我们的模型可能是 $\theta_{0}+\theta_{1} x_{1}+\theta_{2} x_{2}+\theta_{3} x_{1} x_{2}+\theta_{4} x_{1}^{2}+\theta_{5} x_{2}^{2}+\cdots$ 的形式。我们可以用一系列的新的特征 $\mathrm{f}$ 来替换模型中的每一项。例如令: $f_{1}=x_{1}, f_{2}=x_{2}, f_{3}=x_{1} x_{2}, f_{4}=x_{1}^{2}, f_{5}=x_{2}^{2}\ldots$得到 $h_{\theta}(x)=\theta_{1} f_{1}+\theta_{2} f_{2}+\ldots+\theta_{n} f_{n}$ 。然而，除了对原有的特征进行组合以外，有没有<br>更好的方法来构造 $f_{1}, f_{2}, f_{3}$ ？</p>
+<p>我们可以利用核函数来计算出新的特征。</p>
+<p>给定一个训练 实例 $x$, 我们利 用 $x$ 的各个特征与我们预先选定的地标（landmarks） $l^{(1)}, l^{(2)}, l^{(3)}$ 的近似程度来选取新的特征 $f_{1}, f_{2}, f_{3} $。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/ZqtCtios/Image/img/20201209090721.png" alt="image-20201209090721107"></p>
+<p>例如：</p>
+<script type="math/tex; mode=display">
+f_{1}=\operatorname{similarity}\left(x, l^{(1)}\right)=exp\left(-\frac{\left\|x-l^{(1)}\right\|^{2}}{2 \sigma^{2}}\right)</script><p>其中: </p>
+<script type="math/tex; mode=display">
+\left\|x-l^{(1)}\right\|^{2}=\sum_{j=1}^{n}\left(x_{j}-l_{j}^{(1)}\right)^{2}</script><p>为实例 $x$ 中所有特征与地标 $l^{(1)}$ 之间的距离的和。上例中的 $similarity\left(x, l^{(1)}\right)$ 就是核函数, 具体而言, 这里是一个高斯核函数（Gaussian Kernel）。</p>
+<p>这些地标的作用是什么?如果一个训练实例$𝑥$与地标$𝐿$之间的距离近似于 0，则新特征 $𝑓$近似于$𝑒^{−0} = 1$，如果训练实例$𝑥$与地标$𝐿$之间距离较远，则$𝑓$近似于$𝑒^{−(一个较大的数)} = 0$</p>
+<p>假设我们的训练实例含有两个特征 $\left[x_{1} x_{2}\right],$ 给定地标 $l^{(1)}$ 与不同的 $\sigma$ 值，见下图:</p>
+<script type="math/tex; mode=display">
+l^{(1)}=\left[\begin{array}{l}
+3 \\
+5
+\end{array}\right], \quad f_{1}=\exp \left(-\frac{\left\|x-l^{(1)}\right\|^{2}}{2 \sigma^{2}}\right)</script><p><img src="https://cdn.jsdelivr.net/gh/ZqtCtios/Image/img/20201209091305.png" alt="image-20201209091305215"></p>
+<p>图中水平面的坐标为 $x_{1}, x_{2}$ 而垂直坐标轴代表 $f 。$ 可以看出，只有当 $x$ 与 $l^{(1)}$ 重合时 $f$ 才具有最大值。随着x的改变 $f$ 值改变的速率受到 $\sigma^{2}$ 的控制。</p>
+<p>在下图中，当实例处于洋红色的点位置处，因为其离 $l^{(1)}$ 更近，但是离 $l^{(2)}$ 和 $l^{(3)}$ 较远，因此 $f_{1}$ 接近 1，而 $f_{2}, f_{3}$ 接近 0 。因此 $h_{\theta}(x)=\theta_{0}+\theta_{1} f_{1}+\theta_{2} f_{2}+\theta_{1} f_{3}&gt;0,$ 因此预测 $y=1$ 。同理可以求出，对于离 $l^{(2)}$ 较近的绿色点，也预测 $y=1$, 但是对于蓝绿色的点，因为其离三个地标都较远，预测 $y=0$ 。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/ZqtCtios/Image/img/20201209092707.png" alt="image-20201209092707947"></p>
+<p>这样，图中红色的封闭曲线所表示的范围，便是我们依据一个单一的训练实例和我们选取的地标所得出的判定边界，在预测时，我们采用的特征不是训练实例本身的特征，而是通过核函数计算出的新特征$f_1,f_2,f_3$。</p>
+<h2 id="4-核函数-2"><a href="#4-核函数-2" class="headerlink" title="4.核函数 2"></a>4.核函数 2</h2><p>如何选择地标?</p>
+<p>我们通常是根据训练集的数量选择地标的数量，即如果训练集中有m个实例，则我们选取 $m$ 个地标，并且令: $l^{(1)}=x^{(1)}, l^{(2)}=x^{(2)}, \ldots ., l^{(m)}=x^{(m)} 。$ 这样做的好处在于：现在我们得到的新特征是建立在原有特征与训练集中所有其他特征之间距离的基础之上的，即:</p>
+<script type="math/tex; mode=display">
+f^{(i)}=\left[\begin{array}{c}
+f_{0}^{(i)}=1 \\
+f_{1}^{(i)}=\operatorname{sim}\left(x^{(i)}, l^{(1)}\right) \\
+f_{2}^{(i)}=\operatorname{sim}\left(x^{(i)}, l^{(2)}\right) \\
+f_{i}^{(i)}=\operatorname{sim}\left(x^{(i)}, l^{(i)}\right)=e^{0}=1 \\
+\vdots \\
+f_{m}^{(i)}=\operatorname{sim}\left(x^{(i)}, l^{(m)}\right)
+\end{array}\right]</script><p>下面我们将核函数运用到支持向量机中，修改我们的支持向量机假设为:</p>
+<ul>
+<li>给定 $x,$ 计算新特征 $f,$ 当 $\theta^{T} f&gt;=0$ 时，预测 $y=1,$ 否则反之。相应地修改代价函数为: </li>
+</ul>
+<script type="math/tex; mode=display">
+J(\theta)=\min C \sum_{i=1}^{m}\left[y^{(i)} \operatorname{cost}_{1}\left(\theta^{T} f^{(i)}\right)+\left(1-y^{(i)}\right) \operatorname{cost}_{0}\left(\theta^{T} f^{(i)}\right)\right]+\frac{1}{2} \sum_{j=1}^{n=m} \theta_{j}^{2}</script><p>在具体实施过程中，我们还需要对最后的正则化项进行些微调整，在计算 $\sum_{j=1}^{n=m} \theta_{j}^{2}=\theta^{T} \theta$ 时，我们用 $\theta^{T} M \theta$ 代替$\theta^{T} \theta,$ 其中 $M$ 是根据我们选择的核函数而不同的一个矩阵。这样做的原因是为了简化计算。</p>
+<p>支持向量机也可以不使用核函数，不使用核函数又称为线性核函数（linear kernel）， 当我们不采用非常复杂的函数，或者我们的训练集特征非常多而实例非常少的时候，可以采用这种不带核函数的支持向量机。</p>
+<ul>
+<li>下面是支持向量机的两个参数 $C$ 和 $\sigma$ 的影响:</li>
+<li>$C=1 / \lambda$</li>
+<li>$C$ 较大时，相当于入较小，可能会导致过拟合，高方差;</li>
+<li>$C$ 较小时，相当于入较大，可能会导致低拟合，高偏差;</li>
+<li>$\sigma$ 较大时，可能会导致低方差，高偏差;</li>
+<li>$\sigma$ 较小时，可能会导致低偏差，高方差。</li>
+</ul>
+<h2 id="5-使用支持向量机"><a href="#5-使用支持向量机" class="headerlink" title="5.使用支持向量机"></a>5.使用支持向量机</h2><p>在高斯核函数之外我们还有其他一些选择，如:</p>
+<ul>
+<li>多项式核函数（Polynomial Kernel）</li>
+<li>字符串核函数（String kernel）</li>
+<li>卡方核函数（chi-square kernel）</li>
+<li>直方图交集核函数（histogram intersection kernel）</li>
+<li>等等</li>
+</ul>
+<p>多类分类问题：</p>
+<p>假设我们利用之前介绍的一对多方法来解决一个多类分类问题。如果一共有𝑘个类，则我们需要𝑘个模型，以及𝑘个参数向量𝜃。我们同样也可以训练𝑘个支持向量机来解决多类分类问题。但是大多数支持向量机软件包都有内置的多类分类功能，我们只要直接使用即可。</p>
+<p>尽管你不去写你自己的 SVM 的优化软件，但是你也需要做几件事:</p>
+<ol>
+<li>是提出参数𝐶的选择。我们在之前的视频中讨论过误差/方差在这方面的性质。</li>
+<li>你也需要选择内核参数或你想要使用的相似函数，其中一个选择是:我们选择不需要任何内核参数，没有内核参数的理念，也叫线性核函数。因此，如果有人说他使用了线性核的 SVM(支持向量机)，这就意味这他使用了不带有核函数的 SVM(支持向量机)</li>
+</ol>
+<p>从逻辑回归模型，我们得到了支持向量机模型，在两者之间，我们应该如何选择呢?</p>
+<p>𝑛为特征数，𝑚为训练样本数。</p>
+<ol>
+<li>如果相较于𝑚而言，𝑛要大许多，即训练集数据量不够支持我们训练一个复杂的非线性模型，我们选用逻辑回归模型或者不带核函数的支持向量机。 </li>
+<li>如果𝑛较小，而且𝑚大小中等，例如𝑛在 1-1000 之间，而𝑚在 10-10000 之间，使用高斯核函数的支持向量机。</li>
+<li>如果𝑛较小，而𝑚较大，例如𝑛在 1-1000 之间，而𝑚大于 50000，则使用支持向量机会非常慢，解决方案是创造、增加更多的特征，然后使用逻辑回归或不带核函数的支持向量机。 值得一提的是，神经网络在以上三种情况下都可能会有较好的表现，但是训练神经网络可能非常慢，选择支持向量机的原因主要在于它的代价函数是凸函数，不存在局部最小值。</li>
+</ol>
 
                 
             </div>
@@ -710,18 +779,17 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;本篇
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2020/12/08/machinelearning/wu-en-da-ji-qi-xue-xi/06-support-vector-machines/">
+                <a href="/2020/12/09/machinelearning/wu-en-da-ji-qi-xue-xi/07-clustering/">
                     <div class="card-image">
                         
                         
-                        <img src="https://cdn.jsdelivr.net/gh/ZqtCtios/ZqtCtios.github.io/medias/featureimages/18.jpg" class="responsive-img" alt="06_支持向量机(SupportVectorMachines)">
+                        <img src="https://cdn.jsdelivr.net/gh/ZqtCtios/ZqtCtios.github.io/medias/featureimages/22.jpg" class="responsive-img" alt="07_聚类(Clustering)">
                         
-                        <span class="card-title">06_支持向量机(SupportVectorMachines)</span>
+                        <span class="card-title">07_聚类(Clustering)</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -731,9 +799,9 @@
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-12-08
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-12-09
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -746,7 +814,6 @@
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
@@ -758,8 +825,8 @@
                         <span class="chip bg-color">吴恩达</span>
                     </a>
                     
-                    <a href="/tags/SVM/">
-                        <span class="chip bg-color">SVM</span>
+                    <a href="/tags/%E8%81%9A%E7%B1%BB/">
+                        <span class="chip bg-color">聚类</span>
                     </a>
                     
                 </div>
