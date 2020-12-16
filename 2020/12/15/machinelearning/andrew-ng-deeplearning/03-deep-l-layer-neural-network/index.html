@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="02_浅层神经网络(Shallow neural networks), 曾先森的Blog">
+    <meta name="keywords" content="03_深层神经网络（Deep L-layer neural network）, 曾先森的Blog">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -27,7 +27,7 @@
 </script>
 
 
-    <title>02_浅层神经网络(Shallow neural networks) | 曾先森的Blog</title>
+    <title>03_深层神经网络（Deep L-layer neural network） | 曾先森的Blog</title>
     <link rel="icon" type="image/png" href="https://cdn.jsdelivr.net/gh/ZqtCtios/ZqtCtios.github.io/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/ZqtCtios/ZqtCtios.github.io/libs/awesome/css/all.css">
@@ -231,12 +231,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/ZqtCtios/ZqtCtios.github.io/medias/featureimages/15.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/ZqtCtios/ZqtCtios.github.io/medias/featureimages/1.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">02_浅层神经网络(Shallow neural networks)</h1>
+                    <h1 class="description center-align post-title">03_深层神经网络（Deep L-layer neural network）</h1>
                 </div>
             </div>
         </div>
@@ -385,21 +385,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-12-14
+                    2020-12-15
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-12-14
+                    2020-12-16
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.8k
+                    1.4k
                 </div>
                 
 
@@ -424,133 +424,33 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="浅层神经网络（Shallow-neural-networks）"><a href="#浅层神经网络（Shallow-neural-networks）" class="headerlink" title="浅层神经网络（Shallow neural networks）"></a>浅层神经网络（Shallow neural networks）</h1><h2 id="1-神经网络概述（Neural-Network-Overview）"><a href="#1-神经网络概述（Neural-Network-Overview）" class="headerlink" title="1.神经网络概述（Neural Network Overview）"></a>1.神经网络概述（Neural Network Overview）</h2><p>神经网络看起来是如下这个样子</p>
-<p><img src="https://cdn.jsdelivr.net/gh/ZqtCtios/Image/img/image-20201214164209143.png" alt="Neural Network"></p>
-<p>你可以把许多sigmoid 单元堆叠起来形成一个神经网络。对于图中的节点，它包含了之前讲的计算的两个步骤</p>
-<ul>
-<li><p>首先通过计算出值$𝑧$</p>
-</li>
-<li><p>然后通过$\sigma(z)$计算值$𝑎$。</p>
+                <h1 id="深层神经网络（Deep-L-layer-neural-network）"><a href="#深层神经网络（Deep-L-layer-neural-network）" class="headerlink" title="深层神经网络（Deep L-layer neural network）"></a>深层神经网络（Deep L-layer neural network）</h1><h2 id="1-符号定义"><a href="#1-符号定义" class="headerlink" title="1.符号定义"></a>1.符号定义</h2><p><img src="https://cdn.jsdelivr.net/gh/ZqtCtios/Image/img/image-20201216141148480.png" alt="neural network"></p>
+<p>上图是一个四层的神经网络，有三个隐藏层。我们可以看到，第一层（即左边数过去第二层，因为输入层是第 0 层 $)$ 有 5 个神经元数目，第二层 5 个, 第三层 3 个。</p>
+<p>我们用 L表示层数，上图: $L=4$ ，输入层的索引为“0”，第一个隐藏层 $n^{[1]}=5,$ 表示有 5个隐藏神经元，同理 $n^{[2]}=5, n^{[3]}=3, n^{[4]}=n^{[L]}=1($ 输出单元为 1$)$ 。而输入层， $n^{[0]}=n_{x}=3$。</p>
+<p>在不同层所拥有的神经元的数目，对于每层 $I$ 都用 $a^{[l]}$ 来记作 $I$ 层激活后结果，我们会在后面看到在正向传播时，最终能你会计算出 $a^{[l]}$。</p>
+<p>通过用激活函数 $g$ 计算 $z^{[l]},$ 激活函数也被索引为层数 $l,$ 然后我们用 $w^{[l]}$ 来记作在 1 层计算 $z^{[l]}$ 值的权重。类似的， $z^{[l]}$ 里的方程 $b^{[l]}$ 也一样。</p>
+<p>最后总结下符号约定:</p>
+<p>输入的特征记作 $x,$ 但是 $x$ 同样也是 0 层的激活函数，所以 $x=a^{[0]}$ 。最后一层的激活函数，所以 $a^{[L]}$ 是等于这个神经网络所预测的输出结果。</p>
+<h2 id="2-深层网络中的前向传播（Forward-propagation-in-a-Deep-Network）"><a href="#2-深层网络中的前向传播（Forward-propagation-in-a-Deep-Network）" class="headerlink" title="2. 深层网络中的前向传播（Forward propagation in a Deep Network）"></a>2. 深层网络中的前向传播（Forward propagation in a Deep Network）</h2><p>我们先来看对其中一个训练样本 x 如何应用前向传播，之后讨论向量化的版本。</p>
+<p>第一层需要计算 $z^{[1]}=w^{[1]} x+b^{[1]}, a^{[1]}=g^{[1]}\left(z^{[1]}\right)$，（x 可以看做 $a^{[0]}$）</p>
+<p>第二层需要计算 $z^{[2]}=w^{[2]} a^{[1]}+b^{[2]}, a^{[2]}=g^{[2]}\left(z^{[2]}\right)$</p>
+<p>以此类推，</p>
+<p>第四层为 $z^{[4]}=w^{[4]} a^{[3]}+b^{[4]}, \quad a^{[4]}=g^{[4]}\left(z^{[4]}\right)$</p>
+<p>前向传播可以归纳为多次迭代 $z^{[l]}=w^{[l]} a^{[l-1]}+b^{[l]}, a^{[l]}=g^{[l]}\left(z^{[l]}\right)$ 。</p>
+<p>向量化实现过程可以写成:</p>
 <script type="math/tex; mode=display">
-\left.\begin{array}{l}
-x \\
-w \\
-b
-\end{array}\right\} \Longrightarrow z=w^{T} x+b \Longrightarrow a=\sigma(z)</script></li>
-</ul>
-<h2 id="2-神经网络的表示（Neural-Network-Representation）"><a href="#2-神经网络的表示（Neural-Network-Representation）" class="headerlink" title="2.神经网络的表示（Neural Network Representation）"></a>2.神经网络的表示（Neural Network Representation）</h2><p><img src="https://cdn.jsdelivr.net/gh/ZqtCtios/Image/img/image-20201214164452683.png" alt="Neural Network"></p>
-<ul>
-<li>输入层：包含了神经网络的输入，例如途中输入特征$𝑥_1$ 、$𝑥_2$ 、$𝑥_3$ ，它们被竖直地堆叠起来</li>
-<li>隐藏层：输入层与输出层之间节点</li>
-<li>输出层：负责产生预测值</li>
-</ul>
-<p>符号表示：</p>
-<ul>
-<li>$𝑥$：表示输入特征，可以用$𝑎^{[0]}$表示</li>
-<li>$a_j^{[i]}$：第$i$层节点的第$j$个节点</li>
-<li>参数$𝑊$ 和$𝑏$ ：$𝑊$是一个 4x3 的矩阵，而$𝑏$是一个 4x1 的向量</li>
-</ul>
-<h2 id="3-计算一个神经网络的输出（ComputingaNeuralNetwork’s-output）"><a href="#3-计算一个神经网络的输出（ComputingaNeuralNetwork’s-output）" class="headerlink" title="3.计算一个神经网络的输出（ComputingaNeuralNetwork’s output）"></a>3.计算一个神经网络的输出（ComputingaNeuralNetwork’s output）</h2><p><img src="https://cdn.jsdelivr.net/gh/ZqtCtios/Image/img/image-20201214165233518.png" alt="两层网络结构"></p>
-<p>𝑥表示输入特征，𝑎表示每个神经元的输出，𝑊表示特征的权重，上标表示神经网络的层数，下标表示该层的第几个神经元。这是神经网络的符号惯例，下同。</p>
-<h3 id="神经网络的计算"><a href="#神经网络的计算" class="headerlink" title="神经网络的计算"></a>神经网络的计算</h3><p><img src="https://cdn.jsdelivr.net/gh/ZqtCtios/Image/img/image-20201214165343752.png" alt="image-20201214165343752"></p>
-<p>回到两层的神经网络，我们从隐藏层的第一个神经元开始计算，如上图第一个最上面的箭头所指。从上图可以看出，输入与逻辑回归相似，这个神经元的计算与逻辑回归一样分为两步，小圆圈代表了计算的两个步骤。</p>
-<ul>
-<li>第一步， 计算 $z_{1}^{[1]}, z_{1}^{[1]}=w_{1}^{[1] T} x+b_{1}^{[1]}$</li>
-<li>第二步，通过激活函数计算 $a_{1}^{[1]}, a_{1}^{[1]}=\sigma\left(z_{1}^{[1]}\right)$ 。</li>
-</ul>
-<p>隐藏层的第二个以及后面两个神经元的计算过程一样，只是注意符号表示不同，最终分别得到 $a_{2}^{[1]}, a_{3}^{[1]}, a_{4}^{[1]},$ 详细结果见下:</p>
-<script type="math/tex; mode=display">
-\begin{array}{l}
-z_{1}^{[1]}=w_{1}^{[1] T} x+b_{1}^{[1]}, a_{1}^{[1]}=\sigma\left(z_{1}^{[1]}\right) \\
-z_{2}^{[1]}=w_{2}^{[1] T} x+b_{2}^{[1]}, a_{2}^{[1]}=\sigma\left(z_{2}^{[1]}\right) \\
-z_{3}^{[1]}=w_{3}^{[1] T} x+b_{3}^{[1]}, a_{3}^{[1]}=\sigma\left(z_{3}^{[1]}\right) \\
-z_{4}^{[1]}=w_{4}^{[1] T} x+b_{4}^{[1]}, a_{4}^{[1]}=\sigma\left(z_{4}^{[1]}\right)
-\end{array}</script><h3 id="向量化计算"><a href="#向量化计算" class="headerlink" title="向量化计算"></a>向量化计算</h3><p><img src="https://cdn.jsdelivr.net/gh/ZqtCtios/Image/img/image-20201214165605526.png" alt="Z"></p>
-<p>Given input $\mathrm{x}$：</p>
-<script type="math/tex; mode=display">
-\begin{array}{l}
-z^{[1]}=W^{[1]} x+b^{[1]} \\
-a^{[1]}=\sigma\left(z^{[1]}\right) \\
-z^{[2]}=W^{[2]} a^{[1]}+b^{[2]} \\
-a^{[2]}=\sigma\left(z^{[2]}\right)
-\end{array}</script><h2 id="4-多样本向量化（Vectorizing-across-multiple-examples）"><a href="#4-多样本向量化（Vectorizing-across-multiple-examples）" class="headerlink" title="4.多样本向量化（Vectorizing across multiple examples）"></a>4.多样本向量化（Vectorizing across multiple examples）</h2><p>公式 3.12 :</p>
-<script type="math/tex; mode=display">
-x=\left[\begin{array}{llll}
-\vdots & \vdots & \vdots & \vdots \\
-x^{(1)} & x^{(2)} & \cdots & x^{(m)} \\
-\vdots & \vdots & \vdots & \vdots
-\end{array}\right]</script><p>公式 3.13 :</p>
-<script type="math/tex; mode=display">
-Z^{[1]}=\left[\begin{array}{clll}
-\vdots & \vdots & \vdots & \vdots \\
-z^{[1](1)} & z^{[1](2)} & \cdots & z^{[1](m)} \\
-\vdots & \vdots & \vdots & \vdots
-\end{array}\right]</script><p>公式 3.14 :</p>
-<script type="math/tex; mode=display">
-A^{[1]}=\left[\begin{array}{clll}
-\vdots & \vdots & \vdots & \vdots \\
-\alpha^{[1](1)} & \alpha^{[1](2)} & \cdots & \alpha^{[1](m)} \\
-\vdots & \vdots & \vdots & \vdots
-\end{array}\right]</script><p>公式 3.15 :</p>
-<script type="math/tex; mode=display">
-\left.\begin{array}{rl}
-z^{[1](i)}=W^{[1](i)} x^{(i)}+b^{[1]} \\
-\alpha^{[1](i)}=\sigma\left(z^{[1](i)}\right) \\
-z^{[2](i)}=W^{[2](i)} \alpha^{[1](i)}+b^{[2]} \\
-\alpha^{[2](i)}=\sigma\left(z^{[2](i)}\right)
-\end{array}\right\} \Rightarrow\left\{\begin{array}{l}
-A^{[1]}=\sigma\left(z^{[1]}\right) \\
-z^{[2]}=W^{[2]} A^{[1]}+b^{[2]} \\
-A^{[2]}=\sigma\left(z^{[2]}\right)
-\end{array}\right.</script><p>定义矩阵X等于训练样本，将它们组合成矩阵的各列，形成一个n维或n乘以m维矩阵。接下来计算见公式 3.15:</p>
-<p>以此类推，从小写的向量x到这个大写的矩阵 $X,$ 只是通过组合 $x$ 向量在矩阵的各列中。</p>
-<p>同理， $z^{<a href="1">1</a>}, z^{<a href="2">1</a>}$等等都是$z^{<a href="m">1</a>}$的列向量，将所有𝑚都组合在各列中，就的到矩阵$Z^{[1]}$</p>
-<p>同理， $a^{<a href="1">1</a>}, a^{<a href="2">1</a>}, \ldots \ldots, a^{<a href="m">1</a>}$ 将其组合在矩阵各列中，如同从向量x到矩阵 $X,$ 以及从向量z到矩阵 $Z$ 一样，就能得到矩阵 $A^{[1]}$ 。</p>
-<p>同样的，对于 $Z^{[2]}$ 和 $A^{[2]},$ 也是这样得到。</p>
-<h2 id="5-激活函数（Activationfunctions）"><a href="#5-激活函数（Activationfunctions）" class="headerlink" title="5.激活函数（Activationfunctions）"></a>5.激活函数（Activationfunctions）</h2><p>使用一个神经网络时，需要决定使用哪种激活函数用隐藏层上，哪种用在输出节点上。到目前为止, 之前只用过 sigmoid 激活函数, 但是, 有时其他的激活函数效果会更好。<br>在神经网路的前向传播中, $a^{[1]}=\sigma\left(z^{[1]}\right)$ 和 $a^{[2]}=\sigma\left(z^{[2]}\right)$ 这两步会使用到 sigmoid 函数。sigmoid 函数在这里被称为激活函数。</p>
-<script type="math/tex; mode=display">
-\quad a=\sigma(z)=\frac{1}{1+e^{-z}}</script><p>更通常的情况下，使用不同的函数 $g\left(z^{[1]}\right), g$ 可以是除了 sigmoid 函数意外的非线性函数。tanh 函数或者双曲正切函数是总体上都优于 sigmoid 函数的激活函数。$a=\tan (z)$ 的值域是位于+1 和-1 之间。</p>
-<script type="math/tex; mode=display">
-\quad a=\tanh (z)=\frac{e^{z}-e^{-z}}{e^{z}+e^{-z}}</script><p>值域介于+1 和-1 之间。结果表明，如果在隐藏层上使用函数$\quad g\left(z^{[1]}\right)=\tanh \left(z^{[1]}\right)$ 效果总是优于 sigmoid 函数。因为函数值域在-1 和+1的激活函数，其均值是更接近零均值的。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/ZqtCtios/Image/img/TanhReal.gif" alt="tanx"></p>
-<p>在训练一个算法模型时，如果使用 tanh 函数代替sigmoid 函数中心化数据，使得数据的平均值更接近 0 而不是 $0.5 .$</p>
-<p>有一个例外:在二分类的问题中，对于输出层，因为𝑦的值是 0 或 1，所以想让𝑦的数值介于 0 和 1 之间，而不是在-1 和+1 之间。所以需要使用 sigmoid 激活函数。</p>
-<h3 id="修正线性单元的函数-ReLu"><a href="#修正线性单元的函数-ReLu" class="headerlink" title="修正线性单元的函数(ReLu)"></a>修正线性单元的函数(ReLu)</h3><p>ReLu 函数图像是如下图。 </p>
-<p><img src="https://cdn.jsdelivr.net/gh/ZqtCtios/Image/img/0*g9ypL5M3k-f7EW85.png" alt="ReLu"></p>
-<script type="math/tex; mode=display">
-𝑎 = 𝑚𝑎𝑥(0, 𝑧)</script><p>所以，只要𝑧是正值的情况下，导数恒等于 1，当𝑧是负值的时候，导数恒等于 0。</p>
-<p>从实际上来说，当使用𝑧的导数时，𝑧=0 的导数是没有定义的。但是当编程实现的时候，𝑧的取值刚好等于 0.00000001，这个值相当小，所以，在实践中，不需要担心这个值，𝑧是等于 0 的时候，假设一个导数是 1 或者 0 效果都可以。</p>
-<h3 id="选择激活函数的经验法则"><a href="#选择激活函数的经验法则" class="headerlink" title="选择激活函数的经验法则"></a>选择激活函数的经验法则</h3><ul>
-<li>sigmoid 激活函数：除了输出层是一个二分类问题基本不会用它。</li>
-<li>tanh激活函数：tanh是非常优秀的，几乎适合所有场合。</li>
-<li>ReLu激活函数：最常用的默认函数，如果不确定用哪个激活函数，就使用 ReLu 或者Leaky ReLu。</li>
-</ul>
-<h2 id="6-激活函数的导数（Derivatives-of-activation-functions）"><a href="#6-激活函数的导数（Derivatives-of-activation-functions）" class="headerlink" title="6.激活函数的导数（Derivatives of activation functions）"></a>6.激活函数的导数（Derivatives of activation functions）</h2><p>针对以下四种激活，求其导数如下：</p>
-<h3 id="6-1-sigmoid-activation-function"><a href="#6-1-sigmoid-activation-function" class="headerlink" title="6.1 sigmoid  activation function"></a>6.1 sigmoid  activation function</h3><p><img src="https://cdn.jsdelivr.net/gh/ZqtCtios/Image/img/image-20201214172035239.png" alt="sigmoid function"></p>
-<script type="math/tex; mode=display">
-\frac{d}{d z} g(z)=\frac{1}{1+e^{-z}}\left(1-\frac{1}{1+e^{-z}}\right)=g(z)(1-g(z))=a(1-a)</script><h3 id="6-2-Tanh-activation-function"><a href="#6-2-Tanh-activation-function" class="headerlink" title="6.2 Tanh activation function"></a>6.2 Tanh activation function</h3><p><img src="https://cdn.jsdelivr.net/gh/ZqtCtios/Image/img/image-20201214172250352.png" alt="Tanh activation function"></p>
-<script type="math/tex; mode=display">
-g(z)=\tanh (z)=\frac{e^{z}-e^{-z}}{e^{z}+e^{-z}}</script><script type="math/tex; mode=display">
-\frac{d}{\mathrm{~d} z} g(z)=1-(\tanh (z))^{2}</script><h3 id="6-3-Rectified-Linear-Unit"><a href="#6-3-Rectified-Linear-Unit" class="headerlink" title="6.3 Rectified Linear Unit"></a>6.3 Rectified Linear Unit</h3><p><img src="https://cdn.jsdelivr.net/gh/ZqtCtios/Image/img/image-20201214172357648.png" alt="Rectified Linear Unit"></p>
-<script type="math/tex; mode=display">
-\begin{array}{c}
-g(z)=\max (0, z) \\
-0 \\
-g(z)^{\prime}=\left\{\begin{array}{ll}
-0 & \text { if } \quad z<0 \\
-\text { undefined } & \text { if } \quad z>0 \\
-\text { if } \quad z & =0
-\end{array}\right.
-\end{array}</script><h3 id="6-4-Leaky-linear-unit-（Leaky-ReLU）"><a href="#6-4-Leaky-linear-unit-（Leaky-ReLU）" class="headerlink" title="6.4 Leaky linear unit （Leaky ReLU）"></a>6.4 Leaky linear unit （Leaky ReLU）</h3><p>与 ReLU 类似:</p>
-<script type="math/tex; mode=display">
-\begin{array}{c}
-g(z)=\max (0.01 z, z) \\
-g(z)^{\prime}=\left\{\begin{array}{ll}
-0.01 & \text { if } \quad z<0 \\
-1 & \text { if } \quad z>0 \\
-u n d e f i n e d & \text { if } \quad z=0
-\end{array}\right.
-\end{array}</script>
+Z^{[l]}=W^{[l]} a^{[l-1]}+b^{[l]}, \quad A^{[l]}=g^{[l]}\left(Z^{[l]}\right)\left(A^{[0]}=X\right)</script><h2 id="3-搭建神经网络块（Building-blocks-of-deep-neural-networks）"><a href="#3-搭建神经网络块（Building-blocks-of-deep-neural-networks）" class="headerlink" title="3.搭建神经网络块（Building blocks of deep neural networks）"></a>3.搭建神经网络块（Building blocks of deep neural networks）</h2><p><img src="https://cdn.jsdelivr.net/gh/ZqtCtios/Image/img/image-20201216143340801.png" alt="neural networks"></p>
+<p>这是一个层数较少的神经网络, 我们选择其中一层(方框部分 $),$ 从这一层的计算着手。在第l层你有参数 $W^{[l]}$ 和 $b^{[l]},$ 正向传播里有输入的激活函数, 输入是前一层 $a^{[l-1]},$ 输出是 $a^{[l]},$我们之前讲过 $z^{[l]}=W^{[l]} a^{[l-1]}+b^{[l]}, a^{[l]}=g^{[l]}\left(z^{[l]}\right),$ 那么这就是你如何从输入 $a^{[l-1]}$ 走到输出的 $a^{[l]}$ 。之后你就可以把 $z^{[l]}$ 的值缓存起来，我在这里也会把这包括在缓存中，因为缓存的$z^{[i]}$ 对以后的正向反向传播的步骤非常有用。</p>
+<p>然后是反向步骤或者说反向传播步骤，同样也是第l层的计算，你会需要实现一个函数输入为 $d a^{[l]},$ 输出 $d a^{[l-1]}$ 的函数。一个小细节需要注意，输入在这里其实是 $d a^{[l]}$ 以及所缓存的 $z^{[l]}$ 值，之前计算好的 $z^{[l]}$ 值, 除了输出 $d a^{[l-1]}$ 的值以外，也需要输出你需要的梯度 $d W^{[l]}$ 和$d b^{[l]},$ 这是为了实现梯度下降学习。</p>
+<p>这就是基本的正向步骤的结构, 我把它成为称为正向函数，类似的在反向步骤中会称为反向函数。总结起来就是，在 I 层，你会有正向函数，输入 $a^{[l-1]}$ 并且输出 $a^{[l]},$ 为了计算结果你需要用 $W^{[l]}$ 和 $b^{[l]},$ 以及输出到缓存的 $z^{[l]} 。$ 然后用作反向传播的反向函数，是另一个函数, 输入 $d a^{[l]},$ 输出 $d a^{[l-1]},$ 你就会得到对激活函数的导数, 也就是希望的导数值 $d a^{[l]}$。$a^{[l-1]}$是会变的，前一层算出的激活函数导数。在这个方块 (第二个) 里你需要 $W^{[l]}$ 和 $b^{[l]},$ 最后你要算的是$𝑑𝑧^{[𝑙]}$。然后这个方块(第三个)中，这个反向函数可以计算输出$𝑑𝑊^{[𝑙]}$和$𝑑𝑏^{[𝑙]}$。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/ZqtCtios/Image/img/image-20201216143523413.png" alt="sample"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/ZqtCtios/Image/img/image-20201216143646495.png" alt="neural networks"></p>
+<p>神经网络的一步训练包含了, 从 $a^{[0]}$ 开始, 也就是 $x$ 然后经过一系列正向传播计算得到$\hat{y},$ 之后再用输出值计算这个（第二行最后方块），再实现反向传播。现在你就有所有的导数项了， $W$ 也会在每一层被更新为 $W=W-\alpha d W, b$ 也一样， $b=b-\alpha d b,$ 反向传播就都计算完毕，我们有所有的导数值，那么这是神经网络一个梯度下降循环。</p>
+<h2 id="4-参数-VS-超参数（Parameters-vs-Hyperparameters）"><a href="#4-参数-VS-超参数（Parameters-vs-Hyperparameters）" class="headerlink" title="4.参数 VS 超参数（Parameters vs Hyperparameters）"></a>4.参数 VS 超参数（Parameters vs Hyperparameters）</h2><h3 id="4-1-什么是超参数"><a href="#4-1-什么是超参数" class="headerlink" title="4.1 什么是超参数?"></a>4.1 什么是超参数?</h3><p>比如算法中的 learning rate $a$ (学习率) 、iterations(梯度下降法循环的数量)、L（隐藏层数目）、n $^{[l]}$ (隐藏层单元数目) 、 choice of activation function（激活函数的选择）都需要你来设置，这些数字实际上控制了最后的参数 $W$ 和 $b$ 的值，所以它们被称作超参数。</p>
+<p>实际上深度学习有很多不同的超参数，之后我们也会介绍一些其他的超参数，如momentum、mini batch size $、$ regularization parameters 等等。</p>
+<h3 id="4-2-如何寻找超参数的最优值"><a href="#4-2-如何寻找超参数的最优值" class="headerlink" title="4.2 如何寻找超参数的最优值?"></a>4.2 如何寻找超参数的最优值?</h3><p>走 Idea—Code—Experiment—Idea 这个循环，尝试各种不同的参数，实现模型并观察是 否成功，然后再迭代。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/ZqtCtios/Image/img/image-20201216144843534.png" alt="Idea—Code—Experiment—Idea"></p>
+
                 
             </div>
             <hr/>
@@ -576,7 +476,7 @@ u n d e f i n e d & \text { if } \quad z=0
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://blog.ctios.cn/2020/12/14/machinelearning/andrew-ng-deeplearning/02-shallow-neural-networks/">http://blog.ctios.cn/2020/12/14/machinelearning/andrew-ng-deeplearning/02-shallow-neural-networks/</a>
+                    <a href="http://blog.ctios.cn/2020/12/15/machinelearning/andrew-ng-deeplearning/03-deep-l-layer-neural-network/">http://blog.ctios.cn/2020/12/15/machinelearning/andrew-ng-deeplearning/03-deep-l-layer-neural-network/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -797,13 +697,13 @@ u n d e f i n e d & \text { if } \quad z=0
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2020/12/15/machinelearning/andrew-ng-deeplearning/03-deep-l-layer-neural-network/">
+                <a href="/2020/12/16/machinelearning/andrew-ng-deeplearning/04-practical-aspects-of-deep-learning/">
                     <div class="card-image">
                         
                         
-                        <img src="https://cdn.jsdelivr.net/gh/ZqtCtios/ZqtCtios.github.io/medias/featureimages/1.jpg" class="responsive-img" alt="03_深层神经网络（Deep L-layer neural network）">
+                        <img src="https://cdn.jsdelivr.net/gh/ZqtCtios/ZqtCtios.github.io/medias/featureimages/15.jpg" class="responsive-img" alt="04_深度学习的实践层面（Practical aspects of Deep Learning）">
                         
-                        <span class="card-title">03_深层神经网络（Deep L-layer neural network）</span>
+                        <span class="card-title">04_深度学习的实践层面（Practical aspects of Deep Learning）</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -814,8 +714,61 @@ u n d e f i n e d & \text { if } \quad z=0
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-12-15
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-12-16
                         </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E5%90%B4%E6%81%A9%E8%BE%BE%E2%80%94%E2%80%94%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" class="post-category">
+                                    吴恩达——深度学习
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/">
+                        <span class="chip bg-color">深度学习</span>
+                    </a>
+                    
+                    <a href="/tags/%E5%90%B4%E6%81%A9%E8%BE%BE/">
+                        <span class="chip bg-color">吴恩达</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2020/12/14/machinelearning/andrew-ng-deeplearning/02-shallow-neural-networks/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="https://cdn.jsdelivr.net/gh/ZqtCtios/ZqtCtios.github.io/medias/featureimages/15.jpg" class="responsive-img" alt="02_浅层神经网络(Shallow neural networks)">
+                        
+                        <span class="card-title">02_浅层神经网络(Shallow neural networks)</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-12-14
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -841,59 +794,6 @@ u n d e f i n e d & \text { if } \quad z=0
                     
                     <a href="/tags/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/">
                         <span class="chip bg-color">神经网络</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/2020/12/12/machinelearning/andrew-ng-deeplearning/01-basics-of-neural-network/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="https://cdn.jsdelivr.net/gh/ZqtCtios/ZqtCtios.github.io/medias/featureimages/18.jpg" class="responsive-img" alt="01_神经网络的编程基础（Basics of Neural Network programming）">
-                        
-                        <span class="card-title">01_神经网络的编程基础（Basics of Neural Network programming）</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            
-                        
-                    </div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-12-12
-                            </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/%E5%90%B4%E6%81%A9%E8%BE%BE%E2%80%94%E2%80%94%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" class="post-category">
-                                    吴恩达——深度学习
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/">
-                        <span class="chip bg-color">深度学习</span>
-                    </a>
-                    
-                    <a href="/tags/%E5%90%B4%E6%81%A9%E8%BE%BE/">
-                        <span class="chip bg-color">吴恩达</span>
                     </a>
                     
                 </div>

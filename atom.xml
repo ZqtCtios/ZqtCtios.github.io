@@ -6,7 +6,7 @@
   <link href="http://blog.ctios.cn/atom.xml" rel="self"/>
   
   <link href="http://blog.ctios.cn/"/>
-  <updated>2020-12-14T09:32:25.000Z</updated>
+  <updated>2020-12-16T09:19:22.000Z</updated>
   <id>http://blog.ctios.cn/</id>
   
   <author>
@@ -15,6 +15,62 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>04_深度学习的实践层面（Practical aspects of Deep Learning）</title>
+    <link href="http://blog.ctios.cn/2020/12/16/machinelearning/andrew-ng-deeplearning/04-practical-aspects-of-deep-learning/"/>
+    <id>http://blog.ctios.cn/2020/12/16/machinelearning/andrew-ng-deeplearning/04-practical-aspects-of-deep-learning/</id>
+    <published>2020-12-16T09:00:00.000Z</published>
+    <updated>2020-12-16T09:19:22.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;深度学习的实践层面（Practical-aspects-of-Deep-Learning）&quot;&gt;&lt;a href=&quot;#深度学习的实践层面（Practical-aspects-of-Deep-Learning）&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="吴恩达——深度学习" scheme="http://blog.ctios.cn/categories/%E5%90%B4%E6%81%A9%E8%BE%BE%E2%80%94%E2%80%94%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+    <category term="深度学习" scheme="http://blog.ctios.cn/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
+    
+    <category term="吴恩达" scheme="http://blog.ctios.cn/tags/%E5%90%B4%E6%81%A9%E8%BE%BE/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>03_深层神经网络（Deep L-layer neural network）</title>
+    <link href="http://blog.ctios.cn/2020/12/15/machinelearning/andrew-ng-deeplearning/03-deep-l-layer-neural-network/"/>
+    <id>http://blog.ctios.cn/2020/12/15/machinelearning/andrew-ng-deeplearning/03-deep-l-layer-neural-network/</id>
+    <published>2020-12-15T09:00:00.000Z</published>
+    <updated>2020-12-16T09:19:19.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;深层神经网络（Deep-L-layer-neural-network）&quot;&gt;&lt;a href=&quot;#深层神经网络（Deep-L-layer-neural-network）&quot; class=&quot;headerlink&quot; title=&quot;深层神经网络（Deep L-layer</summary>
+        
+      
+    
+    
+    
+    <category term="吴恩达——深度学习" scheme="http://blog.ctios.cn/categories/%E5%90%B4%E6%81%A9%E8%BE%BE%E2%80%94%E2%80%94%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+    <category term="深度学习" scheme="http://blog.ctios.cn/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
+    
+    <category term="吴恩达" scheme="http://blog.ctios.cn/tags/%E5%90%B4%E6%81%A9%E8%BE%BE/"/>
+    
+    <category term="神经网络" scheme="http://blog.ctios.cn/tags/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/"/>
+    
+  </entry>
   
   <entry>
     <title>02_浅层神经网络(Shallow neural networks)</title>
@@ -133,10 +189,10 @@
   
   <entry>
     <title>08_降维_Dimensionality_Reduction_</title>
-    <link href="http://blog.ctios.cn/2020/12/09/machinelearning/wu-en-da-ji-qi-xue-xi/08-dimensionality-reduction/"/>
-    <id>http://blog.ctios.cn/2020/12/09/machinelearning/wu-en-da-ji-qi-xue-xi/08-dimensionality-reduction/</id>
+    <link href="http://blog.ctios.cn/2020/12/09/machinelearning/wu-en-da-ji-qi-xue-xi/08-dimensionality-reduction-2/"/>
+    <id>http://blog.ctios.cn/2020/12/09/machinelearning/wu-en-da-ji-qi-xue-xi/08-dimensionality-reduction-2/</id>
     <published>2020-12-09T08:12:53.000Z</published>
-    <updated>2020-12-09T07:58:56.310Z</updated>
+    <updated>2020-12-09T07:58:56.000Z</updated>
     
     
       
@@ -162,10 +218,10 @@
   
   <entry>
     <title>08_降维_Dimensionality_Reduction_</title>
-    <link href="http://blog.ctios.cn/2020/12/09/machinelearning/wu-en-da-ji-qi-xue-xi/08-dimensionality-reduction-2/"/>
-    <id>http://blog.ctios.cn/2020/12/09/machinelearning/wu-en-da-ji-qi-xue-xi/08-dimensionality-reduction-2/</id>
+    <link href="http://blog.ctios.cn/2020/12/09/machinelearning/wu-en-da-ji-qi-xue-xi/08-dimensionality-reduction/"/>
+    <id>http://blog.ctios.cn/2020/12/09/machinelearning/wu-en-da-ji-qi-xue-xi/08-dimensionality-reduction/</id>
     <published>2020-12-09T08:12:53.000Z</published>
-    <updated>2020-12-09T07:58:56.000Z</updated>
+    <updated>2020-12-09T07:58:56.310Z</updated>
     
     
       
