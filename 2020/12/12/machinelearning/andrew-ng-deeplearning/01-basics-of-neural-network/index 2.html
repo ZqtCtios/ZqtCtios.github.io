@@ -1,0 +1,1384 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="01_神经网络的编程基础（Basics of Neural Network programming）, 曾先森的Blog">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-1JR1MGBQ5L"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+    gtag('config', 'G-1JR1MGBQ5L');
+</script>
+
+
+    <title>01_神经网络的编程基础（Basics of Neural Network programming） | 曾先森的Blog</title>
+    <link rel="icon" type="image/png" href="https://cdn.jsdelivr.net/gh/ZqtCtios/ZqtCtios.github.io/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/ZqtCtios/ZqtCtios.github.io/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/ZqtCtios/ZqtCtios.github.io/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/ZqtCtios/ZqtCtios.github.io/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/ZqtCtios/ZqtCtios.github.io/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/ZqtCtios/ZqtCtios.github.io/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/ZqtCtios/ZqtCtios.github.io/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/ZqtCtios/ZqtCtios.github.io/css/my.css">
+
+    <script src="https://cdn.jsdelivr.net/gh/ZqtCtios/ZqtCtios.github.io/libs/jquery/jquery.min.js"></script>
+
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.2.0">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="曾先森的Blog" type="application/atom+xml">
+</head>
+
+
+
+   <style>
+    body{
+       background-image: url(https://cdn.jsdelivr.net/gh/ZqtCtios/Image/img/20201204234530.jpg);
+       background-repeat:no-repeat;
+       background-size:cover;
+       background-attachment:fixed;
+    }
+</style>
+
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="https://cdn.jsdelivr.net/gh/ZqtCtios/ZqtCtios.github.io/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">曾先森的Blog</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="https://cdn.jsdelivr.net/gh/ZqtCtios/ZqtCtios.github.io/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">曾先森的Blog</div>
+        <div class="logo-desc">
+            
+            Never really desperate, only the lost of the soul.
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/ZqtCtios/ZqtCtios.github.io/medias/featureimages/18.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">01_神经网络的编程基础（Basics of Neural Network programming）</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/ZqtCtios/ZqtCtios.github.io/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        padding: 35px 0 15px 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        padding-bottom: 30px;
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+
+        position: absolute;
+        right: 23.5vw;
+        display: block;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/">
+                                <span class="chip bg-color">深度学习</span>
+                            </a>
+                        
+                            <a href="/tags/%E5%90%B4%E6%81%A9%E8%BE%BE/">
+                                <span class="chip bg-color">吴恩达</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/%E5%90%B4%E6%81%A9%E8%BE%BE%E2%80%94%E2%80%94%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" class="post-category">
+                                吴恩达——深度学习
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2020-12-12
+                </div>
+                
+
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
+                    2020-12-14
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    3.6k
+                </div>
+                
+
+                
+
+                
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/ZqtCtios/ZqtCtios.github.io/libs/prism/prism.css">
+        
+
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h1 id="神经网络的编程基础（Basics-of-Neural-Network-programming）"><a href="#神经网络的编程基础（Basics-of-Neural-Network-programming）" class="headerlink" title="神经网络的编程基础（Basics of Neural Network programming）"></a>神经网络的编程基础（Basics of Neural Network programming）</h1><h2 id="1-二分类（Binary-Classification）"><a href="#1-二分类（Binary-Classification）" class="headerlink" title="1.二分类（Binary Classification）"></a>1.二分类（Binary Classification）</h2><p>这周我们将学习神经网络的基础知识，其中需要注意的是，当实现一个神经网络的时候， 我们需要知道一些非常重要的技术和技巧。例如有一个包含𝑚个样本的训练集，你很可能习 惯于用一个 for 循环来遍历训练集中的每个样本，但是当实现一个神经网络的时候，我们通 常不直接使用 for 循环来遍历整个训练集，所以在这周的课程中你将学会如何处理训练集。</p>
+<p>另外在神经网络的计算中，通常先有一个叫做前向暂停（forward pause）或叫做前向传播 （foward propagation）的步骤，接着有一个叫做反向暂停（backward pause） 或叫做反向传播 （backward propagation）的步骤。所以这周我也会向你介绍为什么神经网络的训练过程可以分为前向传播和反向传播两个独立的部分。</p>
+<p>在课程中我将使用逻辑回归（logistic regression）来传达这些想法，以使大家能够更加容易地理解这些概念。即使你之前了解过逻辑回归，我认为这里还是有些新的、有趣的东西等着你去发现和了解，所以现在开始进入正题。</p>
+<p>逻辑回归是一个用于二分类（binary classification）的算法。首先我们从一个问题开始说起， 这里有一个二分类问题的例子，假如你有一张图片作为输入，比如这只猫，如果识别这张图片为猫，则输出标签 1 作为结果;如果识别出不是猫，那么输出标签 0 作为结果。现在我们可以用字母𝑦来表示输出的结果标签，如下图所示:</p>
+<p><img src="https://cdn.jsdelivr.net/gh/ZqtCtios/Image/img/20201210163758.png" alt="image-20201210163758119"></p>
+<p>我们来看看一张图片在计算机中是如何表示的，为了保存一张图片，需要保存三个矩阵， 它们分别对应图片中的红、绿、蓝三种颜色通道，如果你的图片大小为 64x64 像素，那么你 就有三个规模为 64x64 的矩阵，分别对应图片中红、绿、蓝三种像素的强度值。为了便于表 示，这里我画了三个很小的矩阵，注意它们的规模为 5x4 而不是 64x64，如下图所示:</p>
+<p><img src="https://cdn.jsdelivr.net/gh/ZqtCtios/Image/img/20201210163827.png" alt="image-20201210163827520"></p>
+<p>为了把这些像素值放到一个特征向量中，我们需要把这些像素值提取出来，然后放入一个特征向量𝑥。为了把这些像素值转换为特征向量 𝑥，我们需要像下面这样定义一个特征向量 𝑥 来表示这张图片，我们把所有的像素都取出来，例如 255、231 等等，直到取完所有的红色像素，接着最后是 255、134、…、255、134 等等，直到得到一个特征向量，把图片中所有的红、绿、蓝像素值都列出来。如果图片的大小为 64x64 像素，那么向量 𝑥 的总维度， 将是 64 乘以 64 乘以 3，这是三个像素矩阵中像素的总量。在这个例子中结果为 12,288。现 在我们用$𝑛_𝑥 = 12288$，来表示输入特征向量的维度，有时候为了简洁，我会直接用小写的𝑛 来表示输入特征向量𝑥的维度。所以在二分类问题中，我们的目标就是习得一个分类器，它以图片的特征向量作为输入，然后预测输出结果𝑦为 1 还是 0，也就是预测图片中是否有猫:</p>
+<p><img src="https://cdn.jsdelivr.net/gh/ZqtCtios/Image/img/20201210163923.png" alt="image-20201210163923881"></p>
+<p>接下来我们说明一些在余下课程中，需要用到的一些符号。</p>
+<ul>
+<li>$x:$ 表示一个 $n_{x}$ 维数据，为输入数据，维度为 $\left(n_{x}, 1\right) ;$</li>
+<li>$y:$ 表示输出结果，取值为 (0,1)$;$</li>
+<li>$\left(x^{(i)}, y^{(i)}\right):$ 表示第i组数据，可能是训练数据，也可能是测试数据，此处默认为训练数据;</li>
+<li>$X=\left[x^{(1)}, x^{(2)}, \ldots, x^{(m)}\right]:$ 表示所有的训练数据集的输入值, 放在一个 $n_{x} \times m$ 的矩阵中其中 $m$ 表示样本数目;</li>
+<li>$Y=\left[y^{(1)}, y^{(2)}, \ldots, y^{(m)}\right]:$ 对应表示所有训练数据集的输出值，维度为1 $\times m_{\circ}$</li>
+</ul>
+<p>用一对 $(x, y)$ 来表示一个单独的样本，x代表 $n_{x}$ 维的特征向量， $y$ 表示标签(输出结果)只能为 0 或 1 。而训练集将由 $m$ 个训练样本组成，其中 $\left(x^{(1)}, y^{(1)}\right)$ 表示第一个样本的输入和输出 $,\left(x^{(2)}, y^{(2)}\right)$ 表示第二个样本的输入和输出，直到最后一个样本 $\left(x^{(m)}, y^{(m)}\right),$ 然后所有的这些一起表示整个训练集。有时候为了强调这是训练样本的个数，会写作 $M_{t r a i n},$ 当涉及到测试集的时候，我们会使用 $M_{t e s t}$ 来表示测试集的样本数，所以这是测试集的样本数:</p>
+<script type="math/tex; mode=display">
+(x, y) \quad x \in \mathbb{R}^{n_{x}}, y \in\{0,1\}</script><script type="math/tex; mode=display">
+\left.\left\{\left(x^{(1)} \cdot y^{(1)}\right),\left(x^{(2}, y^{(2)}\right), \ldots, \ldots, \left(x^{(m)}, y^{(m)}\right)\right)\right\}</script><p>最后为了能把训练集表示得更紧奏一点，我们会定义一个矩阵用大写X的表示，它由输入向量 $x^{(1)} 、 x^{(2)}$ 等组成，如下图放在矩阵的列中，所以现在我们把 $x^{(1)}$ 作为第一列放在矩阵中， $x^{(2)}$ 作为第二列， $x^{(m)}$ 放到第m列，然后我们就得到了训练集矩阵 $X$ 。所以这个矩阵有 $m$列， $m$ 是训练集的样本数量，然后这个矩阵的高度记为 $n_{x},$ 注意有时候可能因为其他某些原因，矩阵 $X$ 会由训练样本按照行堆叠起来而不是列，如下图所示: $x^{(1)}$ 的转置直到 $x^{(m)}$ 的转置,但是在实现神经网络的时候,使用左边的这种形式,会让整个实现的过程变得更加简单:</p>
+<p>那么输出标签y呢？同样的道理，为了能更加容易地实现一个神经网络, 将标签y放在列中将会使得后续计算非常方便，所以我们定义大写的Y等于 $y^{(1)}, y^{(m)}, \ldots, y^{(m)},$ 所以在这里是一个规模为 1 乘以m的矩阵。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/ZqtCtios/Image/img/20201210164925.png" alt="image-20201210164925141"></p>
+<h2 id="2-逻辑回归（Logistic-Regression）"><a href="#2-逻辑回归（Logistic-Regression）" class="headerlink" title="2. 逻辑回归（Logistic Regression）"></a>2. 逻辑回归（Logistic Regression）</h2><p>逻辑回归是监督学习问题中，当输出𝑦全部为0或1时使用的一种学习算法。 </p>
+<p>逻辑回归的目标是最大程度地减少其预测与训练数据之间的误差。</p>
+<p>示例：识别图像是否为猫：<br>给定一个由特征向量表示的图像，该算法将评估这张图像是猫图像的概率。</p>
+<script type="math/tex; mode=display">
+\text { Given } x, \hat{y}=P(y=1 \mid x), \text { where } 0 \leq \hat{y} \leq 1</script><p>逻辑回归中常用的参数和表示:</p>
+<ul>
+<li>输入特征向量：$x \in \mathbb{R}^{n_{x}}$， 其中 $n_{x}$ 是特征的数量</li>
+<li>实际值:：$y \in 0,1$</li>
+<li>参数（权重）： $w \in \mathbb{R}^{n_{x}}$，其中 $n_{x}$ 是特征的数量</li>
+<li>偏差（阈值）： $b \in \mathbb{R}$</li>
+<li>输出： $\hat{y}=\sigma\left(w^{T} x+b\right)$</li>
+<li>sigmoid函数： $s=\sigma\left(w^{T} x+b\right)=\sigma(z)=\frac{1}{1+e^{-z}}$</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/ZqtCtios/Image/img/20201211150522.png" alt="sigmoid function"></p>
+<ul>
+<li>当$z \gg 0$时$\sigma(z)=1$</li>
+<li><p>当$z \ll 0$时 $\sigma(z)=0$</p>
+</li>
+<li><p>当 $z=0$时$\sigma(z)=0.5$</p>
+</li>
+</ul>
+<h2 id="3-逻辑回归的代价函数（Cost-Function）"><a href="#3-逻辑回归的代价函数（Cost-Function）" class="headerlink" title="3.逻辑回归的代价函数（Cost Function）"></a>3.逻辑回归的代价函数（Cost Function）</h2><p>为了训练参数w，b，我们需要定义一下的代价函数：</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+&\text { Recap: }\\
+&\hat{y}^{(i)}=\sigma\left(w^{T} x^{(i)}+b\right), \text { where } \sigma\left(z^{(i)}\right)=\frac{1}{1+e^{-z}(t)}\\
+&\text {Given }\left\{\left(x^{(1)}, y^{(1)}\right), \cdots,\left(x^{(m)}, y^{(m)}\right)\right\}, \text { we want } \hat{y}^{(i)} \approx y^{(i)}
+\end{aligned}</script><p>损失函数用于度量预测$\left(\hat{y}^{(i)}\right)$与期望输出$\left(y^{(i)}\right)$之间的差异 ，损失函数为单个训练示例计算误差。<br>$L\left(\hat{y}^{(i)}, y^{(i)}\right)=\frac{1}{2}\left(\hat{y}^{(i)}-y^{(i)}\right)^{2}$<br>$L\left(\hat{y}^{(i)}, y^{(i)}\right)=-\left(y^{(i)} \log \left(\hat{y}^{(i)}\right)+\left(1-y^{(i)}\right) \log \left(1-\hat{y}^{(i)}\right)\right.$</p>
+<ul>
+<li>If $y^{(i)}=1: L\left(\hat{y}^{(i)}, y^{(i)}\right)=-\log \left(\hat{y}^{(i)}\right)$ where $\log \left(\hat{y}^{(i)}\right)$ and $\hat{y}^{(i)}$ should be close to 1</li>
+<li>If $y^{(i)}=0: L\left(\hat{y}^{(i)}, y^{(i)}\right)=-\log \left(1-\hat{y}^{(i)}\right)$ where $\log \left(1-\hat{y}^{(i)}\right)$ and $\hat{y}^{(i)}$ should be close to 0</li>
+</ul>
+<p>代价函数:</p>
+<script type="math/tex; mode=display">
+J(w, b)=\frac{1}{m} \sum_{i=1}^{m} L\left(\hat{y}^{(i)}, y^{(i)}\right)=\frac{1}{m} \sum_{i=1}^{m}\left(-y^{(i)} \log \hat{y}^{(i)}-\left(1-y^{(i)}\right) \log \left(1-\hat{y}^{(i)}\right)\right)</script><h2 id="4-梯度下降法（Gradient-Descent）"><a href="#4-梯度下降法（Gradient-Descent）" class="headerlink" title="4.梯度下降法（Gradient Descent）"></a>4.梯度下降法（Gradient Descent）</h2><p><img src="https://cdn.jsdelivr.net/gh/ZqtCtios/Image/img/20201211144252.png" alt="Gradient Descent"></p>
+<p>整个梯度下降法的迭代过程就是将$J(w,b)$从一个初始点朝着最小值点方向走。</p>
+<script type="math/tex; mode=display">
+w:=w-a \frac{\partial J(w, b)}{\partial w} \quad b:=b-a \frac{\partial J(w, b)}{\partial b}</script><p>其中$a$为步长（step）</p>
+<h2 id="5-计算图（Computation-Graph）"><a href="#5-计算图（Computation-Graph）" class="headerlink" title="5.计算图（Computation Graph）"></a>5.计算图（Computation Graph）</h2><p>例如函数$J(a,b,c)=3(a+bc)$可以分解为以下计算图：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/ZqtCtios/Image/img/20201211154440.png" alt="Computation Graph"></p>
+<h2 id="6-使用计算图求导数（computing-derivatives）"><a href="#6-使用计算图求导数（computing-derivatives）" class="headerlink" title="6.使用计算图求导数（computing derivatives）"></a>6.使用计算图求导数（computing derivatives）</h2><p>下面用到的公式:</p>
+<script type="math/tex; mode=display">
+\frac{d J}{d u}=\frac{d J}{d v} \frac{d v}{d u}, \quad \frac{d J}{d b}=\frac{d J}{d u} \frac{d u}{d b}, \quad \frac{d J}{d a}=\frac{d J}{d u} \frac{d u}{d a}</script><p><img src="https://cdn.jsdelivr.net/gh/ZqtCtios/Image/img/20201211155940.png" alt="computing derivatives"></p>
+<p>反向从最后往前计算导数，比如先计算$\frac{d J}{d u}$，然后通过链式求导法则往前求导</p>
+<h2 id="7-逻辑回归中的梯度下降（Logistic-Regression-Gradient-Descent）"><a href="#7-逻辑回归中的梯度下降（Logistic-Regression-Gradient-Descent）" class="headerlink" title="7.逻辑回归中的梯度下降（Logistic Regression Gradient Descent）"></a>7.逻辑回归中的梯度下降（Logistic Regression Gradient Descent）</h2><p>假设样本只有两个特征 $x_{1}$ 和 $x_{2}$, 为了计算 $z$ ，我们需要输入参数 $w_{1} 、 w_{2}$ 和 $b$, 除此之外还有特征值 $x_{1}$ 和 $x_{2}$。 因此z的计算公式为 ：$z=w_{1} x_{1}+w_{2} x_{2}+b$<br>回想一下逻辑回归的公式定义如下: $\quad \hat{y}=a=\sigma(z)$ 其中 $z=w^{T} x+b, \quad \sigma(z)=\frac{1}{1+e^{-z}}$<br>损失函数: </p>
+<script type="math/tex; mode=display">
+L\left(\hat{y}^{(i)}, y^{(i)}\right)=-y^{(i)} \log \hat{y}^{(i)}-\left(1-y^{(i)}\right) \log \left(1-\hat{y}^{(i)}\right)</script><p>代价函数：</p>
+<script type="math/tex; mode=display">
+J(w, b)=\frac{1}{m} \sum_{i}^{m} L\left(\hat{y}^{(i)}, y^{(i)}\right)</script><p>假设现在只考虑单个样本的情况，单个样本的代价函数定义如下:</p>
+<script type="math/tex; mode=display">
+L(a, y)=-(y \log (a)+(1-y) \log (1-a))</script><p>其中 $a$ 是逻辑回归的输出, $y$ 是样本的标签值。现在让我们画出表示这个计算的计算图。<br>这里先复习下梯度下降法， $w$ 和 $b$ 的修正量可以表达如下:</p>
+<script type="math/tex; mode=display">
+w:=w-a \frac{\partial J(w, b)}{\partial w}, \quad b:=b-a \frac{\partial J(w, b)}{\partial b}</script><p><img src="https://cdn.jsdelivr.net/gh/ZqtCtios/Image/img/20201211160530.png" alt="Computation Graph"></p>
+<p>一步一步往前计算首先对a求偏导数：</p>
+<script type="math/tex; mode=display">
+\frac{d L(a, y)}{d a}=-y / a+(1-y) /(1-a)</script><p>因为 $\frac{d L(a, y)}{d z}=\frac{d L}{d z}=\left(\frac{d L}{d a}\right) \cdot\left(\frac{d a}{d z}\right), \quad$ 并且 $\frac{d a}{d z}=a \cdot(1-a), \quad$ 而 $\frac{d L}{d a}=\left(-\frac{y}{a}+\frac{(1-y)}{(1-a)}\right),$<br>因此将这两项相乘，得到:</p>
+<script type="math/tex; mode=display">
+d z=\frac{d L(a, y)}{d z}=\frac{d L}{d z}=\left(\frac{d L}{d a}\right) \cdot\left(\frac{d a}{d z}\right)=\left(-\frac{y}{a}+\frac{(1-y)}{(1-a)}\right) \cdot a(1-a)=a-y</script><p>现在进行最后一步反向推导，也就是计算𝑤和𝑏变化对代价函数𝐿的影响</p>
+<script type="math/tex; mode=display">
+\frac{\partial L}{\partial w_{1}}=x_{1} \cdot d z,\quad \frac{\partial L}{\partial w_{2}}=x_{2} \cdot d z, \quad d b=d z</script><p>对于m个样本：</p>
+<script type="math/tex; mode=display">
+\begin{array}{l}
+d w_{j}=\frac{1}{m} \sum_{i}^{m} x_{j}^{(i)}\left(a^{(i)}-y^{(i)}\right) \\
+d b=\frac{1}{m} \sum_{i}^{m}\left(a^{(i)}-y^{(i)}\right)
+\end{array}</script><p>伪代码：</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">J<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>
+dw1<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>
+dw2<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>
+db<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token keyword">for</span> i <span class="token operator">=</span> <span class="token number">1</span> to m
+  z<span class="token punctuation">(</span>i<span class="token punctuation">)</span> <span class="token operator">=</span> wx<span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token operator">+</span>b<span class="token punctuation">;</span>
+  a<span class="token punctuation">(</span>i<span class="token punctuation">)</span> <span class="token operator">=</span> sigmoid<span class="token punctuation">(</span>z<span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  J <span class="token operator">+=</span> <span class="token operator">-</span><span class="token punctuation">[</span>y<span class="token punctuation">(</span>i<span class="token punctuation">)</span>log<span class="token punctuation">(</span>a<span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token operator">+</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token operator">-</span>y<span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">)</span>log<span class="token punctuation">(</span><span class="token number">1</span><span class="token operator">-</span>a<span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> dz<span class="token punctuation">(</span>i<span class="token punctuation">)</span> <span class="token operator">=</span> a<span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token operator">-</span>y<span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  dw1 <span class="token operator">+=</span> x1<span class="token punctuation">(</span>i<span class="token punctuation">)</span>dz<span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  dw2 <span class="token operator">+=</span> x2<span class="token punctuation">(</span>i<span class="token punctuation">)</span>dz<span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  db <span class="token operator">+=</span> dz<span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  J<span class="token operator">/=</span> m<span class="token punctuation">;</span>
+  dw1<span class="token operator">/=</span> m<span class="token punctuation">;</span>
+  dw2<span class="token operator">/=</span> m<span class="token punctuation">;</span>
+  db<span class="token operator">/=</span> m<span class="token punctuation">;</span>
+  w<span class="token operator">=</span>w<span class="token operator">-</span>alpha<span class="token operator">*</span>dw
+  b<span class="token operator">=</span>b<span class="token operator">-</span>alpha<span class="token operator">*</span>db<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="8-向量化"><a href="#8-向量化" class="headerlink" title="8.向量化"></a>8.向量化</h2><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> numpy <span class="token keyword">as</span> np <span class="token comment">#导入 numpy 库</span>
+a <span class="token operator">=</span> np<span class="token punctuation">.</span>array<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token comment">#创建一个数据 </span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span>
+<span class="token comment"># [1 2 3 4]</span>
+<span class="token keyword">import</span> time <span class="token comment">#导入时间库</span>
+a <span class="token operator">=</span> np<span class="token punctuation">.</span>random<span class="token punctuation">.</span>rand<span class="token punctuation">(</span><span class="token number">1000000</span><span class="token punctuation">)</span>
+b <span class="token operator">=</span> np<span class="token punctuation">.</span>random<span class="token punctuation">.</span>rand<span class="token punctuation">(</span><span class="token number">1000000</span><span class="token punctuation">)</span> <span class="token comment">#通过 round 随机得到两个一百万维度的数组</span>
+tic <span class="token operator">=</span> time<span class="token punctuation">.</span>time<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment">#现在测量一下当前时间</span>
+<span class="token comment">#向量化的版本</span>
+c <span class="token operator">=</span> np<span class="token punctuation">.</span>dot<span class="token punctuation">(</span>a<span class="token punctuation">,</span>b<span class="token punctuation">)</span>
+toc <span class="token operator">=</span> time<span class="token punctuation">.</span>time<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>“Vectorized version<span class="token punctuation">:</span>” <span class="token operator">+</span> <span class="token builtin">str</span><span class="token punctuation">(</span><span class="token number">1000</span><span class="token operator">*</span><span class="token punctuation">(</span>toc<span class="token operator">-</span>tic<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">+</span>”ms”<span class="token punctuation">)</span> <span class="token comment">#打印一下向量化的版本的时间</span>
+<span class="token comment">#继续增加非向量化的版本</span>
+c<span class="token operator">=</span><span class="token number">0</span>
+tic <span class="token operator">=</span> time<span class="token punctuation">.</span>time<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">1000000</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+	c <span class="token operator">+=</span> a<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">*</span>b<span class="token punctuation">[</span>i<span class="token punctuation">]</span>
+toc <span class="token operator">=</span> time<span class="token punctuation">.</span>time<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>c<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>“For loop<span class="token punctuation">:</span>” <span class="token operator">+</span> <span class="token builtin">str</span><span class="token punctuation">(</span><span class="token number">1000</span><span class="token operator">*</span><span class="token punctuation">(</span>toc<span class="token operator">-</span>tic<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">+</span> “ms”<span class="token punctuation">)</span><span class="token comment">#打印 for循环的版本的时间</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>for太慢，上面的例子相差300倍，深度学习代码中尽量不使用for，使用向量</p>
+<h2 id="9-向量化逻辑回归（Vectorizing-Logistic-Regression）"><a href="#9-向量化逻辑回归（Vectorizing-Logistic-Regression）" class="headerlink" title="9.向量化逻辑回归（Vectorizing Logistic Regression）"></a>9.向量化逻辑回归（Vectorizing Logistic Regression）</h2><p>我们的目标是不使用 for 循环，而是向量，我们可以这么做:</p>
+<script type="math/tex; mode=display">
+Z=w^{T} X+b=n p . \operatorname{dot}(w . T, X)+b</script><script type="math/tex; mode=display">
+A=\sigma(Z)</script><script type="math/tex; mode=display">
+d Z=A-Y</script><script type="math/tex; mode=display">
+d w=\frac{1}{m} * X * d z^{T}​</script><script type="math/tex; mode=display">
+d b=\frac{1}{m} * n p . \operatorname{sum}(d Z)​</script><script type="math/tex; mode=display">
+w:=w-a * d w​</script><script type="math/tex; mode=display">
+b:=b-a * d b​</script><h2 id="10-Python-中的广播（Broadcasting-in-Python）"><a href="#10-Python-中的广播（Broadcasting-in-Python）" class="headerlink" title="10.Python 中的广播（Broadcasting in Python）"></a>10.Python 中的广播（Broadcasting in Python）</h2><p><img src="https://cdn.jsdelivr.net/gh/ZqtCtios/Image/img/image-20201214143246086.png" alt="Broadcasting in Python"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/ZqtCtios/Image/img/image-20201214143943638.png" alt="image-20201214143943638"></p>
+<h2 id="11-logistic-损失函数的解释（Explanationoflogistic-regression-cost-function）"><a href="#11-logistic-损失函数的解释（Explanationoflogistic-regression-cost-function）" class="headerlink" title="11.logistic 损失函数的解释（Explanationoflogistic regression cost function）"></a>11.logistic 损失函数的解释（Explanationoflogistic regression cost function）</h2><p>回想一下，在逻辑回归中，需要预测的结果金,可以表示为 $\hat{y}=\sigma\left(w^{T} x+b\right), \sigma$ 是我们熟给定训练样本 $x$ 条件下 $y$ 等于 1 的概率。<br>换句话说，如果 $y=1,$ 在给定训练样本 $x$ 条件下 $\mathrm{y}=\hat{y}$<br>反过来说，如果 $y=0,$ 在给定训练样本 $x$ 条件下 $(y=1-\hat{y})$,<br>因此，如果 $\hat{y}$ 代表 $y=1$ 的概率，那么1 $-\hat{y}$ 就是 $y=0$ 的概率。<br>接下来，我们就来分析这两个条件概率公式。<br>If $y=1: \quad p(y \mid x)=\hat{y}$<br>If $y=0: \quad p(y \mid x)=1-\hat{y}$</p>
+<p>上述的两个条件概率公式可以合并成如下公式:</p>
+<script type="math/tex; mode=display">
+p(y \mid x)=\hat{y}^{y}(1-\hat{y})^{(1-y)}</script><p>由于 $\log$函数是严格单调递增的函数，最大化 $\log (p(y \mid x))$ 等价于最大化 $p(y \mid x)$ 并且地计算$p(y \mid x)$ 的 $\log$ 对数, 就是计算 $\log \left(\hat{y}^{(y)}(1-\hat{y})^{(1-y)}\right)$ </p>
+<p>其实就是将 $p(y \mid x)$ 代入，通过对数函数化简为:</p>
+<script type="math/tex; mode=display">
+-L(\hat{y}, y)=y \log \hat{y}+(1-y) \log (1-\hat{y})</script>
+                
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">Ctios</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="http://blog.ctios.cn/2020/12/12/machinelearning/andrew-ng-deeplearning/01-basics-of-neural-network/">http://blog.ctios.cn/2020/12/12/machinelearning/andrew-ng-deeplearning/01-basics-of-neural-network/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">Ctios</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/">
+                                    <span class="chip bg-color">深度学习</span>
+                                </a>
+                            
+                                <a href="/tags/%E5%90%B4%E6%81%A9%E8%BE%BE/">
+                                    <span class="chip bg-color">吴恩达</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/ZqtCtios/ZqtCtios.github.io/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="https://cdn.jsdelivr.net/gh/ZqtCtios/ZqtCtios.github.io/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.4rem;
+        line-height: 38px;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="https://cdn.jsdelivr.net/gh/ZqtCtios/ZqtCtios.github.io/medias/reward/alipay.png" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="https://cdn.jsdelivr.net/gh/ZqtCtios/ZqtCtios.github.io/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/2020/12/14/machinelearning/andrew-ng-deeplearning/02-shallow-neural-networks/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="https://cdn.jsdelivr.net/gh/ZqtCtios/ZqtCtios.github.io/medias/featureimages/15.jpg" class="responsive-img" alt="02_浅层神经网络(Shallow neural networks)">
+                        
+                        <span class="card-title">02_浅层神经网络(Shallow neural networks)</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-12-14
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E5%90%B4%E6%81%A9%E8%BE%BE%E2%80%94%E2%80%94%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" class="post-category">
+                                    吴恩达——深度学习
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/">
+                        <span class="chip bg-color">深度学习</span>
+                    </a>
+                    
+                    <a href="/tags/%E5%90%B4%E6%81%A9%E8%BE%BE/">
+                        <span class="chip bg-color">吴恩达</span>
+                    </a>
+                    
+                    <a href="/tags/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/">
+                        <span class="chip bg-color">神经网络</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2020/12/10/machinelearning/wu-en-da-ji-qi-xue-xi/10-recommender-systems/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="https://cdn.jsdelivr.net/gh/ZqtCtios/ZqtCtios.github.io/medias/featureimages/8.jpg" class="responsive-img" alt="10_推荐系统(Recommender Systems)">
+                        
+                        <span class="card-title">10_推荐系统(Recommender Systems)</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-12-10
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E5%90%B4%E6%81%A9%E8%BE%BE%E2%80%94%E2%80%94%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" class="post-category">
+                                    吴恩达——机器学习
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E5%90%B4%E6%81%A9%E8%BE%BE/">
+                        <span class="chip bg-color">吴恩达</span>
+                    </a>
+                    
+                    <a href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/">
+                        <span class="chip bg-color">机器学习</span>
+                    </a>
+                    
+                    <a href="/tags/%E6%8E%A8%E8%8D%90%E7%B3%BB%E7%BB%9F/">
+                        <span class="chip bg-color">推荐系统</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/ZqtCtios/ZqtCtios.github.io/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/ZqtCtios/ZqtCtios.github.io/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/ZqtCtios/ZqtCtios.github.io/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/ZqtCtios/ZqtCtios.github.io/libs/codeBlock/codeShrink.js"></script>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/gh/ZqtCtios/ZqtCtios.github.io/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+<script src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script>
+    MathJax.Hub.Config({
+        tex2jax: {inlineMath: [['$', '$'], ['\(', '\)']]}
+    });
+</script>
+
+
+
+    <footer class="page-footer bg-color">
+    
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/ZqtCtios/ZqtCtios.github.io/libs/aplayer/APlayer.min.css">
+<style>
+    .aplayer .aplayer-lrc p {
+        
+        display: none;
+        
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 16px !important;
+    }
+
+    .aplayer .aplayer-lrc p.aplayer-lrc-current {
+        
+        display: none;
+        
+        font-size: 15px;
+        color: #42b983;
+    }
+
+    
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
+        left: -66px !important;
+    }
+
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover {
+        left: 0px !important;
+    }
+
+    
+</style>
+<div class="">
+    
+    <div class="row">
+        <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
+                   server="netease"
+                   type="playlist"
+                   id="152698194"
+                   fixed='true'
+                   autoplay='false'
+                   theme='#42b983'
+                   loop='all'
+                   order='list'
+                   preload='auto'
+                   volume='0.7'
+                   list-folded='true'
+        >
+        </meting-js>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/gh/ZqtCtios/ZqtCtios.github.io/libs/aplayer/APlayer.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+
+    
+    <div class="container row center-align" style="margin-bottom: 15px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2020</span>
+            
+            <span id="year">2020</span>
+            <a href="/about" target="_blank">Ctios</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            
+            
+            
+            
+            
+            
+            <span id="busuanzi_container_site_pv">
+                |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
+                    class="white-color"></span>&nbsp;次
+            </span>
+            
+            
+            <span id="busuanzi_container_site_uv">
+                |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
+                    class="white-color"></span>&nbsp;人
+            </span>
+            
+            <br>
+            
+            <span id="sitetime">载入运行时间...</span>
+            <script>
+                function siteTime() {
+                    var seconds = 1000;
+                    var minutes = seconds * 60;
+                    var hours = minutes * 60;
+                    var days = hours * 24;
+                    var years = days * 365;
+                    var today = new Date();
+                    var startYear = "2020";
+                    var startMonth = "12";
+                    var startDate = "3";
+                    var startHour = "0";
+                    var startMinute = "0";
+                    var startSecond = "0";
+                    var todayYear = today.getFullYear();
+                    var todayMonth = today.getMonth() + 1;
+                    var todayDate = today.getDate();
+                    var todayHour = today.getHours();
+                    var todayMinute = today.getMinutes();
+                    var todaySecond = today.getSeconds();
+                    var t1 = Date.UTC(startYear, startMonth, startDate, startHour, startMinute, startSecond);
+                    var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
+                    var diff = t2 - t1;
+                    var diffYears = Math.floor(diff / years);
+                    var diffDays = Math.floor((diff / days) - diffYears * 365);
+                    var diffHours = Math.floor((diff - (diffYears * 365 + diffDays) * days) / hours);
+                    var diffMinutes = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours) /
+                        minutes);
+                    var diffSeconds = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours -
+                        diffMinutes * minutes) / seconds);
+                    if (startYear == todayYear) {
+                        document.getElementById("year").innerHTML = todayYear;
+                        document.getElementById("sitetime").innerHTML = "本站已安全运行 " + diffDays + " 天 " + diffHours +
+                            " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+                    } else {
+                        document.getElementById("year").innerHTML = startYear + " - " + todayYear;
+                        document.getElementById("sitetime").innerHTML = "本站已安全运行 " + diffYears + " 年 " + diffDays +
+                            " 天 " + diffHours + " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+                    }
+                }
+                setInterval(siteTime, 1000);
+            </script>
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/ZqtCtios" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:ctios@bupt.edu.cn" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=1196234610" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 1196234610" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fas fa-rss"></i>
+    </a>
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="https://cdn.jsdelivr.net/gh/ZqtCtios/ZqtCtios.github.io/libs/materialize/materialize.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/ZqtCtios/ZqtCtios.github.io/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/ZqtCtios/ZqtCtios.github.io/libs/aos/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/ZqtCtios/ZqtCtios.github.io/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/ZqtCtios/ZqtCtios.github.io/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/ZqtCtios/ZqtCtios.github.io/js/matery.js"></script>
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="https://cdn.jsdelivr.net/gh/ZqtCtios/ZqtCtios.github.io/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="https://cdn.jsdelivr.net/gh/ZqtCtios/ZqtCtios.github.io/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+    <!--腾讯兔小巢-->
+    
+    
+
+    
+
+    
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/ZqtCtios/ZqtCtios.github.io/libs/background/ribbon-dynamic.js" async="async"></script>
+    
+
+    
+    <script src="https://cdn.jsdelivr.net/gh/ZqtCtios/ZqtCtios.github.io/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/tororo.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true},"react":{"opacity":1}});</script></body>
+
+</html>
