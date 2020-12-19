@@ -6,7 +6,7 @@
   <link href="http://blog.ctios.cn/atom.xml" rel="self"/>
   
   <link href="http://blog.ctios.cn/"/>
-  <updated>2020-12-16T09:19:22.000Z</updated>
+  <updated>2020-12-19T14:30:55.472Z</updated>
   <id>http://blog.ctios.cn/</id>
   
   <author>
@@ -15,6 +15,93 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Lesson1_Week2_assignment3_1</title>
+    <link href="http://blog.ctios.cn/2020/12/19/machinelearning/andrew-ng-deeplearning/assignment/lesson1/week3/assignment3/"/>
+    <id>http://blog.ctios.cn/2020/12/19/machinelearning/andrew-ng-deeplearning/assignment/lesson1/week3/assignment3/</id>
+    <published>2020-12-19T09:00:00.000Z</published>
+    <updated>2020-12-19T14:30:55.472Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;Planar-data-classification-with-one-hidden-layer&quot;&gt;&lt;a href=&quot;#Planar-data-classification-with-one-hidden-layer&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="吴恩达——深度学习" scheme="http://blog.ctios.cn/categories/%E5%90%B4%E6%81%A9%E8%BE%BE%E2%80%94%E2%80%94%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+    <category term="深度学习" scheme="http://blog.ctios.cn/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
+    
+    <category term="吴恩达" scheme="http://blog.ctios.cn/tags/%E5%90%B4%E6%81%A9%E8%BE%BE/"/>
+    
+    <category term="作业" scheme="http://blog.ctios.cn/tags/%E4%BD%9C%E4%B8%9A/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Lesson1_Week2_assignment2_2</title>
+    <link href="http://blog.ctios.cn/2020/12/18/machinelearning/andrew-ng-deeplearning/assignment/lesson1/week2/assignment2-2/"/>
+    <id>http://blog.ctios.cn/2020/12/18/machinelearning/andrew-ng-deeplearning/assignment/lesson1/week2/assignment2-2/</id>
+    <published>2020-12-18T09:00:00.000Z</published>
+    <updated>2020-12-19T14:12:37.235Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;Logistic-Regression-with-a-Neural-Network-mindset&quot;&gt;&lt;a href=&quot;#Logistic-Regression-with-a-Neural-Network-mindset&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="吴恩达——深度学习" scheme="http://blog.ctios.cn/categories/%E5%90%B4%E6%81%A9%E8%BE%BE%E2%80%94%E2%80%94%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+    <category term="深度学习" scheme="http://blog.ctios.cn/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
+    
+    <category term="吴恩达" scheme="http://blog.ctios.cn/tags/%E5%90%B4%E6%81%A9%E8%BE%BE/"/>
+    
+    <category term="作业" scheme="http://blog.ctios.cn/tags/%E4%BD%9C%E4%B8%9A/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Lesson1_Week2_assignment2_1</title>
+    <link href="http://blog.ctios.cn/2020/12/17/machinelearning/andrew-ng-deeplearning/assignment/lesson1/week2/assignment2-1/"/>
+    <id>http://blog.ctios.cn/2020/12/17/machinelearning/andrew-ng-deeplearning/assignment/lesson1/week2/assignment2-1/</id>
+    <published>2020-12-17T09:00:00.000Z</published>
+    <updated>2020-12-19T13:50:41.451Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;Python-Basics-with-Numpy-（optional-assignment）&quot;&gt;&lt;a href=&quot;#Python-Basics-with-Numpy-（optional-assignment）&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="吴恩达——深度学习" scheme="http://blog.ctios.cn/categories/%E5%90%B4%E6%81%A9%E8%BE%BE%E2%80%94%E2%80%94%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+    <category term="深度学习" scheme="http://blog.ctios.cn/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
+    
+    <category term="吴恩达" scheme="http://blog.ctios.cn/tags/%E5%90%B4%E6%81%A9%E8%BE%BE/"/>
+    
+    <category term="作业" scheme="http://blog.ctios.cn/tags/%E4%BD%9C%E4%B8%9A/"/>
+    
+  </entry>
   
   <entry>
     <title>04_深度学习的实践层面（Practical aspects of Deep Learning）</title>
@@ -77,7 +164,7 @@
     <link href="http://blog.ctios.cn/2020/12/14/machinelearning/andrew-ng-deeplearning/02-shallow-neural-networks/"/>
     <id>http://blog.ctios.cn/2020/12/14/machinelearning/andrew-ng-deeplearning/02-shallow-neural-networks/</id>
     <published>2020-12-14T09:00:00.000Z</published>
-    <updated>2020-12-14T09:32:25.000Z</updated>
+    <updated>2020-12-19T14:29:26.155Z</updated>
     
     
       
@@ -129,6 +216,35 @@
   </entry>
   
   <entry>
+    <title>09_异常检测(Anomaly Detection)</title>
+    <link href="http://blog.ctios.cn/2020/12/10/machinelearning/wu-en-da-ji-qi-xue-xi/09-anomaly-detection/"/>
+    <id>http://blog.ctios.cn/2020/12/10/machinelearning/wu-en-da-ji-qi-xue-xi/09-anomaly-detection/</id>
+    <published>2020-12-09T16:00:00.000Z</published>
+    <updated>2020-12-10T05:41:11.545Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;1-问题的动机&quot;&gt;&lt;a href=&quot;#1-问题的动机&quot; class=&quot;headerlink&quot; title=&quot;1.问题的动机&quot;&gt;&lt;/a&gt;1.问题的动机&lt;/h2&gt;&lt;p&gt;异常检测(Anomaly</summary>
+        
+      
+    
+    
+    
+    <category term="吴恩达——机器学习" scheme="http://blog.ctios.cn/categories/%E5%90%B4%E6%81%A9%E8%BE%BE%E2%80%94%E2%80%94%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+    <category term="吴恩达" scheme="http://blog.ctios.cn/tags/%E5%90%B4%E6%81%A9%E8%BE%BE/"/>
+    
+    <category term="机器学习" scheme="http://blog.ctios.cn/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    
+    <category term="异常检测" scheme="http://blog.ctios.cn/tags/%E5%BC%82%E5%B8%B8%E6%A3%80%E6%B5%8B/"/>
+    
+  </entry>
+  
+  <entry>
     <title>10_推荐系统(Recommender Systems)</title>
     <link href="http://blog.ctios.cn/2020/12/10/machinelearning/wu-en-da-ji-qi-xue-xi/10-recommender-systems/"/>
     <id>http://blog.ctios.cn/2020/12/10/machinelearning/wu-en-da-ji-qi-xue-xi/10-recommender-systems/</id>
@@ -155,35 +271,6 @@
     <category term="机器学习" scheme="http://blog.ctios.cn/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
     
     <category term="推荐系统" scheme="http://blog.ctios.cn/tags/%E6%8E%A8%E8%8D%90%E7%B3%BB%E7%BB%9F/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>09_异常检测(Anomaly Detection)</title>
-    <link href="http://blog.ctios.cn/2020/12/10/machinelearning/wu-en-da-ji-qi-xue-xi/09-anomaly-detection/"/>
-    <id>http://blog.ctios.cn/2020/12/10/machinelearning/wu-en-da-ji-qi-xue-xi/09-anomaly-detection/</id>
-    <published>2020-12-09T16:00:00.000Z</published>
-    <updated>2020-12-10T05:41:11.545Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h2 id=&quot;1-问题的动机&quot;&gt;&lt;a href=&quot;#1-问题的动机&quot; class=&quot;headerlink&quot; title=&quot;1.问题的动机&quot;&gt;&lt;/a&gt;1.问题的动机&lt;/h2&gt;&lt;p&gt;异常检测(Anomaly</summary>
-        
-      
-    
-    
-    
-    <category term="吴恩达——机器学习" scheme="http://blog.ctios.cn/categories/%E5%90%B4%E6%81%A9%E8%BE%BE%E2%80%94%E2%80%94%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
-    
-    
-    <category term="吴恩达" scheme="http://blog.ctios.cn/tags/%E5%90%B4%E6%81%A9%E8%BE%BE/"/>
-    
-    <category term="机器学习" scheme="http://blog.ctios.cn/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
-    
-    <category term="异常检测" scheme="http://blog.ctios.cn/tags/%E5%BC%82%E5%B8%B8%E6%A3%80%E6%B5%8B/"/>
     
   </entry>
   
@@ -487,57 +574,6 @@
         
         
     <summary type="html">&lt;h1 id=&quot;Chapter-02-An-Array-of-Sequences&quot;&gt;&lt;a href=&quot;#Chapter-02-An-Array-of-Sequences&quot; class=&quot;headerlink&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="FluentPython" scheme="http://blog.ctios.cn/categories/FluentPython/"/>
-    
-    
-    <category term="python" scheme="http://blog.ctios.cn/tags/python/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Chapter_01_The_Python_Data_Model</title>
-    <link href="http://blog.ctios.cn/2020/12/01/python/fluentpython/chapter-01-the-python-data-model/"/>
-    <id>http://blog.ctios.cn/2020/12/01/python/fluentpython/chapter-01-the-python-data-model/</id>
-    <published>2020-11-30T16:00:00.000Z</published>
-    <updated>2020-12-06T15:57:11.000Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;Chapter-01-The-Python-Data-Model&quot;&gt;&lt;a href=&quot;#Chapter-01-The-Python-Data-Model&quot; class=&quot;headerlink&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="FluentPython" scheme="http://blog.ctios.cn/categories/FluentPython/"/>
-    
-    
-    <category term="python" scheme="http://blog.ctios.cn/tags/python/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Chapter_04_Text_versus_Bytes</title>
-    <link href="http://blog.ctios.cn/2020/12/01/python/fluentpython/chapter-04-text-versus-bytes/"/>
-    <id>http://blog.ctios.cn/2020/12/01/python/fluentpython/chapter-04-text-versus-bytes/</id>
-    <published>2020-11-30T16:00:00.000Z</published>
-    <updated>2020-12-06T16:44:05.056Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;pre class=&quot;line-numbers language-python&quot; data-language=&quot;python&quot;&gt;&lt;code class=&quot;language-python&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;# 编码和解码&lt;/span&gt;
-s</summary>
         
       
     
